@@ -55,6 +55,10 @@ class UIController extends Controller
         }
         $user->user_role = $req->user_role;
         $user->save();
+
+        //to shoot an email
+        $this->verifyEmail($user->id);
+
         return back()->with('success','Added Successfully');
     }
 
@@ -89,6 +93,15 @@ class UIController extends Controller
         }
     }
 
+    public function user_verified($id)
+    {
+        $user = User::find($id);
+        $user->status = 1;
+        $user->save();
+        Auth::login($user);
+
+        return redirect(route('UI_index'));
+    }
     public function logout()
     {
         Auth::logout();

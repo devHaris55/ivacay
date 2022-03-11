@@ -1,0 +1,1 @@
+<a href="{{route('user_verified', $this->details->id)}}">Click Here</a>

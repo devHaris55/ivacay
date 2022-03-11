@@ -19,23 +19,24 @@ use App\Http\Controllers\UIController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/admin-login', function () {
     return redirect()->route('admin_login');
 });
 
 /*---------------------------------------User-Routes---------------------------------------------- */
-Route::get('/index', [UIController::class, 'index'])->name('UI_index');
+Route::get('/', [UIController::class, 'index'])->name('UI_index');
 Route::get('/for-guide', [UIController::class, 'for_guide'])->name('UI_for_guide');
 Route::get('/articles', [UIController::class, 'articles'])->name('UI_articles');
 Route::get('/faq', [UIController::class, 'faq'])->name('UI_faq');
-Route::get('/service_provider', [UIController::class, 'service_provider'])->name('UI_service_provider');
+Route::get('/service-provider', [UIController::class, 'service_provider'])->name('UI_service_provider');
 Route::get('/vacationer', [UIController::class, 'vacationer'])->name('UI_vacationer');
 
-Route::get('/sign_up', [UIController::class, 'sign_up'])->name('UI_sign_up');
-Route::post('/sign_up', [UIController::class, 'create_account'])->name('UI_create_account');
+Route::get('/sign-up', [UIController::class, 'sign_up'])->name('UI_sign_up');
+Route::post('/sign-up', [UIController::class, 'create_account'])->name('UI_create_account');
 Route::get('/login', [UIController::class, 'login'])->name('UI_login');
 Route::post('/loggedin', [UIController::class, 'loggedin'])->name('UI_loggedin');
 Route::get('/logout', [UIController::class, 'logout'])->name('UI_logout');
+Route::get('/user-verified/{id?}', [UIController::class, 'user_verified'])->name('user_verified');
 
 
 Route::get('/personal_concierge_service', [UIController::class, 'personal_concierge_service'])->name('UI_personal_concierge_service');
