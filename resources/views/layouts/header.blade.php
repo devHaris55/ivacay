@@ -46,7 +46,7 @@
               @else
                 <li><a href="{{route('UI_logout')}}"> Log Out</a></li>
               @endif
-              <li><a href="javascript:void(0)" class="btn btn_dashed">Plan Your Journey
+              <li><a href="{{route('UI_plan_journey')}}" class="btn btn_dashed">Plan Your Journey
                   <i class="fa-solid fa-arrow-right-long"></i></a></li>
             </ul>
           </div>

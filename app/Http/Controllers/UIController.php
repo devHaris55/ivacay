@@ -33,6 +33,15 @@ class UIController extends EmailController
     {
         return view('vacationer');
     }
+    public function plan_journey()
+    {
+        return view('contact_us');
+    }
+    public function contact_us(Request $req)
+    {
+        $this->contactUs($req->subject, $req->username, $req->email, $req->comment);
+        return back()->with('success','Response submitted Successfully');
+    }
 
 
     public function sign_up()
@@ -69,10 +78,10 @@ class UIController extends EmailController
     public function loggedin(Request $req)
     {
         if(!empty($req->email) && !empty($req->password)){
-            $userfind = User::where('email', $req->email)->first();
+            $userfind = User::where('email', $req->email)->where('status', 1)->first();
             if($userfind){
                 /*means found user*/
-                if(Hash::check($req->password,$userfind->password)){
+                if(Hash::check($req->password, $userfind->password)){
                     /*matched password*/
                     Auth::login($userfind);
                     if(Auth::check()){
@@ -86,13 +95,14 @@ class UIController extends EmailController
                 }
                 /*means found user end*/
             }else{
-                return redirect(route('UI_sign_up'))->with('error','Email not found');
+                return redirect(route('UI_sign_up'))->with('error','Email not found or You didn\'t confirm your email');
             }
         }else{
             return redirect(route('UI_login'))->with('warning','Please fill required fields');
         }
     }
 
+    //execute from user email
     public function user_verified($id)
     {
         $user = User::find($id);

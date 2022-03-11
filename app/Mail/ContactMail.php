@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class MyTestMail extends Mailable
+class ContactMail extends Mailable
 {
     use Queueable, SerializesModels;
     public $details;
@@ -16,9 +16,9 @@ class MyTestMail extends Mailable
      *
      * @return void
      */
-    public function __construct($user)
+    public function __construct($object)
     {
-        $this->details = $user;
+        $this->details = $object;
     }
     /**
      * Build the message.
@@ -27,7 +27,7 @@ class MyTestMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Please! Verify your email.')
-						->view('emails.verify_user');
+        return $this->subject($this->details['subject'])
+						->view('emails.contact_us_mail');
     }
 }

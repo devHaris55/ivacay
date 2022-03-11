@@ -36,7 +36,10 @@ Route::post('/sign-up', [UIController::class, 'create_account'])->name('UI_creat
 Route::get('/login', [UIController::class, 'login'])->name('UI_login');
 Route::post('/loggedin', [UIController::class, 'loggedin'])->name('UI_loggedin');
 Route::get('/logout', [UIController::class, 'logout'])->name('UI_logout');
+
 Route::get('/user-verified/{id?}', [UIController::class, 'user_verified'])->name('user_verified');
+Route::get('/plan-journey', [UIController::class, 'plan_journey'])->name('UI_plan_journey');
+Route::post('/contact-us', [UIController::class, 'contact_us'])->name('UI_contact_us');
 
 
 Route::get('/personal_concierge_service', [UIController::class, 'personal_concierge_service'])->name('UI_personal_concierge_service');

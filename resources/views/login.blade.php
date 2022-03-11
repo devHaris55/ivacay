@@ -34,7 +34,7 @@
                         <form action="{{route('UI_loggedin')}}" method="POST">
                             @csrf
                             <div class="form-group">
-                                <input type="email" name="email" aria-describedby="emailHelp" placeholder="E-mail*">
+                                <input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="E-mail*">
                             </div>
                             <div class="form-group">
                                 <input type="password" name="password" class="form-control" placeholder="password*">

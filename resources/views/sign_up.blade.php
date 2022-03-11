@@ -47,7 +47,7 @@
                         </div>
                         <div class="log_input ">
                             <div class="form-group">
-                                <input type="name" name="username" class="form-control" placeholder="User Name*">
+                                <input type="text" name="username" class="form-control" placeholder="User Name*">
                             </div>
                             <!-- <div class="form-group">
                                 <input type="name" class="form-control" placeholder="Last  Name*">
@@ -56,7 +56,7 @@
                                 <input type="email" name="email" class="form-control" placeholder="E-mail*">
                             </div>
                             <div class="form-group">
-                                <input type="password" name="password" placeholder="password*">
+                                <input type="password" name="password" class="form-control" placeholder="password*">
                                 <span> <i class="fa-regular fa-eye"></i></span>
                             </div>
                             <div class="second_check">
