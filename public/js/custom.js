@@ -1,385 +1,396 @@
 // blogslider start
-$('.blogslid').slick({
-  dots: false,
-  arrows:true,
-  infinite: true,
-  speed: 300,
-  autoplay:true,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-  ]
+$(".blogslid").slick({
+    dots: false,
+    arrows: true,
+    infinite: true,
+    speed: 300,
+    autoplay: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true,
+            },
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+            },
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            },
+        },
+    ],
 });
 
-
 // test Slide start
-$('.test_slide').slick({
-  dots: false,
-  arrows:false,
-  infinite: true,
-  speed: 300,
-  autoplay:true,
-  slidesToShow: 2,
-  slidesToScroll: 1,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-  ]
+$(".test_slide").slick({
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 300,
+    autoplay: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true,
+            },
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+            },
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            },
+        },
+    ],
 });
 
 // blogslider start
-$('.about_slide').slick({
-  dots: false,
-  arrows:false,
-  infinite: true,
-  speed: 500,
-  autoplay:true,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 2
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-  ]
+$(".about_slide").slick({
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true,
+            },
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 2,
+            },
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            },
+        },
+    ],
 });
 
 // blogslider end
 
 // product slider jas start
 
- $('.slider-for').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false,
-  fade: true,
-  asNavFor: '.slider-nav'
+$(".slider-for").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: ".slider-nav",
 });
-$('.slider-nav').slick({
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  asNavFor: '.slider-for',
-  dots: true,
-  centerMode: true,
-  focusOnSelect: true
+$(".slider-nav").slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    asNavFor: ".slider-for",
+    dots: true,
+    centerMode: true,
+    focusOnSelect: true,
 });
 // product slider jas end
 
 // simple slick slider start
 $(".regular").slick({
-  dots: true,
-  infinite: true,
-  speed:300,
-  autoplay:true,
-  slidesToShow: 3,
-  slidesToScroll: 3
+    dots: true,
+    infinite: true,
+    speed: 300,
+    autoplay: true,
+    slidesToShow: 3,
+    slidesToScroll: 3,
 });
 
 // simple slick slider end
 
-// wow animation js 
+// wow animation js
 
 $(function () {
     new WOW().init();
-  });
-
-
-// responsive menu js 
-
-$(function () {
-  $('#menu').slicknav();
 });
 
-    AOS.init();
+// responsive menu js
 
+$(function () {
+    $("#menu").slicknav();
+});
+
+AOS.init();
 
 // mobile mode aos animatio hide js
-AOS.init({disable: 'mobile'});
-
-            
+AOS.init({ disable: "mobile" });
 
 // video play script
-    function playVideo() 
-    { 
-    $('#videoBanner').trigger('play'); 
-    $('#btn2').hide();
-    $('#btn1').show();
-    } 
-    function pauseVideo() 
-    { 
-    $('#videoBanner').trigger('pause'); 
-    $('#btn1').hide();
-    $('#btn2').show();
-    };
-
-
+function playVideo() {
+    $("#videoBanner").trigger("play");
+    $("#btn2").hide();
+    $("#btn1").show();
+}
+function pauseVideo() {
+    $("#videoBanner").trigger("pause");
+    $("#btn1").hide();
+    $("#btn2").show();
+}
 
 // Check box functionalty Both with Validation
 
-   // function myFunction() {
-        //   document.getElementById("panel").style.display = "block";
-        // }
-            var count = 0;
-            var count1 = 0;
-            $( document ).ready(function() {
+// function myFunction() {
+//   document.getElementById("panel").style.display = "block";
+// }
+var count = 0;
+var count1 = 0;
+$(document).ready(function () {
+    $("#btn_click").click(function () {
+        var wtg = $("#wtg").val();
+        var fromdate = $("#fromdate").val();
+        var todate = $("#todate").val();
 
-            $("#btn_click").click(function(){
-              
-            var wtg = $("#wtg").val();
-            var fromdate = $("#fromdate").val();
-            var todate = $("#todate").val();
+        if (wtg == "" || fromdate == "" || todate == "") {
+            alert("Null Working");
+        } else {
+            // alert("Data Filled");
 
-            if(wtg == "" || fromdate == "" || todate == ""){
+            $("#panel").css("display", "block");
 
-                alert("Null Working");
-            }else{
+            $("#panel2").css("display", "block");
 
-                // alert("Data Filled");
-
-                $("#panel").css("display", "block");
-
-                $("#panel2").css("display", "block");
-
-       //          var dd=$('.check_class').val();
-       // console.log(dd);
-
-            }
-                $('#check_id1').click(function(){ 
-
-                if ($('#check_id1').is(":checked")){
+            //          var dd=$('.check_class').val();
+            // console.log(dd);
+        }
+        $("#check_id1").click(function () {
+            if ($("#check_id1").is(":checked")) {
                 // it is checked
                 count++;
                 // alert("It is working");
-                }else{
+            } else {
                 --count;
                 // alert("Not working");
-                }
-                console.log(count);
-                check();
-                });
+            }
+            console.log(count);
+            check();
+        });
 
-                $('#check_id2').click(function(){ 
-
-                if ($('#check_id2').is(":checked")){
+        $("#check_id2").click(function () {
+            if ($("#check_id2").is(":checked")) {
                 // it is checked
                 count++;
                 // alert("It is working");
-                }else{
+            } else {
                 --count;
                 // alert("Not working");
-                }
-                console.log(count);
-                 check();
-                });
-
-            $('#check_id3').click(function(){ 
-
-            if ($('#check_id3').is(":checked")){
-            // it is checked
-            count++;
-            // alert("It is working");
-            }else{
-            --count;
-            // alert("Not working");
             }
             console.log(count);
-             check();
-            });
+            check();
+        });
 
-            $('#check_id4').click(function(){ 
-
-            if ($('#check_id4').is(":checked")){
-            // it is checked
-            count++;
-            // alert("It is working");
-            }else{
-            --count;
-            // alert("Not working");
-            }
-            console.log(count);
-             check();
-            });
-
-            $('#check_id5').click(function(){ 
-
-            if ($('#check_id5').is(":checked")){
-            // it is checked
-            count++;
-            // alert("It is working");
-            }else{
-            --count;
-            // alert("Not working");
-            }
-            console.log(count);
-             check();
-            });
-              });
-
-
-            $('#check_id11').click(function(){ 
-
-                if ($('#check_id11').is(":checked")){
+        $("#check_id3").click(function () {
+            if ($("#check_id3").is(":checked")) {
                 // it is checked
-                count1++;
+                count++;
                 // alert("It is working");
-                }else{
-                --count1;
+            } else {
+                --count;
                 // alert("Not working");
-                }
-                console.log(count);
-                check1();
-                });
+            }
+            console.log(count);
+            check();
+        });
 
-                $('#check_id22').click(function(){ 
-
-                if ($('#check_id22').is(":checked")){
+        $("#check_id4").click(function () {
+            if ($("#check_id4").is(":checked")) {
                 // it is checked
-                count1++;
+                count++;
                 // alert("It is working");
-                }else{
-                --count1;
+            } else {
+                --count;
                 // alert("Not working");
-                }
-                console.log(count);
-                 check1();
-                });
+            }
+            console.log(count);
+            check();
+        });
 
-            $('#check_id33').click(function(){ 
+        $("#check_id5").click(function () {
+            if ($("#check_id5").is(":checked")) {
+                // it is checked
+                count++;
+                // alert("It is working");
+            } else {
+                --count;
+                // alert("Not working");
+            }
+            console.log(count);
+            check();
+        });
+    });
 
-            if ($('#check_id33').is(":checked")){
+    $("#check_id11").click(function () {
+        if ($("#check_id11").is(":checked")) {
             // it is checked
             count1++;
             // alert("It is working");
-            }else{
+        } else {
             --count1;
             // alert("Not working");
-            }
-            console.log(count);
-             check1();
-            });
+        }
+        console.log(count);
+        check1();
+    });
 
-            $('#check_id44').click(function(){ 
-
-            if ($('#check_id44').is(":checked")){
+    $("#check_id22").click(function () {
+        if ($("#check_id22").is(":checked")) {
             // it is checked
             count1++;
             // alert("It is working");
-            }else{
+        } else {
             --count1;
             // alert("Not working");
-            }
-            console.log(count);
-             check1();
-            });
+        }
+        console.log(count);
+        check1();
+    });
 
+    $("#check_id33").click(function () {
+        if ($("#check_id33").is(":checked")) {
+            // it is checked
+            count1++;
+            // alert("It is working");
+        } else {
+            --count1;
+            // alert("Not working");
+        }
+        console.log(count);
+        check1();
+    });
 
-            });
-            
+    $("#check_id44").click(function () {
+        if ($("#check_id44").is(":checked")) {
+            // it is checked
+            count1++;
+            // alert("It is working");
+        } else {
+            --count1;
+            // alert("Not working");
+        }
+        console.log(count);
+        check1();
+    });
+});
 
-            
-            
 // div1
-            function check(){
-
-                var count_check = count;
-                if(count_check>=3){
-                     $("#ssd").css("display", "flex");
-                }else{
-                    $("#ssd").css("display", "none");
-                }
-            }
+function check() {
+    var count_check = count;
+    if (count_check >= 3) {
+        $("#ssd").css("display", "flex");
+    } else {
+        $("#ssd").css("display", "none");
+    }
+}
 
 // div2
 
-              function check1(){
-
-                var count_check1 = count1;
-                if(count_check1>=3){
-                     $("#pcs").css("display", "flex");
-                }else{
-                    $("#pcs").css("display", "none");
-                }
-            } 
-            
-            
-            
-            // colour theme change script
-
-function myFunction() {
-  var checkBox = document.querySelector("#myCheck");
-  var text = document.querySelector("body");
-  if (checkBox.checked == true){
-    text.classList.add("light-mode");
-  } else {
-     text.classList.remove("light-mode");
-  }
+function check1() {
+    var count_check1 = count1;
+    if (count_check1 >= 3) {
+        $("#pcs").css("display", "flex");
+    } else {
+        $("#pcs").css("display", "none");
+    }
 }
 
-            
+// colour theme change script
 
+function myFunction() {
+    var checkBox = document.querySelector("#myCheck");
+    var text = document.querySelector("body");
+    if (checkBox.checked == true) {
+        text.classList.add("light-mode");
+    } else {
+        text.classList.remove("light-mode");
+    }
+}
 
+// ---------------------------------------------- FOr fb login -------------------------------
 
+window.fbAsyncInit = function () {
+    FB.init({
+        appId: "4191803287589411",
+        cookie: true,
+        xfbml: true,
+        version: "v13.0",
+    });
 
+    FB.AppEvents.logPageView();
+};
+
+(function (d, s, id) {
+    var js,
+        fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {
+        return;
+    }
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+})(document, "script", "facebook-jssdk");
+
+// ---------------------------------------------------------------------
+
+FB.getLoginStatus(function (response) {
+    statusChangeCallback(response);
+});
+
+// --------------------------- response from fb ---------
+{
+//   status: 'connected',
+//   authResponse: {
+//       accessToken: '...',
+//       expiresIn:'...',
+//       signedRequest:'...',
+//       userID:'...'
+//   }
+// }
+// ---------------------------- check login status ---
+
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}
+// ---------------------------------------------- FOr fb login -------------------------------

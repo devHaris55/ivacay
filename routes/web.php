@@ -8,6 +8,11 @@ use App\Http\Controllers\admin\AdminTestimonialsController;
 use App\Http\Controllers\admin\AdminServicesController;
 use App\Http\Controllers\admin\AdminProductDetailsController;
 use App\Http\Controllers\UIController;
+use App\Http\Controllers\guider\GuiderController;
+use App\Http\Controllers\guider\GuiderPackageController;
+
+use App\Http\Controllers\FaceBookController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +27,39 @@ use App\Http\Controllers\UIController;
 Route::get('/admin-login', function () {
     return redirect()->route('admin_login');
 });
+
+/*---------------------------------------Guider-Routes---------------------------------------------- */
+
+// For stripe
+Route::get('guider-stripe-form/{membership?}', [GuiderController::class, 'stripe_form'])->name('Guider_stripe_form');
+Route::post('/payee', [GuiderController::class, 'event_stripe'])->name('stripe_post')->middleware('auth');
+// Facebook Login URL
+Route::prefix('facebook')->name('facebook.')->group( function(){
+    Route::get('auth', [FaceBookController::class, 'loginUsingFacebook'])->name('login');
+    Route::get('callback', [FaceBookController::class, 'callbackFromFacebook'])->name('callback');
+});
+
+
+Route::get('guider-list', [GuiderController::class, 'index'])->name('Guider_index');
+Route::get('guider-job-portal', [GuiderController::class, 'job_portal'])->name('Guider_job_portal');
+Route::get('guider-profile', [GuiderController::class, 'guider_profile'])->name('Guider_profile');
+
+Route::get('guider-membership-plan', [GuiderController::class, 'membership_plan'])->name('Guider_membership_plan');
+Route::get('guider-alternate-membership-plan', [GuiderController::class, 'alternate_membership_plan'])->name('Guider_alternate_membership_plan');
+Route::get('guider-membership-subscription/{membership?}', [GuiderController::class, 'membership_subscription'])->name('Guider_membership_subscription');
+
+// =================================================================== GuiderPackageController ===================================================================
+Route::get('guider-packages', [GuiderPackageController::class, 'guider_packages'])->name('Guider_packages');
+Route::get('guider-add-package', [GuiderPackageController::class, 'add_package'])->name('Guider_add_package');
+Route::post('add-edit-package/{package?}', [GuiderPackageController::class, 'add_edit_package'])->name('Guider_add_edit_package');
+Route::get('guider-edit-package/{id?}', [GuiderPackageController::class, 'edit_package'])->name('Guider_edit_package');
+Route::get('guider-delete-package/{package?}', [GuiderPackageController::class, 'delete_package'])->name('Guider_delete_package');
+// =================================================================== GuiderPackageController ===================================================================
+
+
+Route::post('update-guider-profile', [GuiderController::class, 'update_guider_profile'])->name('Guider_update_profile');
+
+
 
 /*---------------------------------------User-Routes---------------------------------------------- */
 Route::get('/', [UIController::class, 'index'])->name('UI_index');

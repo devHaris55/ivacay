@@ -77,6 +77,7 @@ class UIController extends EmailController
     }
     public function loggedin(Request $req)
     {
+        
         if(!empty($req->email) && !empty($req->password)){
             $userfind = User::where('email', $req->email)->where('status', 1)->first();
             if($userfind){
@@ -85,6 +86,11 @@ class UIController extends EmailController
                     /*matched password*/
                     Auth::login($userfind);
                     if(Auth::check()){
+                        // dd($userfind->user_role == 1); //means if user is a guider
+                        if($userfind->user_role == 1) //means if user is a guider
+                        {
+                            return redirect()->route('Guider_membership_plan');
+                        }
                         return redirect(route('UI_index'));
                     }else{
                         return redirect(route('UI_login'));

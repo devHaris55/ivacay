@@ -29,5 +29,10 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'facebook' => [
+        'client_id' => '4191803287589411', //USE FROM FACEBOOK DEVELOPER ACCOUNT
+        'client_secret' => '03aea2ed22a97bcf7283257316b5ad3c', //USE FROM FACEBOOK DEVELOPER ACCOUNT
+        'redirect' => 'http://localhost/haris/IVACAY/ivacay/public/login'
+    ],
 
 ];

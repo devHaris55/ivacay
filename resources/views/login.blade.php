@@ -21,7 +21,8 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-4 col-md-4 centerCol">
                     <div class="face">
-                        <a href="javascript:void(0)">Log in with Facebook</a>
+                        
+                        <a href="{{ route('facebook.login') }}">Log in with Facebook</a>
                     </div>
                     <div class="twi">
                         <a href="javascript:void(0)">Log in with Twitter</a>
