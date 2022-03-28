@@ -29,25 +29,69 @@
                                         incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
                                         gravida. </p>
                                     <div class="input_form">
-                                        <form action="">
+                                        <form action="{{route('Vacationer_search_packages')}}" method="POST">
+                                            @csrf
                                             <ul>
                                                 <li>
                                                    <label for="">Where to go?</label>
-                                                   <input type="text" placeholder="" id="wtg">
+                                                   <!-- <input type="search" placeholder="Search Country" id="search" name="country" required> -->
+                                                   <select class="sel" name="country_id">
+                                                        <option selected="" hidden="" disabled="">Select Country</option>
+                                                        @foreach($countries as $country)
+                                                            <option value="{{$country->id}}">{{$country->name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                <!-- <input type="text" placeholder="" id="wtg"> -->
                                                 </li>                                                
                                                 <li>
                                                     <label for="">From</label>
-                                                    <input type="date" placeholder="" id="fromdate">
+                                                    <input name="from_date" type="date" placeholder="" id="fromdate">
                                                 </li>                                                
                                                 <li>
                                                     <label for="">To</label>
-                                                    <input type="date" placeholder="" id="todate">
+                                                    <input name="end_date" type="date" placeholder="" id="todate">
                                                 </li>
                                                 <li>
-                                                 <a class="btn btn-danger" id="btn_click"> Go</a>
+                                                    <button type="submit">Go</button>
+                                                 <!-- <a class="btn btn-danger" id="btn_click"> Go</a> -->
                                                 </li>
                                   
                                             </ul>
+                                        </form>
+                                        <div id="test"></div>
+                                        @push('js')
+                                        <script>
+                                        $(document).ready(function(){
+                                        $('#search').on('keyup', function(){
+                                                let x = $(this).val();
+                                                let data = {'search': x};
+                                                let url = 'country-for-vacation';
+                                                
+                                                $.ajax({
+                                                    url: url,
+                                                    data: data,
+                                                    type: 'GET',
+                                                
+                                                    success: function(data) {
+                                                        res = data;
+                                                        console.log(data);
+                                                        $('#test').html(data);
+                                        
+                                                    },
+                                                    error: function() {
+                                                        console.log('error');
+                                                    }
+                                        
+                                                });
+                                            });
+                                        });
+                                        
+                                        // In your Javascript (external .js resource or <script> tag)
+                                        $(document).ready(function() {
+                                            $('.js-example-basic-single').select2();
+                                        });
+                                        </script>
+                                        @endpush
                                     </div>
                                 </div>
                             </div>

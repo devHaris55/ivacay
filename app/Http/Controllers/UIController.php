@@ -7,11 +7,20 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
+use App\Models\ImageModel;
+use App\Models\PackageModel;
+use App\Models\ProfileModel;
+use App\Models\CountryModel;
+use App\Models\MembershipPlanModel;
+use App\Models\MembershipModel;
+use Carbon\Carbon;
+
 class UIController extends EmailController
 {
     public function index()
     {
-        return view('index');
+        $countries = CountryModel::all();
+        return view('index',compact('countries'));
     }
     public function for_guide()
     {
@@ -31,7 +40,8 @@ class UIController extends EmailController
     }
     public function vacationer()
     {
-        return view('vacationer');
+        $countries = CountryModel::all();
+        return view('vacationer', compact('countries'));
     }
     public function plan_journey()
     {
@@ -91,7 +101,8 @@ class UIController extends EmailController
                         {
                             return redirect()->route('Guider_membership_plan');
                         }
-                        return redirect(route('UI_index'));
+                        // return redirect(route('UI_index'));
+                        return redirect()->back();
                     }else{
                         return redirect(route('UI_login'));
                     }

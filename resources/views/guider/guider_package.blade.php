@@ -29,6 +29,7 @@
                             <th>#</th>
                             <th>Title</th>
                             <th>Description</th>                            
+                            <th>Price</th>
                             <th>Country</th>
                             <th>Start Date</th>
                             <th>End Date</th>
@@ -41,14 +42,15 @@
                             <td>{{$i}}<?php $i++ ?></td>                            
                             <td>{{$package->title}}</td>
                             <td>{{$package->description}}</td>
-                            <td>{{$package->country}}</td>
+                            <td>{{$package->price}}</td>
+                            <td>{{$package->country_id ? $package->getCountry->name : 0}}</td>
                             <td>{{$package->from_date}}</td>
                             <td>{{$package->end_date}}</td>      
                             <td  class="inactive">{{$package->status == 0 ? 'Active' : 'Inactive'}}</td>
                             <td colspan="2" ><a href="{{route('Guider_edit_package').'/'.$package->id}}" class="edit">Edit |</a><a href="{{route('Guider_delete_package',$package->id)}}" class="del">Delete </a> </td>
                           </tr>
                           @endforeach
-                          <tr>
+                          <!-- <tr>
                             <td>1  </td>                            
                             <td>test  </td>
                             <td>asd@mail.com  </td>
@@ -87,7 +89,7 @@
                             <td>User</td>                            
                             <td  class="inactive">Inactive</td>
                             <td colspan="2" ><a href="javascript:void(0)" class="edit">Edit |</a><a href="javascript:void(0)" class="del">Delete </a> </td>
-                          </tr>
+                          </tr> -->
 
                         </table>
                       </div>

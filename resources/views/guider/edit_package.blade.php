@@ -44,15 +44,15 @@
                             <input type="file" name="image" class="form-control" placeholder="Image">
                         </div>
                         <div class="form-group">
-                        <label>Country</label>
-                          <input type="text" name="country" value="{{$package->country}}" class="form-control" placeholder="Country">
+                        <label>Price</label>
+                          <input type="text" name="price" value="{{$package->price}}" class="form-control" placeholder="Country">
                         </div>
                         <div class="form-group">
-                          <label>Country ID</label>
+                          <label>Country</label>
                             <select class="form-control" name="country_id">
                                 <option selected="" hidden="" disabled="">Select Country</option>
                                 @foreach($countries as $country)
-                                <option {{ $country->id == $package->country_id ? 'selected' : ''}} value="{{$country->id}}">{{$country->title}}</option>
+                                <option {{ $country->id == $package->country_id ? 'selected' : ''}} value="{{$country->id}}">{{$country->name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -82,10 +82,10 @@
                          <label>Status</label>
 
 
-                          <label><input type="radio" name="status" value="{{$package->status}}" {{ $package->status === 1 ? 'checked' : ''}}>
+                          <label><input type="radio" name="status" value="0" {{ $package->status === 0 ? 'checked' : ''}}>
                              Active
                           </label> 
-                          <label><input type="radio" name="status" value="{{$package->status}}" {{ $package->status === 1 ? 'checked' : ''}}>
+                          <label><input type="radio" name="status" value="1" {{ $package->status === 1 ? 'checked' : ''}}>
                             Inactive
                           </label> 
                         </div>

@@ -105,6 +105,7 @@
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
           <div class="about_img wow fadeInRight" data-wow-duration="2s">
             <div class="about_slide">
+
               <div>
                 <div class="img_1"> <img src="{{asset('images/ab_1.jpg')}}" class="img-fluid img1" alt=""></div>
               </div>
@@ -114,6 +115,7 @@
               <div>
                 <div class="img_1"> <img src="{{asset('images/ab_1.jpg')}}" class="img-fluid img1" alt=""></div>
               </div>
+
             </div>
             <div class="img_2"><img src="{{asset('images/ab_2.jpg')}}" class="img-fluid float-left" alt=""></div>
           </div>
@@ -159,26 +161,35 @@
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                         incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
                         gravida. </p>
-                      <div class="input_form">
-                        <form action="">
-                          <ul>
-                            <li>
-                              <label for="">Where to go?</label>
-                              <input type="text" placeholder="" id="wtg">
-                            </li>
-                            <li>
-                              <label for="">From</label>
-                              <input type="date" placeholder="" id="fromdate">
-                            </li>
-                            <li>
-                              <label for="">To</label>
-                              <input type="date" placeholder="" id="todate">
-                            </li>
-                            <li>
-                              <a class="btn btn-danger" id="btn_click"> Go</a>
-                            </li>
-
-                          </ul>
+                        <div class="input_form">
+                          <form action="{{route('Vacationer_search_packages')}}" method="POST">
+                              @csrf
+                              <ul>
+                                  <li>
+                                      <label for="">Where to go?</label>
+                                      <select class="sel" name="country_id">
+                                          <option selected="" hidden="" disabled="">Select Country</option>
+                                          @foreach($countries as $country)
+                                              <option value="{{$country->id}}">{{$country->name}}</option>
+                                          @endforeach
+                                      </select>
+                                      <!-- <input type="text" placeholder="" id="wtg"> -->
+                                  </li>                                                
+                                  <li>
+                                      <label for="">From</label>
+                                      <input name="from_date" type="date" placeholder="" id="fromdate">
+                                  </li>                                                
+                                  <li>
+                                      <label for="">To</label>
+                                      <input name="end_date" type="date" placeholder="" id="todate">
+                                  </li>
+                                  <li>
+                                      <button type="submit">Go</button>
+                                    <!-- <a class="btn btn-danger" id="btn_click"> Go</a> -->
+                                  </li>
+                    
+                              </ul>
+                          </form>
                       </div>
                     </div>
                   </div>
@@ -471,7 +482,7 @@
   @endsection
 
   
-  @push('js')
+@push('js')
   <script>
 
     $(document).ready(function () {
@@ -497,5 +508,43 @@
       });
 
     });
+    
+    $(".about_slide").slick({
+      dots: false,
+      arrows: false,
+      infinite: true,
+      speed: 500,
+      autoplay: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      responsive: [
+          {
+              breakpoint: 1024,
+              settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  infinite: true,
+                  dots: true,
+              },
+          },
+          {
+              breakpoint: 600,
+              settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 2,
+              },
+          },
+          {
+              breakpoint: 480,
+              settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+              },
+          },
+      ],
+  });
+
+
+
   </script>
-  @endpush
+@endpush

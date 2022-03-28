@@ -1,8 +1,8 @@
 @extends('guider.layouts.main')
 @section('content')
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 <div class="price_main">
   <div class="container">
        <div class="row">
@@ -17,7 +17,8 @@
         <br>
         <br>
     <div class="row">
-      <form role="form" action="{{route('stripe_post')}}" method="post" class="require-validation" data-cc-on-file="false" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+        <form role="form" action="{{route('stripe_post')}}" method="post" class="require-validation" data-cc-on-file="false" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
         @csrf
         <input type="text" name="plan_id" hidden value="{{$plan_id}}">
         <div class='form-row row'>
@@ -143,10 +144,7 @@
 
                 function stripeResponseHandler(status, response) {
                     if (response.error) {
-                        $('.error')
-                            .removeClass('d-none')
-                            .find('.alert')
-                            .text(response.error.message);
+                        $('.error').removeClass('d-none').find('.alert').text(response.error.message);
                         $('.preloader').removeClass('block').addClass('d-none');
                     } else {
                         // token contains id, last4, and card type
@@ -165,6 +163,11 @@
         @endpush
 
     </form>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+
+        </div>
+
 
 
     </div>  

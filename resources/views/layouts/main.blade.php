@@ -8,13 +8,14 @@
 
   @include('layouts.css')
   
-  <title>Ivacy</title>
+  <title>Ivacay</title>
 </head>
 
 <body>
 
-  <!-- @include('flash-message') -->
 @include('layouts.header')
+
+@include('flash-message')
 
 
 @yield('content')

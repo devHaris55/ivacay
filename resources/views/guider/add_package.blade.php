@@ -33,7 +33,7 @@
                       <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="form-group">
                         <label>Title</label>
-                          <input type="text" name="title" class="form-control" placeholder="Title">
+                          <input type="text" name="title" class="form-control" placeholder="Title" required>
                         </div>
                         <div class="form-group">
                           <label>Description</label>
@@ -41,18 +41,18 @@
                         </div>
                         <div class="form-group">
                           <label>Image</label>
-                            <input type="file" name="image" class="form-control" placeholder="Image">
+                            <input type="file" name="image" class="form-control" placeholder="Image" required>
                         </div>
                         <div class="form-group">
-                        <label>Country</label>
-                          <input type="text" name="country" class="form-control" placeholder="Country">
+                        <label>Price</label>
+                          <input type="text" name="price" class="form-control" placeholder="Country">
                         </div>
                         <div class="form-group">
-                          <label>Country ID</label>
-                            <select class="form-control" name="country_id">
-                                <option selected="" hidden="" disabled="">Select Country</option>
+                          <label>Country</label>
+                            <select class="form-control" name="country_id" required>
+                                <!-- <option selected="" hidden="" disabled="">Select Country</option> -->
                                 @foreach($countries as $country)
-                                <option value="{{$country->id}}">{{$country->title}}</option>
+                                <option value="{{$country->id}}">{{$country->name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -62,11 +62,11 @@
                         </div> -->
                        <div class="form-group">
                         <label>Start Date</label>
-                          <input type="date" name="from_date" class="form-control" placeholder="Email Address">
+                          <input type="date" name="from_date" class="form-control" required>
                         </div> 
                        <div class="form-group">
                         <label>End Date</label>
-                          <input type="date" name="end_date" class="form-control" placeholder="Email Address">
+                          <input type="date" name="end_date" class="form-control" required>
                         </div> 
                         <!-- <div class="form-group">
                           <label>Phone number</label>
@@ -82,10 +82,10 @@
                          <label>Status</label>
 
 
-                          <label><input type="radio" name="status" checked>
+                          <label><input type="radio" name="status" value="0" checked>
                              Active
                           </label> 
-                          <label><input type="radio" name="status">
+                          <label><input type="radio" name="status" value="1">
                             Inactive
                           </label> 
                         </div>

@@ -17,6 +17,7 @@
   <body>
   @include('guider.layouts.header')
 
+  @include('flash-message')
 
   @yield('content')
 

@@ -24,19 +24,21 @@
                     </label>
                     <!-- <input type="checkbox" class="sub-menu-checkbox" id="Servicesoffered" /> -->
                   </li>
-                  <li class="menu-hasdropdown">
+<!-- /============================== JOB PORTAL ============== -->
+                  <!-- <label title="toggle menu" for="Servicearea">
+                  <span class="downarrow"><i class="fa fa-caret-down"></i></span>
+                  </label>
+                  <input type="checkbox" class="sub-menu-checkbox" id="Servicearea" /> -->
+                  <!-- <li class="menu-hasdropdown">
                     <a href="{{route('Guider_job_portal')}}">job portal</a><span class="icon"><img src="{{asset('guider/images/toogleicon13.png')}}" class="img-responsive"></span>
-                    <!-- <label title="toggle menu" for="Servicearea">
-                    <span class="downarrow"><i class="fa fa-caret-down"></i></span>
-                    </label>
-                    <input type="checkbox" class="sub-menu-checkbox" id="Servicearea" /> -->
                     <ul class="sub-menu-dropdown">
                       <li><a href="">Profile</a><span class="icon"><img src="{{asset('guider/images/toogleicon14.png')}}" class="img-responsive"></span></li>
                       <li><a href="">Security</a><span class="icon"><img src="{{asset('guider/images/toogleicon15.png')}}" class="img-responsive"></span></li>
                       <li><a href="">Account</a><span class="icon"><img src="{{asset('guider/images/toogleicon16.png')}}" class="img-responsive"></span></li>
                     </ul>
-                  </li> 
-                  <li class="menu-hasdropdown">
+                  </li>  -->
+<!-- /=============================== JOB PORTAL ============= -->
+                  <!-- <li class="menu-hasdropdown">
                     <a href="#">Package Detail</a><span class="icon"><img src="{{asset('guider/images/toogleicon14.png')}}" class="img-responsive"></span>
                     <label title="toggle menu" for="Loadaccount">
                     <span class="downarrow"><i class="fa fa-caret-down"></i></span>
@@ -46,7 +48,13 @@
                       <li><a href="">package</a></li>
                       <li><a href="">pakage payment</a></li>
                     </ul>
-                  </li> 
+                  </li> -->
+                  <li class="menu-hasdropdown">
+                    <a href="{{route('UI_logout')}}">Logout</a>
+                    <span class="icon">
+                      <img src="{{asset('guider/images/toogleicon1.png')}}" class="img-responsive">
+                    </span>
+                  </li>
                                                    
                 </ul>
               </div>
@@ -70,8 +78,8 @@
                      <a href="javascript:void(0)" class="avatar">user</a>
                     <div class="dropdown-content">
                       <ul>
-                        <li href="{{route('Guider_profile')}}">Profile</li>
-                        <li href="#">Setting</li>
+                        <a href="{{route('Guider_profile')}}">Profile</a>
+                        <!-- <li href="#">Setting</li> -->
                       </ul>
                     </div>
                   </div>

@@ -1,4 +1,5 @@
 // blogslider start
+
 $(".blogslid").slick({
     dots: false,
     arrows: true,
@@ -345,52 +346,110 @@ function myFunction() {
     }
 }
 
-// ---------------------------------------------- FOr fb login -------------------------------
+// product slider jas start
 
-window.fbAsyncInit = function () {
-    FB.init({
-        appId: "4191803287589411",
-        cookie: true,
-        xfbml: true,
-        version: "v13.0",
-    });
-
-    FB.AppEvents.logPageView();
-};
-
-(function (d, s, id) {
-    var js,
-        fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {
-        return;
-    }
-    js = d.createElement(s);
-    js.id = id;
-    js.src = "https://connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-})(document, "script", "facebook-jssdk");
-
-// ---------------------------------------------------------------------
-
-FB.getLoginStatus(function (response) {
-    statusChangeCallback(response);
+// product slider
+$(".slider-for1").slick({
+    autoplay: true,
+    autoplaySpeed: 20000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    asNavFor: ".slider-nav1",
+});
+$(".slider-nav1").slick({
+    autoplay: true,
+    autoplaySpeed: 20000,
+    infinite: true,
+    slidesToShow: 7,
+    slidesToScroll: 1,
+    asNavFor: ".slider-for1",
+    dots: false,
+    arrows: false,
+    focusOnSelect: true,
+    responsive: [
+        {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                vertical: false,
+            },
+        },
+    ],
 });
 
-// --------------------------- response from fb ---------
-{
-//   status: 'connected',
-//   authResponse: {
-//       accessToken: '...',
-//       expiresIn:'...',
-//       signedRequest:'...',
-//       userID:'...'
-//   }
-// }
-// ---------------------------- check login status ---
+// simple slick slider end
+// Second Slider start
+$(".second_slider").slick({
+    dots: false,
+    arrows: true,
+    infinite: true,
+    speed: 300,
+    autoplay: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true,
+            },
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+            },
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            },
+        },
+    ],
+});
 
-function checkLoginState() {
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
+// ====================================== JS GET N POST REQUEST ======================================
+function AjaxRequest(url, data) {
+    var res;
+    $.ajax({
+        url: url,
+        data: data,
+        async: false,
+        error: function () {
+            console.log("error");
+        },
+        dataType: "json",
+        success: function (data) {
+            res = data;
+        },
+        type: "POST",
+    });
+    return res;
 }
-// ---------------------------------------------- FOr fb login -------------------------------
+
+function AjaxRequest_get(url, data) {
+    var res;
+    $.ajax({
+        url: url,
+        data: data,
+        async: false,
+        type: "GET",
+        dataType: "json",
+        success: function (data) {
+            res = data;
+        },
+        error: function () {
+            console.log("error");
+        },
+    });
+    return res;
+}
+// ============================================================================

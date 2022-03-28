@@ -25,7 +25,7 @@
                       <li> 100% Money Back Guarantee *</li>              
                     </ul>
                     </div>
-                    <a href="{{route('Guider_stripe_form', $plan->id)}}" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary">GET STARTED</a>
+                    <a href="{{route('Guider_stripe_form', $plan->id)}}" class="btn btn-primary">GET STARTED</a>
                   </div>
                 </div>
                 @endforeach
@@ -49,7 +49,7 @@
                       <li> CMS will be Additional $250*</li>
                     </ul>
                     </div>
-                    <a href="{{route('Guider_alternate_membership_plan')}}" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary">GET STARTED</a>
+                    <a href="{{route('Guider_alternate_membership_plan')}}" class="btn btn-primary">GET STARTED</a>
                   </div>
                 </div>
                 <!-- <div class="col-sm-3 col-md-3">
