@@ -41,7 +41,7 @@
                         </div>
                         <div class="form-group">
                           <label>Image</label>
-                            <input type="file" name="image" class="form-control" placeholder="Image" required>
+                            <input type="file" name="image[]" multiple class="form-control" placeholder="Image" required>
                         </div>
                         <div class="form-group">
                         <label>Price</label>

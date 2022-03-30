@@ -1,8 +1,6 @@
 @extends('guider.layouts.main')
 @section('content')
 
-
-
             <div id="main">
               <div id="main-contents">
                 <div id="abouttab" class="tabcontent DBabout">
@@ -38,6 +36,11 @@
                         <div class="form-group">
                           <label>Description</label>
                             <input type="text" name="description" value="{{$package->description}}" class="form-control" placeholder="Description">
+                        </div>
+                        <div class="row col-md-12">
+                          @for($a = 0; $a < count($package->getImages); $a++)
+                            <img class="inline-block col-md-2" src="{{asset('/packages/'.$package->getImages[$a]->title)}}" alt="img">
+                          @endfor
                         </div>
                         <div class="form-group">
                           <label>Image</label>

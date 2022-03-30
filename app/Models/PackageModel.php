@@ -20,6 +20,10 @@ class PackageModel extends Model
     }
     public function getImage()
     {
-        return $this->belongsTo('App\Models\ImageModel','image_id');
+        return $this->hasMany('App\Models\ImageModel','image_id');
+    }
+    public function getImages()
+    {
+        return $this->hasMany('App\Models\ImageModel','pakage_id');
     }
 }

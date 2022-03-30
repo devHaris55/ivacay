@@ -38,7 +38,7 @@ Route::get('/admin-login', function () {
 
 // For stripe
 Route::get('guider-stripe-form/{membership?}', [GuiderController::class, 'stripe_form'])->name('Guider_stripe_form');
-Route::post('/payee', [GuiderController::class, 'event_stripe'])->name('stripe_post')->middleware('auth');
+Route::post('/payee', [GuiderController::class, 'event_stripe'])->name('stripe_post');
 
 // Facebook Login URL
 Route::prefix('facebook')->name('facebook.')->group( function(){

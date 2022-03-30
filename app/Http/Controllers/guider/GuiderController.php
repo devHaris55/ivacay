@@ -161,16 +161,18 @@ class GuiderController extends Controller
             //condition store database Order 
             $membership_obj = new MembershipModel();
             $membership_obj->user_id = auth()->user()->id;
-            $membership_obj->membership_id = $membership->id;
+            $membership_obj->membership_id = $plan->id;
             $membership_obj->payment_id = $response['id'];
             $membership_obj->receipt_url = $response['receipt_url'];
-            $membership_obj->no_of_packages = $membership->no_of_packages;
-            $membership_obj->duration = $membership->duration;
+            $membership_obj->no_of_packages = $plan->no_of_packages;
+            $membership_obj->duration = $plan->duration;
+            $membership_obj->title = $plan->title;
+            $membership_obj->price = $plan->price;
             $membership_obj->save();
         } else {
             return back()->with('error', 'Check your inputs and try again');
         }
-        return redirect(route('UI_index'))->with('success', 'Thank you for purchasing...');
+        return redirect(route('Guider_packages'))->with('success', 'Thank you for purchasing...');
     }
 }
 

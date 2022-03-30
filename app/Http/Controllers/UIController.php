@@ -125,9 +125,9 @@ class UIController extends EmailController
         $user = User::find($id);
         $user->status = 1;
         $user->save();
-        Auth::login($user);
+        // Auth::login($user);
 
-        return redirect(route('UI_index'));
+        return redirect(route('UI_login'))->with('success', 'Email authorized! You can login now.');
     }
     public function logout()
     {

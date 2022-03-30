@@ -30,8 +30,8 @@ class GuiderPackageController extends Controller
                 if($pkg_expiry > $now)
                 {
 // ========  ==================================================================================================================================================================================================================================                }
-                    
-                    $packages = PackageModel::where('status', '!=', 2)->get();
+
+                    $packages = PackageModel::where('status', '!=', 2)->where('user_id', auth()->user()->id)->get();
                     return view('guider.guider_package', compact('packages'));
 // ========  ==================================================================================================================================================================================================================================                }
 
@@ -84,7 +84,8 @@ class GuiderPackageController extends Controller
 // ========  ==================================================================================================================================================================================================================================                }
 
                     $countries = CountryModel::all();
-                    $package = PackageModel::find($id);
+                    // $package = PackageModel::find($id)->with('getImages');
+                    $package = PackageModel::where('id', $id)->with('getImages')->first();
                     return view('guider.edit_package', compact('countries', 'package'));    
 // ========  ==================================================================================================================================================================================================================================                }
 
@@ -185,17 +186,8 @@ class GuiderPackageController extends Controller
             
                     (isset($package->id) and $package->id>0) ? $create=0 : $create=1;
             
-                    $image_obj = new ImageModel();
-                    if($req->hasFile('image'))
-                    {
-                        $imageName = time().'.'.$req->image->getClientOriginalExtension();
-                        $req->image->move(public_path('/packages'), $imageName);
-                        $image_obj->title = $imageName;
-                    }
-                    $image_obj->save();
-                    
                     $package->user_id = auth()->user()->id;
-                    $package->image_id = $image_obj->id;
+                    // $package->image_id = $image_obj->id;
                     $package->title = $req->title;
                     $package->description = $req->description;
                     $package->price = $req->price;
@@ -204,7 +196,35 @@ class GuiderPackageController extends Controller
                     $package->end_date = $req->end_date;
                     // $package->is_taken = $req->is_taken;
                     $package->save();
-            
+
+
+                    if($req->hasFile('image'))
+                    {
+                        $pre_images = ImageModel::where('pakage_id', $package->id)->delete();
+                        
+                        $check_array = true;
+                        foreach($req->image as $key => $img)
+                        {
+                            $image_obj = new ImageModel();
+                            $imageName = time().$key.'.'.$img->getClientOriginalExtension();
+                            $img->move(public_path('/packages'), $imageName);
+                            $image_obj->title = $imageName;
+                            $image_obj->pakage_id = $package->id;
+                            $image_obj->save();
+
+                            $check_array = false;
+                        }
+                        if($check_array)
+                        {
+                            $image_obj = new ImageModel();
+                            $imageName = time().'.'.$req->image->getClientOriginalExtension();
+                            $req->image->move(public_path('/packages'), $imageName);
+                            $image_obj->title = $imageName;
+                            $image_obj->pakage_id = $package->id;
+                            $image_obj->save();
+                        }
+                    }
+                   
                     return back()->with('success', $session_msg);
 // ========  ==================================================================================================================================================================================================================================                }
                 }
