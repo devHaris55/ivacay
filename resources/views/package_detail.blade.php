@@ -44,13 +44,15 @@
                             </div> -->
                             <div class="slider_products">
                                 <div class=" slider-for1">
+                                @foreach($package_detail->getImages as $img)
                                     <div>
                                         <div class="productMainDetail">
-                                            <a href="{{asset('packages/'.$package_detail->getImage->title)}}" tabindex="0" data-fancybox="gallery">
-                                                <img src="{{asset('packages/'.$package_detail->getImage->title)}}" class="img-fluid" alt="" />
+                                            <a href="{{asset('packages/'.$img->title)}}" tabindex="0" data-fancybox="gallery">
+                                                <img src="{{asset('packages/'.$img->title)}}" class="img-fluid" alt="" />
                                             </a>
                                         </div>
                                     </div>
+                                    @endforeach
 
                                     <!-- <div>
                                         <div class="productMainDetail">
@@ -117,14 +119,16 @@
                                     </div> -->
 
                                 </div>
-                                <!-- <div class=" slider-nav1">
+                                <div class=" slider-nav1">
+                                @foreach($package_detail->getImages as $img)
                                     <div>
                                         <div class="productlistBox">
-                                            <a href="javascript:void(0)"> <img src="{{asset('images/slick_1.jpg')}}"
+                                            <a href="javascript:void(0)"> <img src="{{asset('packages/'.$img->title)}}"
                                                     class="img-responsive" alt=""></a>
                                         </div>
                                     </div>
-                                    <div>
+                                    @endforeach
+                                <!--<div>
                                         <div class="productlistBox">
                                             <a href="javascript:void(0)">
                                                 <img src="{{asset('images/slick_2.jpg')}}" class="img-responsive" alt=""></a>
@@ -171,9 +175,9 @@
                                             <a href="javascript:void(0)"><img src="{{asset('images/slick_9.jpg')}}"
                                                     class="img-responsive" alt=""></a>
                                         </div>
-                                    </div>
+                                    </div> -->
 
-                                </div> -->
+                                </div>
 
 
                             </div>
@@ -1043,8 +1047,12 @@
                             <div class="my_revie">
                                 <div class="pro_main">
                                     <div class="pro_img">
-                                        <img src="{{asset('packages/'.$package_detail->getImage->title)}}"
+                                    @foreach($package_detail->getImages as $key => $img)
+                                    @if($key == 0)
+                                        <img src="{{asset('packages/'.$img->title)}}"
                                             class="img-fluid" alt="">
+                                            @endif
+                                    @endforeach
                                     </div>
                                     <div class="pro_text">
                                         <div class="webster">
