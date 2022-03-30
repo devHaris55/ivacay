@@ -1046,14 +1046,15 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="my_revie">
                                 <div class="pro_main">
-                                    <div class="pro_img">
                                     @foreach($package_detail->getImages as $key => $img)
-                                    @if($key == 0)
-                                        <img src="{{asset('packages/'.$img->title)}}"
-                                            class="img-fluid" alt="">
-                                            @endif
-                                    @endforeach
-                                    </div>
+                                        @if($key == 0)
+                                    <div class="pro_img">
+                                                <img src="{{asset('packages/'.$img->title)}}"
+                                                    class="img-fluid" alt="">
+                                                </div>
+                                                @endif
+                                            @endforeach
+
                                     <div class="pro_text">
                                         <div class="webster">
                                             <h4><img src="{{asset('https://fiverr')}}-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/6b705596713956936f7dd1c9176d9cee-1533547927922/7ba0d351-04b3-4826-8a55-7779ec09157c.png"

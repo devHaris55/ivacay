@@ -129,6 +129,15 @@ class GuiderPackageController extends Controller
 
     public function add_edit_package(Request $req, PackageModel $package)
     {
+        $validated = $req->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'country_id' => 'required',
+            'from_date' => 'required',
+            'end_date' => 'required',
+            'image.*' => 'mimes:jpg,jpeg,png',
+        ]);
         if(Auth::check())
         {
             $member = MembershipModel::where('user_id', auth()->user()->id)->orderBy('id', 'DESC')->first();

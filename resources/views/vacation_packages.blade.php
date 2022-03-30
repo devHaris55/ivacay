@@ -25,7 +25,8 @@
             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
             <div class="pro_main">
               <div class="pro_img">
-                <img src="https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207863668/original/2dd61c9bd5d828616e87d6e75b7eb74d0b7c4a0d.jpg" class="img-fluid" alt="">
+                <?php $images = $package->getImages; ?>
+                <img src="{{asset('packages/'.$images[0]->title)}}" class="img-fluid" alt="">
               </div>
               <div class="pro_text">
                 <div class="webster">

@@ -26,6 +26,7 @@ class VacationerPackageController extends Controller
             ->where('from_date', $req->from_date)
             ->where('end_date', $req->end_date)
             // ->where('status', 0)
+            ->with('getImages')
             ->get();
             // dd($packages);
 
