@@ -72,9 +72,9 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-xs-12 sign_btn">
 
-                    <button id="paynow" class="btn btn-primary btn-lg btn-block" type="submit" onClick="myFunction()">Pay
+                    <button id="paynow" class="btn  btn-lg btn-block" type="submit" onClick="myFunction()">Pay
                         Now</button>
                 </div>
             </div>

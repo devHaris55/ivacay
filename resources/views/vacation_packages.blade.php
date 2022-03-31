@@ -243,6 +243,7 @@
       .pro_main {
       border: 1px solid #fff;
       transition: all 0.5s ease-in-out;
+      margin-bottom: 20px;
       }
       .pro_main:hover{      box-shadow: 0px 0px 9px #ffb000;
       border: 1px solid #ffb000;

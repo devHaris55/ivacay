@@ -290,7 +290,7 @@
                                 <hr>
                                 <h5>Style</h5>
                                 <strong>Minimalist</strong>
-                    <a href="{{route('Vacationer_stripe_form', $package_detail->id)}}" class="btn btn-primary">Book Now</a>
+                    <a href="{{route('Vacationer_stripe_form', $package_detail->id)}}" >Book Now</a>
 
                             </div>
 
@@ -1039,11 +1039,11 @@
                     </div> -->
 
                 </div>
-                <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="col-md-4 col-sm-4 col-xs-12 mb-10">
                     <div class="main_scroll">
                         @foreach($guider_packages as $guider_package)
                     <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-12 col-sm-12 col-xs-12 m-20">
                             <div class="my_revie">
                                 <div class="pro_main">
                                     @foreach($package_detail->getImages as $key => $img)

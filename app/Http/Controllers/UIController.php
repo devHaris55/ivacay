@@ -75,10 +75,15 @@ class UIController extends EmailController
         $user->user_role = $req->user_role;
         $user->save();
 
+        $profile = new ProfileModel();
+        $profile->user_id = $user->id;
+        $profile->full_name = $req->username;
+        $profile->save();
+
         //to shoot an email
         $this->verifyEmail($user->id);
 
-        return back()->with('success','Added Successfully');
+        return back()->with('success','Account created successfully!');
     }
 
     public function login()
@@ -87,6 +92,10 @@ class UIController extends EmailController
     }
     public function loggedin(Request $req)
     {
+        $this->validate($req, [
+            'email' => ['required'],
+            'password' => ['required'],
+        ]);
         
         if(!empty($req->email) && !empty($req->password)){
             $userfind = User::where('email', $req->email)->where('status', 1)->first();
@@ -100,6 +109,9 @@ class UIController extends EmailController
                         if($userfind->user_role == 1) //means if user is a guider
                         {
                             return redirect()->route('Guider_membership_plan');
+                        } else if($userfind->user_role == 0)
+                        {
+                            return redirect()->route('UI_index');
                         }
                         // return redirect(route('UI_index'));
                         return redirect()->back();
@@ -112,7 +124,7 @@ class UIController extends EmailController
                 }
                 /*means found user end*/
             }else{
-                return redirect(route('UI_sign_up'))->with('error','Email not found or You didn\'t confirm your email');
+                return back()->with('error','Email not found or You didn\'t confirm your email yet');
             }
         }else{
             return redirect(route('UI_login'))->with('warning','Please fill required fields');

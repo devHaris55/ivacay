@@ -160,12 +160,12 @@ class GuiderPackageController extends Controller
                     {
                         if($create == 0)
                         {
-                            $package_limit = $member->no_of_packages + 1;
+                            $package_limit++;
                         }
                     }
                     if($req->status == 0)
                     {
-                        if($package_limit >> count($user_packages))
+                        if($package_limit > count($user_packages))
                         {
                             $package->status = 0;
                             if($create == 0)
@@ -193,7 +193,7 @@ class GuiderPackageController extends Controller
                     
                     // CHECKING NO OF PACKAGES
             
-                    (isset($package->id) and $package->id>0) ? $create=0 : $create=1;
+                    // (isset($package->id) and $package->id>0) ? $create=0 : $create=1;
             
                     $package->user_id = auth()->user()->id;
                     // $package->image_id = $image_obj->id;

@@ -38,8 +38,8 @@
                                 <input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="E-mail*">
                             </div>
                             <div class="form-group">
-                                <input type="password" name="password" class="form-control" placeholder="password*">
-                                <span> <i class="fa-regular fa-eye"></i></span>
+                                <input type="password" id="password" name="password" class="form-control" placeholder="password*">
+                                <span> <a href="javascript:void(0)" type="button" onclick="showPass()"><i class="fa-regular fa-eye"></i></a></span>
                             </div>
                             <div class="form-group">
                             <button type="submit">Login</button>
@@ -59,3 +59,17 @@
     <!-- Log In End -->
 
 @endsection
+
+@push('js')
+<script>
+    function showPass() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
+@endpush
+
