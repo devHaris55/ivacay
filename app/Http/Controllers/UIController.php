@@ -75,11 +75,6 @@ class UIController extends EmailController
         $user->user_role = $req->user_role;
         $user->save();
 
-        $profile = new ProfileModel();
-        $profile->user_id = $user->id;
-        $profile->full_name = $req->username;
-        $profile->save();
-
         //to shoot an email
         $this->verifyEmail($user->id);
 
@@ -137,7 +132,6 @@ class UIController extends EmailController
         $user = User::find($id);
         $user->status = 1;
         $user->save();
-        // Auth::login($user);
 
         return redirect(route('UI_login'))->with('success', 'Email authorized! You can login now.');
     }

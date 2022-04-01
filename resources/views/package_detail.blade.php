@@ -1046,7 +1046,7 @@
                         <div class="col-md-12 col-sm-12 col-xs-12 m-20">
                             <div class="my_revie">
                                 <div class="pro_main">
-                                    @foreach($package_detail->getImages as $key => $img)
+                                    @foreach($guider_package->getImages as $key => $img)
                                         @if($key == 0)
                                     <div class="pro_img">
                                                 <img src="{{asset('packages/'.$img->title)}}"
