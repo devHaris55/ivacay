@@ -95,7 +95,7 @@
                     </div>
 
                     <div class="editbtn">
-                    <button type="submit">Update</button>
+                     <button type="submit sign_btn btn btn_dashed">Update</button>
                     <!-- <a href="#">Save</a> -->
                   </div>
                   </form>           
@@ -108,3 +108,31 @@
 
 @endsection
 
+<style>
+  .editbtn button {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #fff;
+    margin: 0;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    text-transform: capitalize;
+    border: 2px dashed #f8c22c;
+    padding: 0;
+    height: 47px;
+    width: 212px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333333;
+    margin: 30px 0 0;
+}
+
+.editbtn button:hover {
+    background-color: #f8c22c;
+    color: #333333;
+    border: 2px dashed #333333;
+}
+</style>

@@ -106,7 +106,8 @@ class UIController extends EmailController
                             return redirect()->route('Guider_membership_plan');
                         } else if($userfind->user_role == 0)
                         {
-                            return redirect()->route('UI_index');
+                            return back()->with('success', 'Logged in successfully');
+                            // return redirect()->route('UI_index');
                         }
                         // return redirect(route('UI_index'));
                         return redirect()->back();

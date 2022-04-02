@@ -37,10 +37,12 @@ class GuiderMembershipController extends Controller
                 }
             }
             $plans = MembershipPlanModel::where('plan_type', null)->get();
-            return view('guider.membership_plans', compact('plans'));
+            $current_plan = 0;
+            return view('guider.membership_plans', compact('plans', 'current_plan'));
         }
         return redirect(route('UI_login'));
     }
+   
 
 
     public function alternate_membership_plan()
@@ -48,22 +50,23 @@ class GuiderMembershipController extends Controller
         if(Auth::check())
         {
             $member = MembershipModel::where('user_id', auth()->user()->id)->orderBy('id', 'DESC')->first();
-            if($member)
-            {
-                $pkg_expiry = $member->created_at->addDay($member->duration);
-                $now = Carbon::now();
-                if($pkg_expiry > $now)
-                {
-// ========  ==================================================================================================================================================================================================================================                }
-                    return redirect()->route('Guider_index');
+//             if($member)
+//             {
+//                 $pkg_expiry = $member->created_at->addDay($member->duration);
+//                 $now = Carbon::now();
+//                 if($pkg_expiry > $now)
+//                 {
+// // ========  ==================================================================================================================================================================================================================================                }
+//                     return redirect()->route('Guider_index');
 
         
-// ========  ==================================================================================================================================================================================================================================                }
+// // ========  ==================================================================================================================================================================================================================================                }
 
-            }
-        }
+//                 }
+//             }
         $plans = MembershipPlanModel::where('plan_type', '!=', null)->get();
-        return view('guider.alternate_membership_plans', compact('plans'));
+        $current_plan = $member->id;
+        return view('guider.alternate_membership_plans', compact('plans', 'current_plan'));
         }
         return redirect(route('UI_login'));
     }
@@ -137,6 +140,22 @@ class GuiderMembershipController extends Controller
         //     return view('guider.membership_plans', compact('plans'));
         // }
         // return redirect(route('UI_login'));        
+    }
+
+
+
+
+
+    public function upgrade_membership_plan()
+    {
+        if(Auth::check())
+        {
+            $member = MembershipModel::where('user_id', auth()->user()->id)->orderBy('id', 'DESC')->first();
+            $current_plan = $member->id;
+            $plans = MembershipPlanModel::where('plan_type', null)->get();
+            return view('guider.membership_plans', compact('plans', 'current_plan'));
+        }
+        return redirect(route('UI_login'));
     }
 }
 

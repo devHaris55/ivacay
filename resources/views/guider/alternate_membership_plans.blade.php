@@ -8,14 +8,14 @@
               <div class="row">
                 @foreach($plans as $plan)
                 <div class="col-sm-3 col-md-3">
-                  <div class="packagesbox wow fadeInUp" data-wow-duration="0.6s" data-wow-delay="0.6s"> 
+                  <div class="packagesbox wow fadeInUp {{ $plan->id == $current_plan ? 'my_color' : ''}}" style="{{ $plan->id == $current_plan ? 'background: #101954; color: #fff;' : ''}}" data-wow-duration="0.6s" data-wow-delay="0.6s"> 
                     <small>{{$plan->title}}</small>                            
                       <!-- <h5><del>$500.00</del> 60% off !</h5> -->
                       <span>${{$plan->price}}</span>
                     <div class="scrollbar" id="style-3">
-                    <ul>
-                      <li> 3 Page Website</li>
-                      <li> 2 Stock Images</li>
+                    <ul class="my_colr">
+                      <li>Duration {{$plan->duration}} days</li>
+                      <li>Packages limit {{$plan->no_of_packages < 10 ? $plan->no_of_packages : 'infinity'}}</li>
                       <li> 1 jQuery Slider Banner</li>
                       <li> Contact/Query Form</li>
                       <li> 48 to 72 hours TAT</li>
@@ -114,7 +114,9 @@
 <style>
 
 /*packages page css start */
-
+.my_color ul li {
+    color: #fff !important;
+}
 .packagesbox:hover {
   transition: all .5s ease;
   background: #101954;

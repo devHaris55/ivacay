@@ -2,20 +2,19 @@
 @section('content')
 
 
-
 <div class="price_main">
             <div class="container">
               <div class="row">
                 @foreach($plans as $plan)
                 <div class="col-sm-3 col-md-3">
-                  <div class="packagesbox wow fadeInUp" data-wow-duration="0.6s" data-wow-delay="0.6s"> 
+                  <div class="packagesbox wow fadeInUp {{ $plan->id == $current_plan ? 'my_color' : ''}}" style="{{ $plan->id == $current_plan ? 'background: #101954; color: #fff;' : ''}}" data-wow-duration="0.6s" data-wow-delay="0.6s"> 
                     <small>{{$plan->title}}</small>                            
                       <!-- <h5><del>$500.00</del> 60% off !</h5> -->
                       <span>${{$plan->price}}</span>
                     <div class="scrollbar" id="style-3">
-                    <ul>
-                      <li> 3 Page Website</li>
-                      <li> 2 Stock Images</li>
+                    <ul class="my_colr">
+                      <li>Duration {{$plan->duration}} days</li>
+                      <li>Packages limit {{$plan->no_of_packages < 10 ? $plan->no_of_packages : 'infinity'}}</li>
                       <li> 1 jQuery Slider Banner</li>
                       <li> Contact/Query Form</li>
                       <li> 48 to 72 hours TAT</li>
@@ -25,7 +24,11 @@
                       <li> 100% Money Back Guarantee *</li>              
                     </ul>
                     </div>
-                    <a href="{{route('Guider_stripe_form', $plan->id)}}" class="btn btn-primary">GET STARTED</a>
+                    @if($plan->id > $current_plan)
+                      <a href="{{route('Guider_stripe_form', $plan->id)}}" class="btn btn-primary">GET STARTED</a>
+                      @else
+                      <span> _ </span>
+                    @endif
                   </div>
                 </div>
                 @endforeach
@@ -114,18 +117,22 @@
 <style>
 
 /*packages page css start */
-
-.packagesbox:hover {
+.my_color ul li {
+    color: #fff !important;
+}
+.packagesbox:hover, .hoverpackage {
   transition: all .5s ease;
   background: #101954;
 }
 .packagesbox {
-  box-shadow: rgb(0 0 0 / 46%) 1px 1px 10px;
-  background: #fff;
-  padding: 30px;
-  border-radius: 15px;
-  transition: all 0.5s ease-in-out;
+    box-shadow: rgb(0 0 0 / 46%) 1px 1px 10px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    transition: all 0.5s ease-in-out;
+    min-height: 540px;
 }
+
 
 .packagesbox small {
   color: #32004a;

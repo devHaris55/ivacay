@@ -79,6 +79,7 @@
                     <div class="dropdown-content">
                       <ul>
                         <a href="{{route('Guider_profile')}}">Profile</a>
+                        <li><a href="{{route('Guider_upgrade_membership_plan')}}">Upgrade Package</a></li>
                         <!-- <li href="#">Setting</li> -->
                       </ul>
                     </div>

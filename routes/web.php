@@ -55,6 +55,7 @@ Route::post('update-guider-profile', [GuiderController::class, 'update_guider_pr
 
 
 // =================================================================== GuiderMembershipController ===================================================================
+Route::get('guider-membership-upgrade', [GuiderMembershipController::class, 'upgrade_membership_plan'])->name('Guider_upgrade_membership_plan');
 Route::get('guider-membership-plan', [GuiderMembershipController::class, 'membership_plan'])->name('Guider_membership_plan');
 Route::get('guider-alternate-membership-plan', [GuiderMembershipController::class, 'alternate_membership_plan'])->name('Guider_alternate_membership_plan');
 Route::get('guider-membership-subscription/{membership?}', [GuiderMembershipController::class, 'membership_subscription'])->name('Guider_membership_subscription');
