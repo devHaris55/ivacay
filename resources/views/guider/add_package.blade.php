@@ -11,8 +11,9 @@
                   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                     <div class="nav_list"> 
                       <ul>
-                        <li><a href="javascript:void(0)">Home /</a></li>
-                        <li><a href="{{route('Guider_packages')}}">Package list /</a></li>
+                        <li><a href="{{route('Guider_packages')}}">Home</a></li>
+                        <li><a href="javascript:void(0)">/</a></li>
+                        <li><a href="{{route('Guider_packages')}}">Package list</a></li>
                       </ul>
                     </div>
                   </div>                  
@@ -37,15 +38,15 @@
                         </div>
                         <div class="form-group">
                           <label>Description</label>
-                            <input type="text" name="description" class="form-control" placeholder="Description">
+                            <input type="text" name="description" class="form-control" placeholder="Description" required>
                         </div>
                         <div class="form-group">
                           <label>Image</label>
-                            <input type="file" name="image[]" multiple class="form-control" placeholder="Image" required>
+                            <input type="file" name="image[]" class="form-control" placeholder="Image" multiple="multiple" required>
                         </div>
                         <div class="form-group">
                         <label>Price</label>
-                          <input type="text" name="price" class="form-control" placeholder="Country">
+                          <input type="number" name="price" class="form-control" placeholder="Price" required>
                         </div>
                         <div class="form-group">
                           <label>Country</label>
@@ -62,11 +63,11 @@
                         </div> -->
                        <div class="form-group">
                         <label>Start Date</label>
-                          <input type="date" name="from_date" class="form-control" required>
+                          <input type="date" min="{{Carbon\Carbon::now()->addDay()->format('Y-m-d')}}" value={{Carbon\Carbon::now()->addDay()->format('Y-m-d')}} name="from_date" class="form-control" required>
                         </div> 
                        <div class="form-group">
                         <label>End Date</label>
-                          <input type="date" name="end_date" class="form-control" required>
+                          <input type="date" min="{{Carbon\Carbon::now()->addDay(2)->format('Y-m-d')}}" value={{Carbon\Carbon::now()->addDay(2)->format('Y-m-d')}} name="end_date" class="form-control" required>
                         </div> 
                         <!-- <div class="form-group">
                           <label>Phone number</label>

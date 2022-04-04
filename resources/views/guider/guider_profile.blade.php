@@ -27,7 +27,7 @@
                       </div>
                       <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="form-group">
-                          <input type="text" name="phone" value="{{$profile ? $profile->phone : ''}}" class="form-control" placeholder="Phone Number">
+                          <input type="number" name="phone" value="{{$profile ? $profile->phone : ''}}" class="form-control" placeholder="Phone Number">
                         </div>                      
                       </div>                      
                     </div>
@@ -49,32 +49,7 @@
                         </div>                      
                       </div>                      
                     </div>
-                    <div class="row">
-                      <div class="col-md-2 col-sm-2 col-xs-12">
-                        <label>Country</label>
-                      </div>
-                      <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="form-group">
-                          <input type="text" name="country" value="{{$profile ? $profile->country : ''}}" class="form-control" placeholder="Country">
-                        </div>                      
-                      </div>
-                      <div class="col-md-2 col-sm-2 col-xs-12">
-                        <label>Country ID</label>
-                      </div>
-                      <div class="col-md-4 col-sm-4 col-xs-12">
-                      <div class="form-group">
-                            <select class="form-control" name="country_id">
-                                <option selected="" hidden="" disabled="">Select Country</option>
-                                @foreach($countries as $country)
-                                <option value="{{$country->id}}">{{$country->title}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <!-- <div class="form-group">
-                          <input type="text" name="country_id" class="form-control" placeholder="Country ID">
-                        </div>                       -->
-                      </div>                      
-                    </div>
+                    
                     <div class="row">
                       <div class="col-md-2 col-sm-2 col-xs-12">
                         <label>Account Title</label>
@@ -91,6 +66,32 @@
                         <div class="form-group">
                           <input type="text" name="account_number" value="{{$profile ? $profile->account_number : ''}}" class="form-control" placeholder="Account Number">
                         </div>                      
+                      </div>                      
+                    </div>
+                    <div class="row">
+                      <!-- <div class="col-md-2 col-sm-2 col-xs-12">
+                        <label>Country</label>
+                      </div>
+                      <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="form-group">
+                          <input type="text" name="country" value="{{$profile ? $profile->country : ''}}" class="form-control" placeholder="Country">
+                        </div>                      
+                      </div> -->
+                      <div class="col-md-2 col-sm-2 col-xs-12">
+                        <label>Country</label>
+                      </div>
+                      <div class="col-md-4 col-sm-4 col-xs-12">
+                      <div class="form-group">
+                            <select class="form-control" name="country_id">
+                                <option selected="" hidden="" disabled="">Select Country</option>
+                                @foreach($countries as $country)
+                                <option value="{{$country->id}}" {{$profile ? $profile->country_id == $country->id ? 'selected' : '' : ''}}>{{$country->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <!-- <div class="form-group">
+                          <input type="text" name="country_id" class="form-control" placeholder="Country ID">
+                        </div>                       -->
                       </div>                      
                     </div>
 

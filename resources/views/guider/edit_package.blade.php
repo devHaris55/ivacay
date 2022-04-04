@@ -9,7 +9,7 @@
                   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                     <div class="nav_list"> 
                       <ul>
-                        <li><a href="javascript:void(0)">Home /</a></li>
+                        <li><a href="{{route('Guider_packages')}}">Home /</a></li>
                         <li><a href="{{route('Guider_packages')}}">Package list /</a></li>
                       </ul>
                     </div>
@@ -31,11 +31,11 @@
                       <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="form-group">
                         <label>Title</label>
-                          <input type="text" name="title" value="{{$package->title}}" class="form-control" placeholder="Title">
+                          <input type="text" name="title" value="{{$package->title}}" class="form-control" placeholder="Title" required>
                         </div>
                         <div class="form-group">
                           <label>Description</label>
-                            <input type="text" name="description" value="{{$package->description}}" class="form-control" placeholder="Description">
+                            <input type="text" name="description" value="{{$package->description}}" class="form-control" placeholder="Description" required>
                         </div>
                         <div class="row col-md-12">
                           @for($a = 0; $a < count($package->getImages); $a++)
@@ -44,11 +44,11 @@
                         </div>
                         <div class="form-group">
                           <label>Image</label>
-                            <input type="file" name="image" class="form-control" placeholder="Image">
+                            <input type="file" name="image[]" multiple class="form-control" placeholder="Image">
                         </div>
                         <div class="form-group">
                         <label>Price</label>
-                          <input type="text" name="price" value="{{$package->price}}" class="form-control" placeholder="Country">
+                          <input type="number" name="price" value="{{$package->price}}" class="form-control" placeholder="Price" required>
                         </div>
                         <div class="form-group">
                           <label>Country</label>
@@ -65,12 +65,13 @@
                         </div> -->
                        <div class="form-group">
                         <label>Start Date</label>
-                          <input type="date" name="from_date" value="{{$package->from_date}}" class="form-control" placeholder="Email Address">
+                          <input type="date" name="from_date" min="{{Carbon\Carbon::now()->format('Y-m-d')}}" value="{{$package->from_date}}" class="form-control" placeholder="Email Address" required>
                         </div> 
                        <div class="form-group">
                         <label>End Date</label>
-                          <input type="date" name="end_date" value="{{$package->end_date}}" class="form-control" placeholder="Email Address">
-                        </div> 
+                          <input type="date" name="end_date" min="{{Carbon\Carbon::now()->addDay()->format('Y-m-d')}}" value="{{$package->end_date}}" class="form-control" placeholder="Email Address" required>
+                        </div>
+                        
                        <!-- <div class="form-group">
                           <label>Phone number</label>
                             <select class="form-control" id="user_role" name="user_role">

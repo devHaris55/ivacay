@@ -11,8 +11,8 @@
                     <div class="nav_list"> 
                       <ul>
                         <li><a href="javascript:void(0)">Home</a></li>
-                        <li><a href="javascript:void(0)">/</a></li>
-                        <li><a href="javascript:void(0)">Packages</a></li>
+                        <!-- <li><a href="javascript:void(0)">/</a></li>
+                        <li><a href="javascript:void(0)">Packages</a></li> -->
                       </ul>
                     </div>
                   </div>                  
