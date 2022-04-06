@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Models\JobModel;
+use App\Models\JobAppliedModel;
 
 
 use App\Http\Controllers\Controller;
@@ -16,6 +17,11 @@ class AdminJobController extends Controller
     }
 
 /**Job functions starts*/
+    function job_applications()
+    {
+        $job_applications = JobAppliedModel::with('get_user', 'get_job')->get();
+        return view('admin.jobs-applied.job-applied-list',compact('job_applications'));
+    }
     function job()
     {
         $job = JobModel::get();

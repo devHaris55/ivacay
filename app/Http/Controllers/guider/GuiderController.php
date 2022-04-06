@@ -36,7 +36,7 @@ class GuiderController extends Controller
         $applied_job->job_id = $job->id;
         $applied_job->save();
 
-        return view('guider.index',compact('job'));
+        return view('guider.index',compact('job'))->with('success', 'Successfully applied');
     }
     // public function job_portal()
     // {

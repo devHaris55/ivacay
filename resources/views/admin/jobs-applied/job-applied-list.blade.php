@@ -4,16 +4,16 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
             <li class="breadcrumb-item"><a href="{{route('admin_dashboard')}}"><span class="fas fa-home"></span></a></li>
-            <li class="breadcrumb-item active" aria-current="page">Jobs Applied</li>
+            <li class="breadcrumb-item active" aria-current="page">Jobs Applications</li>
         </ol>
     </nav>
     <div class="d-flex justify-content-between w-100 flex-wrap">
         <div class="mb-3 mb-lg-0">
-            <h1 class="h4">Jobs-Applied-List</h1>
+            <h1 class="h4">Jobs-Application-List</h1>
         </div>
-        <div>
-            <a href="{{route('admin_jobs_applied_add')}}" class="btn btn-outline-gray"><i class="far fa-plus-square mr-1"></i> Add New Job</a>
-        </div>
+        <!-- <div>
+            <a href="route('admin_jobs_applied_add')" class="btn btn-outline-gray"><i class="far fa-plus-square mr-1"></i> Add New Job</a>
+        </div> -->
     </div>
 </div>
 
@@ -29,30 +29,35 @@
                 <thead class="thead-light">
                     <tr>
                         <th class="border-0">#</th>
-                        <th class="border-0">Name</th>
+                        <th class="border-0">Guider Name</th>
+                        <th class="border-0">Guider Email</th>
+                        <th class="border-0">Job Title</th>
                         <th class="border-0">Image</th>
-                        <th class="border-0">Status</th>
-                        <th class="border-0">Action</th>
+                        <!-- <th class="border-0">Status</th> -->
+                        <th class="border-0">Job Description</th>
                     </tr>
                 </thead>
                 <tbody>
                     <!-- Item -->
                         <!-- Start of Item -->
-                        @foreach($job as $key=>$value)
+                        @foreach($job_applications as $key=>$value)
                             <tr>
                                 <td class="border-0"><a href="#" class="text-primary font-weight-bold">{{$key+1}}</a> </td>
-                                <td class="border-0 font-weight-bold">{{$value->title}}</td>
+                                <td class="border-0 font-weight-bold">{{$value->get_user->username}}</td>
+                                <td class="border-0 font-weight-bold">{{$value->get_user->email}}</td>
+                                <td class="border-0 font-weight-bold">{{$value->get_job->title}}</td>
                                 <td class="border-0">
-                                    <img class="img-list" src="{{asset('uploads/jobs_applied/'.$value->images)}}" alt="{{$value->title}}">
+                                    <img class="img-list" src="{{asset('/uploads/jobs/'.$value->get_job->images)}}" alt="{{$value->title}}">
                                 </td>
-                                <td class="border-0 font-weight-bold">
+                                <td class="border-0 font-weight-bold">{{$value->get_job->description}}</td>
+                                <!-- <td class="border-0 font-weight-bold">
                                     <span class="{{$value->status == 1 ? 'text-success' : 'text-danger'}}">{{$value->status == 1 ? 'Active' : 'Inactive'}}</span>
                                 </td>
                                 <td class="border-0">
-                                    <a href="{{route('admin_jobs_applied_edit').'/'.$value->id}}" class="text-secondary mr-3"><i class="fas fa-edit"></i>Edit</a>
+                                    <a href="route('admin_jobs_applied_edit').'/'.$value->id" class="text-secondary mr-3"><i class="fas fa-edit"></i>Edit</a>
                                     <span class="text-primary"> |  </span>
-                                    <a href="{{route('admin_jobs_applied_delete').'/'.$value->id}}" class="text-danger ml-3"><i class="far fa-trash-alt"></i>Delete</a>
-                                </td>
+                                    <a href="route('admin_jobs_applied_delete').'/'.$value->id" class="text-danger ml-3"><i class="far fa-trash-alt"></i>Delete</a>
+                                </td> -->
                             </tr>
                         @endforeach
                         <!-- End of Item -->

@@ -35,6 +35,7 @@ Route::get('/admin-login', function () {
     return redirect()->route('admin_login');
 });
 
+    /*--------------------------------------- Admin ROUTES ------------------------------- START --------------- */
 /**Job Routes */
     Route::get('/admin/job-list', [AdminJobController::class, 'job'])->name('admin_jobs');
     Route::get('/admin/job-add', [AdminJobController::class, 'job_add'])->name('admin_jobs_add');
@@ -42,6 +43,7 @@ Route::get('/admin-login', function () {
     Route::get('/admin/job-delete/{job?}', [AdminJobController::class, 'job_delete'])->name('admin_jobs_delete');
     Route::post('/admin/job-add-edit/{job?}', [AdminJobController::class, 'job_add_edit_data'])->name('admin_jobs_add_edit');
 
+    Route::get('/admin/job-applications-list', [AdminJobController::class, 'job_applications'])->name('admin_jobs_applications');
 
 
 
