@@ -47,6 +47,12 @@ function active($current_page){
             <span>Dashboard</span>
           </a>
         </li>
+        <li class="nav-item {{ active('job-list') . active('job-add') . active('job-edit') }}">
+          <a href="{{route('admin_jobs')}}" class="nav-link">
+              <span class="sidebar-icon"><span class="far fa-images"></span></span>
+              <span>Jobs</span>
+          </a>
+        </li>
         <li class="nav-item {{ active('banner-list') . active('banner-add') . active('banner-edit') }}">
           <a href="{{route('admin_banners')}}" class="nav-link">
               <span class="sidebar-icon"><span class="far fa-images"></span></span>

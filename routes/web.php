@@ -9,6 +9,7 @@ use App\Http\Controllers\admin\AdminServicesController;
 use App\Http\Controllers\admin\AdminProductDetailsController;
 use App\Http\Controllers\UIController;
 
+use App\Http\Controllers\admin\AdminJobController;
 
 use App\Http\Controllers\guider\GuiderController;
 use App\Http\Controllers\guider\GuiderPackageController;
@@ -34,7 +35,20 @@ Route::get('/admin-login', function () {
     return redirect()->route('admin_login');
 });
 
-/*--------------------------------------- GUIDER ROUTES ------------------------------- START --------------- */
+/**Job Routes */
+    Route::get('/admin/job-list', [AdminJobController::class, 'job'])->name('admin_jobs');
+    Route::get('/admin/job-add', [AdminJobController::class, 'job_add'])->name('admin_jobs_add');
+    Route::get('/admin/job-edit/{id?}', [AdminJobController::class, 'job_edit'])->name('admin_jobs_edit');
+    Route::get('/admin/job-delete/{job?}', [AdminJobController::class, 'job_delete'])->name('admin_jobs_delete');
+    Route::post('/admin/job-add-edit/{job?}', [AdminJobController::class, 'job_add_edit_data'])->name('admin_jobs_add_edit');
+
+
+
+
+
+
+
+    /*--------------------------------------- GUIDER ROUTES ------------------------------- START --------------- */
 
 // For stripe
 Route::get('guider-stripe-form/{membership?}', [GuiderController::class, 'stripe_form'])->name('Guider_stripe_form');
@@ -47,7 +61,10 @@ Route::prefix('facebook')->name('facebook.')->group( function(){
 });
 
 // =================================================================== GuiderController ===================================================================
-Route::get('guider-list', [GuiderController::class, 'index'])->name('Guider_index');
+// --------------------- JOBs ------
+Route::get('guider-jobs', [GuiderController::class, 'index'])->name('Guider_index');
+Route::get('guider-applied-job/{job?}', [GuiderController::class, 'job_applied'])->name('Guider_job_applied');
+// --------------------- JOBs ------
 Route::get('guider-job-portal', [GuiderController::class, 'job_portal'])->name('Guider_job_portal');
 Route::get('guider-profile', [GuiderController::class, 'guider_profile'])->name('Guider_profile');
 Route::post('update-guider-profile', [GuiderController::class, 'update_guider_profile'])->name('Guider_update_profile');

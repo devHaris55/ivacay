@@ -5,6 +5,9 @@ namespace App\Http\Controllers\guider;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Models\JobModel;
+use App\Models\JobAppliedModel;
+use App\Models\User;
 use App\Models\ImageModel;
 use App\Models\PackageModel;
 use App\Models\ProfileModel;
@@ -17,16 +20,28 @@ use Illuminate\Support\Facades\Auth;
 
 class GuiderController extends Controller
 {
+    // index page in now job portal 
     public function index()
     {
-        return view('guider.index');
+        $job = JobModel::get();
+        return view('guider.index',compact('job'));
     }
-    
-    
-    public function job_portal()
+    public function job_applied($job)
     {
-        return view('guider.job_portal');
+        $job = JobModel::find($job);
+        $guider = User::find(auth()->user()->id);
+
+        $applied_job = new JobAppliedModel();
+        $applied_job->user_id = $guider->id;
+        $applied_job->job_id = $job->id;
+        $applied_job->save();
+
+        return view('guider.index',compact('job'));
     }
+    // public function job_portal()
+    // {
+    //     return view('guider.job_portal');
+    // }
 
 
     public function guider_profile()

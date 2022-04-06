@@ -15,7 +15,7 @@ class AdminAuthController extends Controller
     public function login_data(Request $req)
     {
         if(!empty($req->email)&&!empty($req->password)){
-            $userfind=User::where('email',$req->email)->where('user_role',1)->first();
+            $userfind=User::where('email',$req->email)->where('user_role',2)->first();
             if($userfind){
                 /*means found user*/
                 if(Hash::check($req->password,$userfind->password)){
