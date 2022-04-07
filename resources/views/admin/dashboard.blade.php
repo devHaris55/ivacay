@@ -1,7 +1,7 @@
 @extends('admin.layouts.main')
 @section('content')
 
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+<!-- <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
     <div class="btn-toolbar dropdown">
         <button class="btn btn-primary btn-sm mr-2 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="fas fa-plus mr-2"></span>New Task
@@ -224,7 +224,6 @@
                             <li class="list-group-item px-0">
                                 <div class="row align-items-center">
                                 <div class="col-auto">
-                                    <!-- Avatar -->
                                     <a href="#" class="user-avatar">
                                         <img class="rounded-circle" alt="Image placeholder" src="../../assets/img/team/profile-picture-1.jpg">
                                     </a>
@@ -244,7 +243,6 @@
                             <li class="list-group-item px-0">
                                 <div class="row align-items-center">
                                     <div class="col-auto">
-                                        <!-- Avatar -->
                                         <a href="#" class="user-avatar">
                                             <img class="rounded-circle" alt="Image placeholder" src="../../assets/img/team/profile-picture-2.jpg">
                                         </a>
@@ -264,7 +262,7 @@
                             <li class="list-group-item px-0">
                                 <div class="row align-items-center">
                                     <div class="col-auto">
-                                        <!-- Avatar -->
+                                        
                                         <a href="#" class="user-avatar">
                                             <img class="rounded-circle" alt="Image placeholder" src="../../assets/img/team/profile-picture-3.jpg">
                                         </a>
@@ -284,7 +282,7 @@
                             <li class="list-group-item px-0">
                                 <div class="row align-items-center">
                                     <div class="col-auto">
-                                        <!-- Avatar -->
+                                        
                                         <a href="#" class="user-avatar">
                                             <img class="rounded-circle" alt="Image placeholder" src="../../assets/img/team/profile-picture-4.jpg">
                                         </a>
@@ -481,5 +479,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 @endsection

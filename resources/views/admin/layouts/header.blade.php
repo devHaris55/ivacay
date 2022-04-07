@@ -53,13 +53,13 @@ function active($current_page){
               <span>Jobs</span>
           </a>
         </li>
-        <li class="nav-item {{ active('job-applied-list') . active('job-add') . active('job-edit') }}">
+        <!-- <li class="nav-item {{ active('job-applied-list') . active('job-add') . active('job-edit') }}">
           <a href="{{route('admin_jobs_applications')}}" class="nav-link">
               <span class="sidebar-icon"><span class="far fa-images"></span></span>
               <span>Job Applications</span>
           </a>
         </li>
-        <!-- <li class="nav-item {{ active('banner-list') . active('banner-add') . active('banner-edit') }}">
+        <li class="nav-item {{ active('banner-list') . active('banner-add') . active('banner-edit') }}">
           <a href="{{route('admin_banners')}}" class="nav-link">
               <span class="sidebar-icon"><span class="far fa-images"></span></span>
               <span>Banners</span>

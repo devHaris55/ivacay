@@ -42,8 +42,10 @@ Route::get('/admin-login', function () {
     Route::get('/admin/job-edit/{id?}', [AdminJobController::class, 'job_edit'])->name('admin_jobs_edit');
     Route::get('/admin/job-delete/{job?}', [AdminJobController::class, 'job_delete'])->name('admin_jobs_delete');
     Route::post('/admin/job-add-edit/{job?}', [AdminJobController::class, 'job_add_edit_data'])->name('admin_jobs_add_edit');
-
-    Route::get('/admin/job-applications-list', [AdminJobController::class, 'job_applications'])->name('admin_jobs_applications');
+    
+    Route::get('/admin/job-applications-list/{job_id?}', [AdminJobController::class, 'job_applications'])->name('admin_jobs_applications');
+    Route::get('/admin/job-completed/{job_applied_id?}', [AdminJobController::class, 'jobs_applied_completed'])->name('admin_jobs_applied_completed');
+    Route::get('/admin/job-cancelled/{job_applied_id?}', [AdminJobController::class, 'jobs_applied_cancelled'])->name('admin_jobs_applied_cancelled');
 
 
 

@@ -30,12 +30,14 @@
                     <tr>
                         <th class="border-0">#</th>
                         <th class="border-0">Guider Name</th>
+                        <th class="border-0">Guider Email</th>
                         <th class="border-0">Job Title</th>
                         <th class="border-0">Image</th>
                         <th class="border-0">Start Date</th>
                         <th class="border-0">End Date</th>
                         <!-- <th class="border-0">Status</th> -->
-                        <th class="border-0">Job Description</th>
+                        <!-- <th class="border-0">Job Description</th> -->
+                        <th class="border-0">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,21 +47,33 @@
                             <tr>
                                 <td class="border-0"><a href="#" class="text-primary font-weight-bold">{{$key+1}}</a> </td>
                                 <td class="border-0 font-weight-bold">{{$value->get_user->username}}</td>
+                                <td class="border-0 font-weight-bold">{{$value->get_user->email}}</td>
                                 <td class="border-0 font-weight-bold">{{$value->get_job->title}}</td>
                                 <td class="border-0">
                                     <img class="img-list" src="{{asset('/uploads/jobs/'.$value->get_job->images)}}" alt="{{$value->title}}">
                                 </td>
                                 <td class="border-0 font-weight-bold">{{$value->get_job->start_date}}</td>
                                 <td class="border-0 font-weight-bold">{{$value->get_job->end_date}}</td>
-                                <td class="border-0 font-weight-bold">{{$value->get_job->description}}</td>
+                                <!-- <td class="border-0 font-weight-bold">{{$value->get_job->description}}</td> -->
                                 <!-- <td class="border-0 font-weight-bold">
                                     <span class="{{$value->status == 1 ? 'text-success' : 'text-danger'}}">{{$value->status == 1 ? 'Active' : 'Inactive'}}</span>
-                                </td>
-                                <td class="border-0">
-                                    <a href="route('admin_jobs_applied_edit').'/'.$value->id" class="text-secondary mr-3"><i class="fas fa-edit"></i>Edit</a>
-                                    <span class="text-primary"> |  </span>
-                                    <a href="route('admin_jobs_applied_delete').'/'.$value->id" class="text-danger ml-3"><i class="far fa-trash-alt"></i>Delete</a>
                                 </td> -->
+                                @if($value->status == 0)
+                                <td class="border-0">
+                                    <a href="{{route('admin_jobs_applied_completed',['job_applied_id' => $value->id])}}" class="text-secondary mr-3"><i class="fas fa-edit"></i>Completed</a>
+                                    <span class="text-primary"> |  </span>
+                                    <a href="{{route('admin_jobs_applied_cancelled').'/'.$value->id}}" class="text-danger ml-3"><i class="far fa-trash-alt"></i>Cancelled</a>
+                                </td>
+                                @elseif ($value->status == 1)
+                                <td class="border-0">
+                                    <a href="javascript:void(0)" class="text-secondary mr-3">Completed</a>
+                                </td>
+                                @elseif ($value->status == 2)
+                                <td class="border-0">
+                                    <a href="javascript:void(0)" class="text-danger mr-3">Cancelled</a>
+                                </td>
+                                @endif
+
                             </tr>
                         @endforeach
                         <!-- End of Item -->

@@ -17,11 +17,27 @@ class AdminJobController extends Controller
     }
 
 /**Job functions starts*/
-    function job_applications()
+    function job_applications($job_id)
     {
-        $job_applications = JobAppliedModel::with('get_user', 'get_job')->get();
+        $job_applications = JobAppliedModel::where('job_id', $job_id)->with('get_user', 'get_job')->get();
         return view('admin.jobs-applied.job-applied-list',compact('job_applications'));
     }
+    public function jobs_applied_completed(JobAppliedModel $job_applied_id)
+    {
+        //status 2 means completed
+        $job_applied_id->status = 1;
+        $job_applied_id->save();
+        return back()->with('success', 'Job application status updated');
+    }
+    function jobs_applied_cancelled(JobAppliedModel $job_applied_id)
+    {
+        //status 2 means cancelled
+        $job_applied_id->status = 2;
+        $job_applied_id->save();
+        return back()->with('success', 'Job application status updated');
+    }
+
+
     function job()
     {
         $job = JobModel::get();
@@ -31,6 +47,10 @@ class AdminJobController extends Controller
     {
         return view('admin.jobs.job-add');
     }
+
+
+
+
     function job_edit($id)
     {
         $job = JobModel::where('id',$id)->first();
