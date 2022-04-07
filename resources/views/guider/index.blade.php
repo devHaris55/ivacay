@@ -30,20 +30,24 @@
                             <th>Title</th>
                             <th>Description</th>                            
                             <th>Image</th>
-                            <th>Status</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <!-- <th>Status</th> -->
                             <th >Action</th>
                           </tr>
                           @foreach($job as $key=>$value)
                             <tr>
-                                <td class="border-0"><a href="#" class="font-weight-bold">{{$key+1}}</a> </td>
+                                <td class="border-0 font-weight-bold">{{ $key+1 }}</td>
                                 <td class="border-0 font-weight-bold">{{$value->title}}</td>
                                 <td class="border-0 font-weight-bold">{{$value->description}}</td>
                                 <td class="border-0">
                                     <img class="img-list" src="{{asset('uploads/jobs/'.$value->images)}}" alt="{{$value->title}}">
                                 </td>
-                                <td class="border-0 font-weight-bold">
+                                <td class="border-0 font-weight-bold">{{$value->start_date}}</td>
+                                <td class="border-0 font-weight-bold">{{$value->end_date}}</td>
+                                <!-- <td class="border-0 font-weight-bold">
                                     <span class="{{$value->status == 1 ? 'text-success' : 'text-danger'}}">{{$value->status == 1 ? 'Active' : 'Inactive'}}</span>
-                                </td>
+                                </td> -->
                                 <td class="border-0">
                                     <a href="{{route('Guider_job_applied').'/'.$value->id}}" class="text-primary mr-3"></i>Apply</a>
                                     <!-- <a href="{{route('admin_jobs_edit').'/'.$value->id}}" class="text-secondary mr-3"><i class="fas fa-edit"></i>Edit</a>

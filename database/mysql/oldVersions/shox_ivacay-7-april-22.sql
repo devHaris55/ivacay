@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 4.9.7
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 07, 2022 at 04:12 AM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Host: localhost:3306
+-- Generation Time: Mar 30, 2022 at 07:01 PM
+-- Server version: 5.6.41-84.1
+-- PHP Version: 7.3.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -31,8 +32,8 @@ CREATE TABLE `countries` (
   `id` int(11) NOT NULL,
   `code` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT current_timestamp()
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -294,10 +295,10 @@ INSERT INTO `countries` (`id`, `code`, `name`, `created_at`, `updated_at`) VALUE
 
 CREATE TABLE `faq` (
   `id` int(11) NOT NULL,
-  `question` text DEFAULT NULL,
-  `answer` text DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT current_timestamp()
+  `question` text,
+  `answer` text,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -310,86 +311,9 @@ CREATE TABLE `images` (
   `id` int(11) NOT NULL,
   `pakage_id` int(11) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT current_timestamp()
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `images`
---
-
-INSERT INTO `images` (`id`, `pakage_id`, `title`, `created_at`, `updated_at`) VALUES
-(1, 1, '16486868630.jpg', '2022-03-30 19:34:23', '2022-03-30 19:34:23'),
-(2, 1, '16486868631.jpg', '2022-03-30 19:34:23', '2022-03-30 19:34:23'),
-(3, 2, '16486868900.jpg', '2022-03-30 19:34:50', '2022-03-30 19:34:50'),
-(4, 3, '16486869230.jpg', '2022-03-30 19:35:23', '2022-03-30 19:35:23'),
-(5, 3, '16486869241.jpg', '2022-03-30 19:35:24', '2022-03-30 19:35:24'),
-(6, 3, '16486869242.jpg', '2022-03-30 19:35:24', '2022-03-30 19:35:24'),
-(7, 4, '16486869540.jpg', '2022-03-30 19:35:54', '2022-03-30 19:35:54'),
-(8, 4, '16486869541.jpg', '2022-03-30 19:35:54', '2022-03-30 19:35:54'),
-(9, 4, '16486869542.jpg', '2022-03-30 19:35:54', '2022-03-30 19:35:54'),
-(10, 4, '16486869543.jpg', '2022-03-30 19:35:54', '2022-03-30 19:35:54'),
-(11, 4, '16486869544.jpg', '2022-03-30 19:35:54', '2022-03-30 19:35:54'),
-(12, 5, '16486871520.jpg', '2022-03-30 19:39:12', '2022-03-30 19:39:12'),
-(13, 6, '16486875970.jpg', '2022-03-30 19:46:37', '2022-03-30 19:46:37'),
-(14, 6, '16486875971.jpg', '2022-03-30 19:46:37', '2022-03-30 19:46:37'),
-(15, 6, '16486875972.jpg', '2022-03-30 19:46:37', '2022-03-30 19:46:37'),
-(16, 7, '16486876440.jpg', '2022-03-30 19:47:24', '2022-03-30 19:47:24'),
-(18, 13, '16491077630.jpg', '2022-04-04 16:29:23', '2022-04-04 16:29:23'),
-(19, 13, '16491077631.jpg', '2022-04-04 16:29:23', '2022-04-04 16:29:23'),
-(20, 13, '16491077632.jpg', '2022-04-04 16:29:23', '2022-04-04 16:29:23'),
-(21, 13, '16491077633.jpg', '2022-04-04 16:29:23', '2022-04-04 16:29:23'),
-(22, 12, '16491078580.jpg', '2022-04-04 16:30:58', '2022-04-04 16:30:58'),
-(23, 12, '16491078581.jpg', '2022-04-04 16:30:58', '2022-04-04 16:30:58'),
-(24, 12, '16491078582.jpg', '2022-04-04 16:30:58', '2022-04-04 16:30:58'),
-(25, 12, '16491078583.jpg', '2022-04-04 16:30:58', '2022-04-04 16:30:58');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `jobs`
---
-
-CREATE TABLE `jobs` (
-  `id` int(11) NOT NULL,
-  `title` varchar(55) NOT NULL,
-  `description` text DEFAULT NULL,
-  `images` varchar(500) DEFAULT NULL,
-  `start_date` date NOT NULL,
-  `end_date` date NOT NULL,
-  `status` int(11) NOT NULL DEFAULT 0,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `jobs`
---
-
-INSERT INTO `jobs` (`id`, `title`, `description`, `images`, `start_date`, `end_date`, `status`, `created_at`, `updated_at`) VALUES
-(2, 'Aut ipsum minima omn', 'Dicta tempor id corr', '1649297143.jpg', '2022-04-09', '2022-04-30', 1, '2022-04-06 21:05:43', '2022-04-06 21:05:43');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `jobs_applied`
---
-
-CREATE TABLE `jobs_applied` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `job_id` int(11) NOT NULL,
-  `status` int(11) NOT NULL COMMENT '0 = pending, 1 = completed, 2 = cancelled',
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `jobs_applied`
---
-
-INSERT INTO `jobs_applied` (`id`, `user_id`, `job_id`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, 2, 0, '2022-04-06 21:07:56', '2022-04-06 21:07:56');
 
 -- --------------------------------------------------------
 
@@ -403,7 +327,7 @@ CREATE TABLE `journies` (
   `user_id` int(11) DEFAULT NULL,
   `package_id` int(11) DEFAULT NULL,
   `payment_id` varchar(255) DEFAULT NULL,
-  `payment_url` text DEFAULT NULL,
+  `payment_url` text,
   `status` int(11) DEFAULT NULL COMMENT '0 = Process,\r\n1 = Completed<\r\n2 = Rejected',
   `member_ship_id` int(11) DEFAULT NULL,
   `total_price` decimal(14,2) DEFAULT NULL,
@@ -411,13 +335,6 @@ CREATE TABLE `journies` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `journies`
---
-
-INSERT INTO `journies` (`id`, `invoice_number`, `user_id`, `package_id`, `payment_id`, `payment_url`, `status`, `member_ship_id`, `total_price`, `is_paid`, `created_at`, `updated_at`) VALUES
-(1, NULL, 3, 2, 'ch_3KjUZ7FF6yglEvQF07uTcEcJ', 'https://pay.stripe.com/receipts/acct_1KEflEFF6yglEvQF/ch_3KjUZ7FF6yglEvQF07uTcEcJ/rcpt_LQLFMWJ57YrYEPIGNI9A3eufKjwhQ2P', NULL, NULL, '73.00', NULL, '2022-03-31 15:25:58', '2022-03-31 15:25:58');
 
 -- --------------------------------------------------------
 
@@ -432,8 +349,8 @@ CREATE TABLE `membership_plans` (
   `plan_type` varchar(255) DEFAULT NULL,
   `no_of_packages` int(11) NOT NULL,
   `duration` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -441,13 +358,13 @@ CREATE TABLE `membership_plans` (
 --
 
 INSERT INTO `membership_plans` (`id`, `title`, `price`, `plan_type`, `no_of_packages`, `duration`, `created_at`, `updated_at`) VALUES
-(1, 'Free', '0.00', NULL, 1, 3, '2022-03-24 19:42:47', '2022-03-24 19:42:47'),
-(2, 'Deluxe', '19.99', NULL, 5, 30, '2022-03-24 19:42:47', '2022-03-24 19:42:47'),
-(3, 'Premium', '29.99', NULL, 2147483647, 30, '2022-03-24 19:42:51', '2022-03-24 19:42:51'),
-(4, 'Monthly ', '19.99', 'Alternative', 2147483647, 30, '2022-03-24 19:42:51', '2022-03-24 19:42:51'),
-(5, 'Quarterly', '55.00', 'Alternative', 2147483647, 90, '2022-03-24 19:46:18', '2022-03-24 19:46:18'),
-(6, 'Half-Yearly', '100.00', 'Alternative', 2147483647, 180, '2022-03-24 19:46:18', '2022-03-24 19:46:18'),
-(7, 'Yearly', '199.00', 'Alternative', 2147483647, 365, '2022-03-24 19:46:18', '2022-03-24 19:46:18');
+(1, 'Free', 0.00, NULL, 1, 3, '2022-03-24 19:42:47', '2022-03-24 19:42:47'),
+(2, 'Deluxe', 19.99, NULL, 5, 30, '2022-03-24 19:42:47', '2022-03-24 19:42:47'),
+(3, 'Premium', 29.99, NULL, 2147483647, 30, '2022-03-24 19:42:51', '2022-03-24 19:42:51'),
+(4, 'Monthly ', 19.99, 'Alternative', 2147483647, 30, '2022-03-24 19:42:51', '2022-03-24 19:42:51'),
+(5, 'Quarterly', 55.00, 'Alternative', 2147483647, 90, '2022-03-24 19:46:18', '2022-03-24 19:46:18'),
+(6, 'Half-Yearly', 100.00, 'Alternative', 2147483647, 180, '2022-03-24 19:46:18', '2022-03-24 19:46:18'),
+(7, 'Yearly', 199.00, 'Alternative', 2147483647, 365, '2022-03-24 19:46:18', '2022-03-24 19:46:18');
 
 -- --------------------------------------------------------
 
@@ -460,23 +377,15 @@ CREATE TABLE `member_ships` (
   `user_id` int(11) NOT NULL,
   `membership_id` int(11) NOT NULL,
   `payment_id` varchar(255) DEFAULT NULL,
-  `receipt_url` text DEFAULT NULL,
+  `receipt_url` text,
   `title` varchar(255) DEFAULT NULL,
   `price` decimal(14,2) DEFAULT NULL,
-  `description` text DEFAULT NULL,
+  `description` text,
   `no_of_packages` int(11) DEFAULT NULL,
   `duration` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT current_timestamp()
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `member_ships`
---
-
-INSERT INTO `member_ships` (`id`, `user_id`, `membership_id`, `payment_id`, `receipt_url`, `title`, `price`, `description`, `no_of_packages`, `duration`, `created_at`, `updated_at`) VALUES
-(2, 1, 2, 'ch_3KjBxXFF6yglEvQF0OWe0IJD', 'https://pay.stripe.com/receipts/acct_1KEflEFF6yglEvQF/ch_3KjBxXFF6yglEvQF0OWe0IJD/rcpt_LQ219QgIWoAzk6l9LceEckgWrao0JVv', 'Deluxe', '19.99', NULL, 5, 30, '2022-03-30 19:33:55', '2022-03-30 19:33:55'),
-(3, 4, 2, 'ch_3KjXDVFF6yglEvQF1BTVHfGR', 'https://pay.stripe.com/receipts/acct_1KEflEFF6yglEvQF/ch_3KjXDVFF6yglEvQF1BTVHfGR/rcpt_LQNzOz7lpE4QxjqZd4FVBZfe5GISXy3', 'Deluxe', '19.99', NULL, 5, 30, '2022-03-31 18:15:49', '2022-03-31 18:15:49');
 
 -- --------------------------------------------------------
 
@@ -488,35 +397,16 @@ CREATE TABLE `packages` (
   `id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
-  `description` text DEFAULT NULL,
+  `description` text,
   `price` int(11) NOT NULL,
   `from_date` date DEFAULT NULL,
   `end_date` date DEFAULT NULL,
   `is_taken` int(11) DEFAULT NULL COMMENT '0 = unavailable,\r\n1 = available',
   `country_id` int(11) DEFAULT NULL,
   `status` int(11) NOT NULL COMMENT '0 = active, 1 = inactive, 2 = deleted',
-  `created_at` timestamp NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT current_timestamp()
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `packages`
---
-
-INSERT INTO `packages` (`id`, `user_id`, `title`, `description`, `price`, `from_date`, `end_date`, `is_taken`, `country_id`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Repudiandae enim lab', 'Natus aliquid aute d', 553, '2022-03-25', '2022-04-01', NULL, 233, 0, '2022-03-30 19:34:23', '2022-03-30 19:36:54'),
-(2, 1, 'Ut maiores obcaecati', 'Elit ea itaque recu', 73, '2022-03-25', '2022-04-01', NULL, 233, 0, '2022-03-30 19:34:50', '2022-03-30 19:36:43'),
-(3, 1, 'Asperiores ex ration', 'Iste est sed ex quis', 615, '2022-03-25', '2022-04-01', NULL, 233, 0, '2022-03-30 19:35:23', '2022-03-30 19:35:23'),
-(4, 1, 'Consequuntur quos di', 'Aut iste eiusmod qui', 421, '2022-03-25', '2022-04-01', NULL, 233, 0, '2022-03-30 19:35:54', '2022-03-30 19:46:02'),
-(5, 1, 'Voluptatem Enim eli', 'Labore elit vitae v', 329, '2022-03-25', '2022-04-01', NULL, 233, 1, '2022-03-30 19:39:12', '2022-03-30 19:39:12'),
-(6, 1, 'Ratione omnis et vol', 'Incididunt voluptas', 698, '2022-03-25', '2022-04-01', NULL, 233, 0, '2022-03-30 19:46:37', '2022-03-30 19:46:37'),
-(7, 1, 'Ad quia illum qui c', 'Voluptatem inventore', 520, '1973-06-30', '1996-09-27', NULL, 177, 1, '2022-03-30 19:47:24', '2022-03-30 19:47:24'),
-(8, 1, 'Ut qui iste temporib', 'Est dignissimos esse', 631, '2022-04-05', '2022-04-05', NULL, 137, 1, '2022-04-04 15:15:09', '2022-04-04 15:15:09'),
-(9, 1, 'Aut sint vero natus', 'Dolore voluptate ver', 22, '2022-04-05', '2022-04-05', NULL, 63, 1, '2022-04-04 15:20:41', '2022-04-04 15:20:41'),
-(10, 1, 'Culpa voluptas adip', 'Magni qui laudantium', 879, '2022-04-05', '2022-04-05', NULL, 108, 1, '2022-04-04 15:21:09', '2022-04-04 15:21:09'),
-(11, 1, 'Sed eos delectus do', 'Sunt adipisci dolor', 383, '2022-04-05', '2022-04-05', NULL, 217, 1, '2022-04-04 15:21:37', '2022-04-04 15:21:37'),
-(12, 1, 'Nam anim praesentium', 'Dolore nihil nobis m', 967, '2022-04-05', '2022-04-15', NULL, 190, 1, '2022-04-04 16:28:58', '2022-04-04 16:30:27'),
-(13, 1, 'In corrupti dolor d', 'Libero ea aliquam ar', 613, '2022-04-05', '2022-04-15', NULL, 193, 1, '2022-04-04 16:29:23', '2022-04-04 16:29:23');
 
 -- --------------------------------------------------------
 
@@ -529,24 +419,15 @@ CREATE TABLE `profiles` (
   `user_id` int(11) DEFAULT NULL,
   `full_name` varchar(255) DEFAULT NULL,
   `phone` varchar(255) DEFAULT NULL,
-  `address` text DEFAULT NULL,
+  `address` text,
   `zip_code` varchar(255) DEFAULT NULL,
   `country_id` int(11) DEFAULT NULL,
   `country` varchar(255) DEFAULT NULL,
   `account_title` varchar(255) DEFAULT NULL,
   `account_number` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT current_timestamp()
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `profiles`
---
-
-INSERT INTO `profiles` (`id`, `user_id`, `full_name`, `phone`, `address`, `zip_code`, `country_id`, `country`, `account_title`, `account_number`, `created_at`, `updated_at`) VALUES
-(1, 3, 'tourist', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-03-30 19:52:03', '2022-03-30 19:52:03'),
-(2, 4, 'a', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-03-31 18:15:07', '2022-03-31 18:15:07'),
-(3, 1, 'Jacob', NULL, NULL, NULL, 233, NULL, NULL, NULL, '2022-04-04 16:39:14', '2022-04-04 16:39:22');
 
 -- --------------------------------------------------------
 
@@ -561,25 +442,14 @@ CREATE TABLE `users` (
   `provider_id` varchar(255) DEFAULT NULL,
   `avatar` varchar(255) DEFAULT NULL,
   `password` varchar(555) DEFAULT NULL,
-  `user_role` int(11) NOT NULL COMMENT '0 = tourist,\r\n1 = guider,\r\n2 = admin',
-  `status` int(11) DEFAULT 0 COMMENT '1 = active , 0 = inactive ',
-  `is_reset` int(11) NOT NULL DEFAULT 0,
-  `is_approved` int(11) NOT NULL DEFAULT 0 COMMENT '0 = not Approved,\r\n1 = Approved',
+  `user_role` int(11) NOT NULL COMMENT '0 = tourist,\r\n1 = guider',
+  `status` int(11) DEFAULT '0' COMMENT '0 = active , 1 = inactive ',
+  `is_reset` int(11) NOT NULL DEFAULT '0',
+  `is_approved` int(11) NOT NULL DEFAULT '0' COMMENT '0 = not Approved,\r\n1 = Approved',
   `facebook_id` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `username`, `email`, `provider_id`, `avatar`, `password`, `user_role`, `status`, `is_reset`, `is_approved`, `facebook_id`, `created_at`, `updated_at`) VALUES
-(1, 'guider', 'guider@gmail.com', NULL, NULL, '$2y$10$Bhrk3QGuAe3VvnXkqRoqxuwj/X56jkm14PNN63XfjsUv/1Mt1FK9y', 1, 1, 0, 0, NULL, '2022-03-30 19:15:19', '2022-03-30 19:15:19'),
-(2, 'dev', 'dev.haris55@gmail.com', NULL, NULL, '$2y$10$iDCLYb5Kd0aaD2lbRLjKsO1tza758dMdLrB47PSbrxcm.K4bBqI9C', 1, 0, 0, 0, NULL, '2022-03-30 19:18:50', '2022-03-30 19:18:50'),
-(3, 'tourist', 'tourist@gmail.com', NULL, NULL, '$2y$10$TcoeERgnCFf065oKoY2DweVWjcSmY.d9Bn9nBcQ.5ei3IO51OgPVa', 0, 1, 0, 0, NULL, '2022-03-30 19:52:02', '2022-03-30 19:52:02'),
-(4, 'a', 'a@gmail.com', NULL, NULL, '$2y$10$/6vcJ/TyqOzXhvCrjF573OrYjK67QMju7K4pOcL.OApNHj1VKuBgq', 1, 1, 0, 0, NULL, '2022-03-31 18:15:07', '2022-03-31 18:15:07'),
-(5, 'admin', 'admin@mail.com', NULL, NULL, '$2y$10$eBzm3cEsbRSf2djUAs1P2eyT.yQlWP3XJQb737CalCQoTsdTbRvja', 2, 1, 0, 0, NULL, '2022-04-05 21:23:33', '2022-04-05 21:23:33');
 
 --
 -- Indexes for dumped tables
@@ -601,18 +471,6 @@ ALTER TABLE `faq`
 -- Indexes for table `images`
 --
 ALTER TABLE `images`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `jobs`
---
-ALTER TABLE `jobs`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `jobs_applied`
---
-ALTER TABLE `jobs_applied`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -679,25 +537,13 @@ ALTER TABLE `faq`
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
---
--- AUTO_INCREMENT for table `jobs`
---
-ALTER TABLE `jobs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `jobs_applied`
---
-ALTER TABLE `jobs_applied`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `journies`
 --
 ALTER TABLE `journies`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `membership_plans`
@@ -709,25 +555,25 @@ ALTER TABLE `membership_plans`
 -- AUTO_INCREMENT for table `member_ships`
 --
 ALTER TABLE `member_ships`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `packages`
 --
 ALTER TABLE `packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `profiles`
 --
 ALTER TABLE `profiles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -744,7 +590,7 @@ ALTER TABLE `journies`
 -- Constraints for table `member_ships`
 --
 ALTER TABLE `member_ships`
-  ADD CONSTRAINT `memship_id` FOREIGN KEY (`membership_id`) REFERENCES `membership_plans` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `memship_id` FOREIGN KEY (`membership_id`) REFERENCES `member_ships` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `usr_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --

@@ -46,6 +46,14 @@
                                         <img class="img-fluid image-preview" alt="" id="output">
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label>Start Date</label>
+                                    <input type="date" min="{{Carbon\Carbon::now()->addDay()->format('Y-m-d')}}" value={{Carbon\Carbon::now()->addDay()->format('Y-m-d')}} name="start_date" class="form-control" required>
+                                </div> 
+                                <div class="form-group">
+                                    <label>End Date</label>
+                                    <input type="date" min="{{Carbon\Carbon::now()->addDay(2)->format('Y-m-d')}}" value={{Carbon\Carbon::now()->addDay(2)->format('Y-m-d')}} name="end_date" class="form-control" required>
+                                </div> 
                                 <fieldset class="my-4">
                                     <legend class="h6">Status</legend>
                                     <div class="form-check">

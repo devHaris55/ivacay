@@ -30,9 +30,10 @@
                     <tr>
                         <th class="border-0">#</th>
                         <th class="border-0">Guider Name</th>
-                        <th class="border-0">Guider Email</th>
                         <th class="border-0">Job Title</th>
                         <th class="border-0">Image</th>
+                        <th class="border-0">Start Date</th>
+                        <th class="border-0">End Date</th>
                         <!-- <th class="border-0">Status</th> -->
                         <th class="border-0">Job Description</th>
                     </tr>
@@ -44,11 +45,12 @@
                             <tr>
                                 <td class="border-0"><a href="#" class="text-primary font-weight-bold">{{$key+1}}</a> </td>
                                 <td class="border-0 font-weight-bold">{{$value->get_user->username}}</td>
-                                <td class="border-0 font-weight-bold">{{$value->get_user->email}}</td>
                                 <td class="border-0 font-weight-bold">{{$value->get_job->title}}</td>
                                 <td class="border-0">
                                     <img class="img-list" src="{{asset('/uploads/jobs/'.$value->get_job->images)}}" alt="{{$value->title}}">
                                 </td>
+                                <td class="border-0 font-weight-bold">{{$value->get_job->start_date}}</td>
+                                <td class="border-0 font-weight-bold">{{$value->get_job->end_date}}</td>
                                 <td class="border-0 font-weight-bold">{{$value->get_job->description}}</td>
                                 <!-- <td class="border-0 font-weight-bold">
                                     <span class="{{$value->status == 1 ? 'text-success' : 'text-danger'}}">{{$value->status == 1 ? 'Active' : 'Inactive'}}</span>

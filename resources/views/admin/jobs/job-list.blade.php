@@ -30,8 +30,11 @@
                     <tr>
                         <th class="border-0">#</th>
                         <th class="border-0">Name</th>
+                        <th class="border-0">Description</th>
                         <th class="border-0">Image</th>
-                        <th class="border-0">Status</th>
+                        <th class="border-0">Start Date</th>
+                        <th class="border-0">End Date</th>
+                        <!-- <th class="border-0">Status</th> -->
                         <th class="border-0">Action</th>
                     </tr>
                 </thead>
@@ -42,12 +45,16 @@
                             <tr>
                                 <td class="border-0"><a href="#" class="text-primary font-weight-bold">{{$key+1}}</a> </td>
                                 <td class="border-0 font-weight-bold">{{$value->title}}</td>
+                                <td class="border-0 font-weight-bold">{{$value->description}}</td>
                                 <td class="border-0">
                                     <img class="img-list" src="{{asset('uploads/jobs/'.$value->images)}}" alt="{{$value->title}}">
                                 </td>
-                                <td class="border-0 font-weight-bold">
+                                <td class="border-0 font-weight-bold">{{$value->start_date}}</td>
+                                <td class="border-0 font-weight-bold">{{$value->end_date}}</td>
+
+                                <!-- <td class="border-0 font-weight-bold">
                                     <span class="{{$value->status == 1 ? 'text-success' : 'text-danger'}}">{{$value->status == 1 ? 'Active' : 'Inactive'}}</span>
-                                </td>
+                                </td> -->
                                 <td class="border-0">
                                     <a href="{{route('admin_jobs_edit').'/'.$value->id}}" class="text-secondary mr-3"><i class="fas fa-edit"></i>Edit</a>
                                     <span class="text-primary"> |  </span>

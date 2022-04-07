@@ -59,7 +59,7 @@ function active($current_page){
               <span>Job Applications</span>
           </a>
         </li>
-        <li class="nav-item {{ active('banner-list') . active('banner-add') . active('banner-edit') }}">
+        <!-- <li class="nav-item {{ active('banner-list') . active('banner-add') . active('banner-edit') }}">
           <a href="{{route('admin_banners')}}" class="nav-link">
               <span class="sidebar-icon"><span class="far fa-images"></span></span>
               <span>Banners</span>
@@ -104,7 +104,7 @@ function active($current_page){
                   <li class="nav-item {{ active('products-list') . active('products-add') . active('products-edit') }}"><a class="nav-link" href="{{route('admin_products')}}"><i class="fas fa-box-open"></i><span> Products</span></a></li>
               </ul>
           </div>
-        </li>
+        </li> -->
 
         <li role="separator" class="dropdown-divider mt-4 mb-3 border-black"></li>
 

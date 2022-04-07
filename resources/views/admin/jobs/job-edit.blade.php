@@ -48,6 +48,14 @@
                                     </div>
                                     <small class="form-text text-muted">Max. file size: 50 MB. Allowed images: jpg, gif, png.</small><br>
                                 </div>
+                                <div class="form-group">
+                                    <label>Start Date</label>
+                                    <input type="date" name="start_date" min="{{Carbon\Carbon::now()->format('Y-m-d')}}" value="{{$job->start_date}}" class="form-control" placeholder="Email Address" required>
+                                </div> 
+                                <div class="form-group">
+                                    <label>End Date</label>
+                                    <input type="date" name="end_date" min="{{Carbon\Carbon::now()->addDay()->format('Y-m-d')}}" value="{{$job->end_date}}" class="form-control" placeholder="Email Address" required>
+                                </div>
                                 <fieldset class="my-4">
                                     <legend class="h6">Status</legend>
                                     <div class="form-check">

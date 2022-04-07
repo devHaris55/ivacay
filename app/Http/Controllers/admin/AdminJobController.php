@@ -43,6 +43,18 @@ class AdminJobController extends Controller
     }
     function job_add_edit_data(Request $request,JobModel $job)
     {
+        (isset($job->id) and $job->id>0) ? $validate_image = '' : $validate_image='required';
+
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'start_date' => 'required|before:end_date',
+            'end_date' => 'required|after:start_date',
+            // 'image' => 'required',
+            'images' => $validate_image,
+            'images.*' => 'image|mimes:jpeg,png,jpg|max:2048'
+        ]);
+
         $create = 1;
         (isset($job->id) and $job->id>0)?$create=0:$create=1;
         if($request->hasFile('images'))
@@ -53,6 +65,8 @@ class AdminJobController extends Controller
         }
         $job->title = $request->title;
         $job->description = $request->description;
+        $job->start_date = $request->start_date;
+        $job->end_date = $request->end_date;
         $job->status = $request->status;
         $job->save();
         if($create == 0)

@@ -28,15 +28,23 @@ class GuiderController extends Controller
     }
     public function job_applied($job)
     {
-        $job = JobModel::find($job);
-        $guider = User::find(auth()->user()->id);
+        $pre_applied_job = JobAppliedModel::where('user_id', auth()->user()->id)->where('status', 0)->first();
+        if($pre_applied_job)
+        {
+            return back()->with('error', 'You can\'t apply! Your previous applied job is not done yet');
+        } else {
+            $job_for_apply = JobModel::find($job);
+            $guider = User::find(auth()->user()->id);
+    
+            $applied_job = new JobAppliedModel();
+            $applied_job->user_id = $guider->id;
+            $applied_job->job_id = $job_for_apply->id;
+            // status = 0  -->  pending
+            $applied_job->status = 0;
+            $applied_job->save();
+        }
 
-        $applied_job = new JobAppliedModel();
-        $applied_job->user_id = $guider->id;
-        $applied_job->job_id = $job->id;
-        $applied_job->save();
-
-        return view('guider.index',compact('job'))->with('success', 'Successfully applied');
+        return redirect(route('Guider_index'))->with('success', 'Successfully applied');
     }
     // public function job_portal()
     // {
