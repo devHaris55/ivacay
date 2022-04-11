@@ -53,6 +53,18 @@ function active($current_page){
               <span>Jobs</span>
           </a>
         </li>
+        <li class="nav-item {{ active('guider-list') }}">
+          <a href="{{route('admin_guiders')}}" class="nav-link">
+              <span class="sidebar-icon"><span class="far fa-user"></span></span>
+              <span>Guider</span>
+          </a>
+        </li>
+        <li class="nav-item {{ active('vacationer-list') }}">
+          <a href="{{route('admin_vacationers')}}" class="nav-link">
+              <span class="sidebar-icon"><span class="far fa-user"></span></span>
+              <span>Vacationer</span>
+          </a>
+        </li>
         <!-- <li class="nav-item {{ active('job-applied-list') . active('job-add') . active('job-edit') }}">
           <a href="{{route('admin_jobs_applications')}}" class="nav-link">
               <span class="sidebar-icon"><span class="far fa-images"></span></span>

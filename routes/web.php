@@ -10,6 +10,8 @@ use App\Http\Controllers\admin\AdminProductDetailsController;
 use App\Http\Controllers\UIController;
 
 use App\Http\Controllers\admin\AdminJobController;
+use App\Http\Controllers\admin\AdminGuiderController;
+use App\Http\Controllers\admin\AdminVacationerController;
 
 use App\Http\Controllers\guider\GuiderController;
 use App\Http\Controllers\guider\GuiderPackageController;
@@ -47,9 +49,13 @@ Route::get('/admin-login', function () {
     Route::get('/admin/job-completed/{job_applied_id?}', [AdminJobController::class, 'jobs_applied_completed'])->name('admin_jobs_applied_completed');
     Route::get('/admin/job-cancelled/{job_applied_id?}', [AdminJobController::class, 'jobs_applied_cancelled'])->name('admin_jobs_applied_cancelled');
 
+/** Guider Routes */
+    Route::get('/admin/guider-list',[AdminGuiderController::class, 'guider'])->name('admin_guiders');
 
+/** Vacationer Routes */
+Route::get('/admin/vacationer-list',[AdminVacationerController::class, 'vacationer'])->name('admin_vacationers');
 
-
+    /*--------------------------------------- Admin ROUTES ------------------------------- END --------------- */
 
 
     /*--------------------------------------- GUIDER ROUTES ------------------------------- START --------------- */
