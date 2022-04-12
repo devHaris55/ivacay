@@ -11,7 +11,7 @@ use App\Models\ProfileModel;
 use App\Models\CountryModel;
 use App\Models\MembershipPlanModel;
 use App\Models\MembershipModel;
-use App\Models\JourniesModel;
+use App\Models\JourneysModel;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
@@ -104,7 +104,7 @@ class VacationerPackageController extends Controller
         if ($response['status'] == 'succeeded') 
         {
             //condition store database Order 
-            $journey = new JourniesModel();
+            $journey = new JourneysModel();
             $journey->user_id = auth()->user()->id;
             $journey->package_id = $package->id;
             $journey->payment_id = $response['id'];

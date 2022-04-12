@@ -4,12 +4,12 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
             <li class="breadcrumb-item"><a href="{{route('admin_dashboard')}}"><span class="fas fa-home"></span></a></li>
-            <li class="breadcrumb-item active" aria-current="page">Guiders</li>
+            <li class="breadcrumb-item active" aria-current="page">Journeys</li>
         </ol>
     </nav>
     <div class="d-flex justify-content-between w-100 flex-wrap">
         <div class="mb-3 mb-lg-0">
-            <h1 class="h4">Guiders-List</h1>
+            <h1 class="h4">Journeys-List</h1>
         </div>
     </div>
 </div>
@@ -26,25 +26,29 @@
                 <thead class="thead-light">
                     <tr>
                         <th class="border-0">#</th>
-                        <th class="border-0">Guider Name</th>
+                        <th class="border-0">Name</th>
                         <th class="border-0">Email</th>
-                        <th class="border-0">Current Membership</th>
-                        <th class="border-0">Status</th>
+                        <th class="border-0">Package Title</th>
+                        <th class="border-0">Country</th>
+                        <th class="border-0">Price</th>
+                        <!-- <th class="border-0">Status</th> -->
                         <!-- <th class="border-0 text-center">Action</th> -->
                     </tr>
                 </thead>
                 <tbody>
                     <!-- Item -->
                         <!-- Start of Item -->
-                        @foreach($guiders as $key=>$value)
+                        @foreach($journeys as $key=>$value)
                             <tr>
                                 <td class="border-0"><a href="#" class="text-primary font-weight-bold">{{$key+1}}</a> </td>
-                                <td class="border-0 font-weight-bold">{{$value->username}}</td>
-                                <td class="border-0 font-weight-bold">{{$value->email}}</td>
-                                <td class="border-0 font-weight-bold {{ count($value->getMemberships) > 0 ? '' : 'text-danger' }}">{{ count($value->getMemberships) > 0 ? $value->getMemberships[0]->title : 'Non-subscriber' }}</td>
-                                <td class="border-0 font-weight-bold">
+                                <td class="border-0 font-weight-bold">{{$value->getUser->username}}</td>
+                                <td class="border-0 font-weight-bold">{{$value->getUser->email}}</td>
+                                <td class="border-0 font-weight-bold">{{ $value->getPackages->title }}</td>
+                                <td class="border-0 font-weight-bold">{{ $value->getPackages->getCountry->name }}</td>
+                                <td class="border-0 font-weight-bold">{{ $value->getPackages->price }}</td>
+                                <!-- <td class="border-0 font-weight-bold">
                                     <span class="{{$value->status == 1 ? 'text-success' : 'text-danger'}}">{{$value->status == 1 ? 'Active' : 'Inactive'}}</span>
-                                </td>
+                                </td> -->
                                 <!-- <td class="border-0">
                                     <span class="text-primary"> |  </span>
                                     <a href="{{route('admin_jobs_edit').'/'.$value->id}}" class="text-secondary mr-3"><i class="fas fa-edit"></i>Edit</a>

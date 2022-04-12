@@ -12,6 +12,7 @@ use App\Http\Controllers\UIController;
 use App\Http\Controllers\admin\AdminJobController;
 use App\Http\Controllers\admin\AdminGuiderController;
 use App\Http\Controllers\admin\AdminVacationerController;
+use App\Http\Controllers\admin\AdminJourneyController;
 
 use App\Http\Controllers\guider\GuiderController;
 use App\Http\Controllers\guider\GuiderPackageController;
@@ -54,6 +55,9 @@ Route::get('/admin-login', function () {
 
 /** Vacationer Routes */
 Route::get('/admin/vacationer-list',[AdminVacationerController::class, 'vacationer'])->name('admin_vacationers');
+
+/** Vacationer Routes */
+Route::get('/admin/journey-list',[AdminJourneyController::class, 'journey'])->name('admin_journeys');
 
     /*--------------------------------------- Admin ROUTES ------------------------------- END --------------- */
 
