@@ -431,8 +431,7 @@
           <div class="icon_div">
             <img src="{{asset('images/ic_4.png')}}" class="img-fluid" alt="" />
             <div class="sel">
-
-                            <a href="{{route('UI_vacationer')}}">Build your package</a>
+              <a href="{{route('UI_build_package')}}">Build your package</a>
 
             </div>
           </div>

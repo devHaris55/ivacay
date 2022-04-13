@@ -56,7 +56,7 @@ function active($current_page){
         <li class="nav-item {{ active('guider-list') }}">
           <a href="{{route('admin_guiders')}}" class="nav-link">
               <span class="sidebar-icon"><span class="far fa-user"></span></span>
-              <span>Guiders</span>
+              <span>Guides</span>
           </a>
         </li>
         <li class="nav-item {{ active('vacationer-list') }}">
@@ -69,6 +69,18 @@ function active($current_page){
           <a href="{{route('admin_journeys')}}" class="nav-link">
               <span class="sidebar-icon"><span class="far fa-user"></span></span>
               <span>Journeys</span>
+          </a>
+        </li>
+        <li class="nav-item {{ active('membership-list') }}">
+          <a href="{{route('admin_memberships')}}" class="nav-link">
+              <span class="sidebar-icon"><span class="far fa-user"></span></span>
+              <span>Memberships</span>
+          </a>
+        </li>
+        <li class="nav-item {{ active('Package-request-list') }}">
+          <a href="{{route('admin_package_requests')}}" class="nav-link">
+              <span class="sidebar-icon"><span class="far fa-images"></span></span>
+              <span>Package requests</span>
           </a>
         </li>
         <!-- <li class="nav-item {{ active('job-applied-list') . active('job-add') . active('job-edit') }}">

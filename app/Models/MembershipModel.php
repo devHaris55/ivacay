@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\MembershipPlanModel;
 
 class MembershipModel extends Model
 {
@@ -13,5 +14,9 @@ class MembershipModel extends Model
     public function getUser()
     {
         return $this->belongsTo('App\Models\User','user_id');
+    }
+    public function getMembershipPlan()
+    {
+        return $this->belongsTo('App\Models\MembershipPlanModel','membership_id');
     }
 }

@@ -27,12 +27,50 @@
                             viverra
                             maecenas accumsan lacus vel facilisis.
                         </p>
+                        <!-- -------------------------------------------------------------------------- -->
+                        <form method="POST" action="">
+                            @csrf
+                            <!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> -->
+                        <!-- -------------------------------------------------------------------------- -->
                         <div class="form-group">
-                            <input type="text" aria-describedby="emailHelp" placeholder="Country City Zip" >
+                            <input type="text" aria-describedby="emailHelp" id="search" name="country" placeholder="Search Country" >
+                            <!-- <input type="search" class="searchable" placeholder="Search by Part#" id="search" name="part" required> -->
                             <button type="submit" class="btn btn-primary"><i
                                     class="fas fa-magnifying-glass"></i></button>
-                            <p>Or click a map location* and find your next private guide!</p>
+                                    <p>Or click a map location* and find your next private guide!</p>
                         </div>
+                        <!-- -------------------------------------------------------------------------- -->
+                    </form>
+                    <div id="test"></div>
+                    @push('js')
+                        <script>        
+                        $(document).ready(function(){
+                        $('#search').on('keyup', function(){
+                                let x = $(this).val();
+                                let data = {'search': x};
+                                let url = 'country-search';
+                                
+                                $.ajax({
+                                    url: url,
+                                    data: data,
+                                    type: 'GET',
+                                
+                                    success: function(data) {
+                                        res = data;
+                                        $('#test').html(data);
+                        
+                                    },
+                                    error: function() {
+                                        console.log('error');
+                                    }
+                        
+                                });
+                            });
+                        });
+                        
+                        </script>
+                        @endpush
+                    <!-- -------------------------------------------------------------------------- -->
                     </div>
                     <div class="service_map">
                         <!--<img src="images/service_map.png" class="img-fluid" alt="">-->

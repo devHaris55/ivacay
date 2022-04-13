@@ -34,10 +34,51 @@ class UIController extends EmailController
     {
         return view('faq');
     }
+
+
     public function service_provider()
     {
         return view('service_provider');
     }
+    public function search_country(Request $request)
+    {
+        if($request->ajax()){
+            
+         if($request->search != null)  {
+            $part = CountryModel::where('name','LIKE','%'.$request->search.'%')
+            // ->orWhere('title','LIKE','%'.$request->search.'%')
+            ->get();
+                $output = '';
+                if (count($part) > 0) {
+                    $output .= '<table class="table table-striped">
+                                    <tbody>
+                                        ';
+                                        foreach($part as $value){
+
+                                            $route = route('UI_country_specific_packages',[$value->id]);
+                                        $output .= 
+                                            '<tr><a href="'.$route.'">
+                                                ' . $value->name . '
+                                            </a></tr>'
+                                            ;
+                                            }
+                                    $output .=  '
+                                    </tbody>
+                                </table>' ;
+                    return $output;          
+                    // return response()->json(['data', $output]);
+                    // return redirect()->route('UI_single_product', [$part->id]);
+                } else {
+                    return $output = 'No Result Found';   
+                    // return redirect()->route('UI_part_not_found');
+                }
+            }else{
+                return $output = '';   
+            }
+        } 
+    }
+
+
     public function vacationer()
     {
         $countries = CountryModel::all();
@@ -47,11 +88,17 @@ class UIController extends EmailController
     {
         return view('contact_us');
     }
+    public function build_package()
+    {
+        $countries = CountryModel::all();
+        return view('build_your_package', compact('countries'));
+    }
     public function contact_us(Request $req)
     {
         $this->contactUs($req->subject, $req->username, $req->email, $req->comment);
         return back()->with('success','Response submitted Successfully');
     }
+    
 
 
     public function sign_up()

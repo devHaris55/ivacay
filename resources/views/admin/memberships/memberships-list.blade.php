@@ -4,12 +4,12 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
             <li class="breadcrumb-item"><a href="{{route('admin_dashboard')}}"><span class="fas fa-home"></span></a></li>
-            <li class="breadcrumb-item active" aria-current="page">Journeys</li>
+            <li class="breadcrumb-item active" aria-current="page">Memberships</li>
         </ol>
     </nav>
     <div class="d-flex justify-content-between w-100 flex-wrap">
         <div class="mb-3 mb-lg-0">
-            <h1 class="h4">Journeys-List</h1>
+            <h1 class="h4">Memberships-List</h1>
         </div>
     </div>
 </div>
@@ -28,8 +28,7 @@
                         <th class="border-0">#</th>
                         <th class="border-0">Name</th>
                         <th class="border-0">Email</th>
-                        <th class="border-0">Package Title</th>
-                        <th class="border-0">Country</th>
+                        <th class="border-0">Membership Plan</th>
                         <th class="border-0">Payment Slip</th>
                         <th class="border-0">Price</th>
                         <!-- <th class="border-0">Status</th> -->
@@ -39,15 +38,14 @@
                 <tbody>
                     <!-- Item -->
                         <!-- Start of Item -->
-                        @foreach($journeys as $key=>$value)
+                        @foreach($memberships as $key=>$value)
                             <tr>
                                 <td class="border-0"><a href="#" class="text-primary font-weight-bold">{{$key+1}}</a> </td>
                                 <td class="border-0 font-weight-bold">{{$value->getUser->username}}</td>
                                 <td class="border-0 font-weight-bold">{{$value->getUser->email}}</td>
-                                <td class="border-0 font-weight-bold">{{ $value->getPackages->title }}</td>
-                                <td class="border-0 font-weight-bold">{{ $value->getPackages->getCountry->name }}</td>
-                                <td class="border-0 font-weight-bold"><a href="{{ $value->payment_url }}">Payemnt slip</a></td>
-                                <td class="border-0 font-weight-bold">{{ $value->getPackages->price }}</td>
+                                <td class="border-0 font-weight-bold">{{$value->getMembershipPlan->title}}</td>
+                                <td class="border-0 font-weight-bold"><a href="{{ $value->receipt_url }}">Payemnt slip</a></td>
+                                <td class="border-0 font-weight-bold">{{ $value->price }}</td>
                                 <!-- <td class="border-0 font-weight-bold">
                                     <span class="{{$value->status == 1 ? 'text-success' : 'text-danger'}}">{{$value->status == 1 ? 'Active' : 'Inactive'}}</span>
                                 </td> -->

@@ -12,6 +12,7 @@ use App\Models\CountryModel;
 use App\Models\MembershipPlanModel;
 use App\Models\MembershipModel;
 use App\Models\JourneysModel;
+use App\Models\PackageRequestsModel;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,7 +26,7 @@ class VacationerPackageController extends Controller
             // ->whereBetween('',[$req->date_from, $req->date_to])
             ->where('from_date', $req->from_date)
             ->where('end_date', $req->end_date)
-            // ->where('status', 0)
+            ->where('status', 0)
             ->with('getImages')
             ->get();
             // dd($packages);
@@ -115,5 +116,30 @@ class VacationerPackageController extends Controller
             return back()->with('error', 'Check your inputs and try again');
         }
         return redirect(route('UI_index'))->with('success', 'Your vacation booked');
+    }
+
+
+    public function country_specific_packages($country_id)
+    {
+        $packages = PackageModel::where('country_id', $country_id)
+            ->where('status', 0)
+            ->with('getImages')
+            ->get();
+
+            return view('vacation_packages', compact('packages'));
+    }
+    public function package_request(Request $req)
+    {
+        // $user = Auth::user();
+
+        $pack_req = new PackageRequestsModel();
+        // $pack_req->user_id = $user->id;
+        $pack_req->country_id = $req->country_id;
+        $pack_req->start_date = $req->start_date;
+        $pack_req->end_date = $req->end_date;
+        $pack_req->save();
+
+        // $this->contactUs($req->subject, $req->username, $req->email, $req->comment);
+        return back()->with('success','Request submitted Successfully');
     }
 }

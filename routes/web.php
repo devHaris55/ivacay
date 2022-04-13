@@ -13,6 +13,7 @@ use App\Http\Controllers\admin\AdminJobController;
 use App\Http\Controllers\admin\AdminGuiderController;
 use App\Http\Controllers\admin\AdminVacationerController;
 use App\Http\Controllers\admin\AdminJourneyController;
+use App\Http\Controllers\admin\AdminMembershipController;
 
 use App\Http\Controllers\guider\GuiderController;
 use App\Http\Controllers\guider\GuiderPackageController;
@@ -56,8 +57,14 @@ Route::get('/admin-login', function () {
 /** Vacationer Routes */
 Route::get('/admin/vacationer-list',[AdminVacationerController::class, 'vacationer'])->name('admin_vacationers');
 
-/** Vacationer Routes */
+/** Admin Journey Routes */
 Route::get('/admin/journey-list',[AdminJourneyController::class, 'journey'])->name('admin_journeys');
+
+/** Admin Membership Routes */
+Route::get('/admin/membership-list',[AdminMembershipController::class, 'membership'])->name('admin_memberships');
+
+/** Package Requests Routes */
+Route::get('/admin/package-requests-list',[AdminMembershipController::class, 'package_requests'])->name('admin_package_requests');
 
     /*--------------------------------------- Admin ROUTES ------------------------------- END --------------- */
 
@@ -116,14 +123,22 @@ Route::get('/country-for-vacation', [VacationerPackageController::class, 'search
 Route::get('vacationer-stripe-form/{package?}', [VacationerPackageController::class, 'stripe_form'])->name('Vacationer_stripe_form');
 Route::post('/package-payee', [VacationerPackageController::class, 'event_stripe'])->name('package_stripe_post');
 
+Route::get('country-specific-packages/{country_id?}', [VacationerPackageController::class, 'country_specific_packages'])->name('UI_country_specific_packages');
+Route::post('/package-request', [VacationerPackageController::class, 'package_request'])->name('Vacationer_package_request');
+
 
 // =================================================================== VacationerPackageController ===================================================================
 
 Route::get('/', [UIController::class, 'index'])->name('UI_index');
+Route::get('/build-your-package', [UIController::class, 'build_package'])->name('UI_build_package');
 Route::get('/for-guide', [UIController::class, 'for_guide'])->name('UI_for_guide');
 Route::get('/articles', [UIController::class, 'articles'])->name('UI_articles');
 Route::get('/faq', [UIController::class, 'faq'])->name('UI_faq');
+
 Route::get('/service-provider', [UIController::class, 'service_provider'])->name('UI_service_provider');
+Route::get('country-search', [UIController::class, 'search_country'])->name('UI_search_country');
+
+
 Route::get('/vacationer', [UIController::class, 'vacationer'])->name('UI_vacationer');
 
 Route::get('/sign-up', [UIController::class, 'sign_up'])->name('UI_sign_up');
