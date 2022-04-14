@@ -63,11 +63,11 @@
                         </div> -->
                        <div class="form-group">
                         <label>Start Date</label>
-                          <input type="date" min="{{Carbon\Carbon::now()->addDay()->format('Y-m-d')}}" value={{Carbon\Carbon::now()->addDay()->format('Y-m-d')}} name="from_date" class="form-control" required>
+                          <input type="date" min="{{Carbon\Carbon::now()->addDay()->format('Y-m-d')}}" value="{{Carbon\Carbon::now()->addDay()->format('Y-m-d')}}" name="from_date" class="form-control" required>
                         </div> 
                        <div class="form-group">
                         <label>End Date</label>
-                          <input type="date" min="{{Carbon\Carbon::now()->addDay(2)->format('Y-m-d')}}" value={{Carbon\Carbon::now()->addDay(2)->format('Y-m-d')}} name="end_date" class="form-control" required>
+                          <input type="date" min="{{Carbon\Carbon::now()->addDay(2)->format('Y-m-d')}}" value="{{Carbon\Carbon::now()->addDay(2)->format('Y-m-d')}}" name="end_date" class="form-control" required>
                         </div> 
                         <!-- <div class="form-group">
                           <label>Phone number</label>

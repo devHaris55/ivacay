@@ -130,13 +130,32 @@ class VacationerPackageController extends Controller
     }
     public function package_request(Request $req)
     {
+        $req->validate([
+            'username' => 'required',
+            'email' => 'required',
+            'country_id' => 'required',
+            'start_date' => 'required|before:end_date',
+            'end_date' => 'required|after:start_date',
+            'starting_point' => 'required',
+            'destination' => 'required',
+            'comment' => 'required',
+            // 'image' => 'required',
+            // 'image' => $validate_image,
+            // 'image.*' => 'image|mimes:jpeg,png,jpg|max:2048'
+        ]);
+
         // $user = Auth::user();
 
         $pack_req = new PackageRequestsModel();
         // $pack_req->user_id = $user->id;
+        $pack_req->username = $req->username;
+        $pack_req->email = $req->email;
         $pack_req->country_id = $req->country_id;
         $pack_req->start_date = $req->start_date;
         $pack_req->end_date = $req->end_date;
+        $pack_req->starting_point = $req->starting_point;
+        $pack_req->destination = $req->destination;
+        $pack_req->comment = $req->comment;
         $pack_req->save();
 
         // $this->contactUs($req->subject, $req->username, $req->email, $req->comment);

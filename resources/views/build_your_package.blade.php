@@ -25,27 +25,43 @@
                     @csrf
                     <div class="col-xs-12 col-sm-4 col-md-4 centerCol">
                         <div class="log_input ">
-                            <label for="">Where to go?</label>
-                            <select class="sel" name="country_id">
-                                <option selected="" hidden="" disabled="">Select Country</option>
-                                @foreach($countries as $country)
-                                    <option value="{{$country->id}}">{{$country->name}}</option>
-                                @endforeach
-                            </select>
+                            <div class="form-group">
+                                <label for="">Username</label>
+                                <input name="username" type="text" class="form-control" placeholder="Username" id="fromdate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Email</label>
+                                <input name="email" type="email" class="form-control" placeholder="Email" id="fromdate" required>
+                            </div>
+                            <div class="log_input cust">
+                                <label for="">Where to go?</label>
+                                <select class="sel" name="country_id">
+                                    <!-- <option selected="" hidden="" disabled="">Select Country</option> -->
+                                    @foreach($countries as $country)
+                                        <option value="{{$country->id}}">{{$country->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                             <div class="form-group">
                                 <label for="">Start Date</label>
-                                <input name="start_date" type="date" placeholder="" id="fromdate">
+                                <input name="start_date" min="{{Carbon\Carbon::now()->addDay()->format('Y-m-d')}}" value="{{Carbon\Carbon::now()->addDay()->format('Y-m-d')}}" type="date" placeholder="" id="fromdate" required>
                             </div>
                             <div class="form-group">
                                 <label for="">End Date</label>
-                                <input name="end_date" type="date" placeholder="" id="fromdate">
-                            </div>
-                            <!-- <div class="form-group">
-                                <input type="email" name="email" class="form-control" placeholder="E-mail*">
+                                <input name="end_date" min="{{Carbon\Carbon::now()->addDay(2)->format('Y-m-d')}}" value="{{Carbon\Carbon::now()->addDay(2)->format('Y-m-d')}}" type="date" placeholder="" id="fromdate" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="comment" class="form-control" placeholder="Comment*">
-                            </div> -->
+                                <label for="">Starting Point</label>
+                                <input name="starting_point" type="text" class="form-control" placeholder="Starting Point" id="fromdate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Destination</label>
+                                <input name="destination" type="text" class="form-control" placeholder="Destination" id="fromdate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Comment</label>
+                                <input type="text" name="comment" class="form-control" placeholder="Comment*" required>
+                            </div>
                         </div>
                         <div class="sign_btn">
                         <button type="submit">Submit Response</button>

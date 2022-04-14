@@ -1507,7 +1507,12 @@ a.btn.btn_dashed i {
     margin-top: 5% !important;
     margin: 0;
 }
-
+.log_input.cust  select {
+    color: #ffffff;
+    border: 1px solid #44346e;
+    border-radius: 60px;
+    background: #160f29;
+}
 .log_input .form-control:focus {
     color: #fff;
     background-color: transparent;
@@ -1515,7 +1520,20 @@ a.btn.btn_dashed i {
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
 }
+.log_input label {
+    color: #ffffff;
+    margin: 10px 0 0;
+    padding: 0 20px;
 
+}
+
+div#test a {
+    display: block;
+    text-align: left;
+    color: #fff;
+    font-size: 16px;
+    line-height: 29px;
+}
 .log_input .form-group {
     position: relative;
 }
@@ -2699,6 +2717,17 @@ a#btn_click:hover {
     background: #0000008c;
 }
 
+
+
+.light-mode .log_input label {
+    color: #000000;
+    margin: 10px 0 0;
+}
+
+.light-mode div#test a {
+    color: rgb(0, 0, 0);
+
+}
 #chartdiv {
     width: 100%;
     height: 500px;
@@ -2730,4 +2759,10 @@ a#btn_click:hover {
     height: 19px;
     width: 2px;
     background: #ffffff;
+}
+
+
+
+.service.text-center button.btn.btn-primary {
+    display: none;
 }

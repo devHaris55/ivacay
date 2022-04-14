@@ -374,7 +374,10 @@
           <div class="icon_border wow zoomIn" data-wow-duration="2s">
             <div class="icon_div ">
               <img src="{{asset('images/ic_2.png')}}" class="img-fluid" alt="" />
-              <div class="select">
+              <div class="sel">
+                <a href="{{route('UI_build_package')}}">Group Travelers</a>
+              </div>
+              <!-- <div class="select">
                 <select name="" id="">
                   <option>Group Travellers</option>
                   <option>lorem</option>
@@ -383,7 +386,7 @@
                   <option>lorem</option>
                   <option>lorem</option>
                 </select>
-              </div>
+              </div> -->
             </div>
           </div>
 
@@ -394,7 +397,10 @@
           <div class="icon_div">
             <img src="{{asset('images/ic_1.png')}}" class="img-fluid" alt="" />
             <!--<a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal">Local Industry</a>-->
-            <div class="select">
+            <div class="sel">
+              <a href="{{route('UI_vacationer')}}">Individual Travelers</a>
+            </div>
+            <!-- <div class="select">
               <select name="" id="">
                 <option>Individual Travellers</option>
                 <option>lorem</option>
@@ -403,7 +409,7 @@
                 <option>lorem</option>
                 <option>lorem</option>
               </select>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -412,7 +418,10 @@
         <div class="icon_border next_icon1 wow zoomIn" data-wow-duration="2s">
           <div class="icon_div">
             <img src="{{asset('images/ic_3.png')}}" class="img-fluid" alt="" />
-            <div class="select">
+            <div class="sel">
+              <a href="{{route('UI_for_guide')}}">Budget Travelers</a>
+            </div>
+            <!-- <div class="select">
               <select name="" id="">
                 <option> Budget Travellers.</option>
                 <option>lorem</option>
@@ -421,7 +430,7 @@
                 <option>lorem</option>
                 <option>lorem</option>
               </select>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -432,7 +441,6 @@
             <img src="{{asset('images/ic_4.png')}}" class="img-fluid" alt="" />
             <div class="sel">
               <a href="{{route('UI_build_package')}}">Build your package</a>
-
             </div>
           </div>
         </div>
@@ -442,7 +450,10 @@
         <div class="icon_border next_icon3 wow zoomIn" data-wow-duration="2s">
           <div class="icon_div">
             <img src="{{asset('images/ic_5.png')}}" class="img-fluid" alt="" />
-            <div class="select">
+            <div class="sel">
+              <a href="{{route('UI_for_guide')}}">Your Concierge</a>
+            </div>
+            <!-- <div class="select">
               <select name="" id="">
                 <option>Your Concierge</option>
                 <option>lorem</option>
@@ -451,7 +462,7 @@
                 <option>lorem</option>
                 <option>lorem</option>
               </select>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -460,8 +471,11 @@
         <div class="icon_border next_icon4 wow zoomIn" data-wow-duration="2s">
           <div class="icon_div">
             <img src="{{asset('images/ic_4.png')}}" class="img-fluid" alt="" />
-            <div class="select">
-                          <select name="" id="">
+            <div class="sel">
+              <a href="{{route('UI_articles')}}">Your Adventure</a>
+            </div>
+            <!-- <div class="select">
+              <select name="" id="">
                 <option> Your Adventure</option>
                 <option>lorem</option>
                 <option>lorem</option>
@@ -469,7 +483,7 @@
                 <option>lorem</option>
                 <option>lorem</option>
               </select>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
