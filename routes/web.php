@@ -124,6 +124,7 @@ Route::get('vacationer-stripe-form/{package?}', [VacationerPackageController::cl
 Route::post('/package-payee', [VacationerPackageController::class, 'event_stripe'])->name('package_stripe_post');
 
 Route::get('country-specific-packages/{country_id?}', [VacationerPackageController::class, 'country_specific_packages'])->name('UI_country_specific_packages');
+Route::get('country-specific-packages-map/{country_name?}', [VacationerPackageController::class, 'country_specific_packages_map'])->name('UI_country_specific_packages_map');
 Route::post('/package-request', [VacationerPackageController::class, 'package_request'])->name('Vacationer_package_request');
 
 

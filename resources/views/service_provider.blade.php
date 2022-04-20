@@ -74,8 +74,7 @@
                     </div>
                     <div class="service_map">
                         <!--<img src="images/service_map.png" class="img-fluid" alt="">-->
-                                                <div id="chartdiv"></div>
-
+                        <div id="chartdiv"></div>
                     </div>
                 </div>
                 <div class="register">
@@ -127,7 +126,17 @@ hs.properties.fill = am4core.color("#7e70a8");
 
 // Add hit events
 polygonSeries.mapPolygons.template.events.on("hit", function(ev) {
-  alert("Clicked on " + ev.target.dataItem.dataContext.name);
+    
+         let country_name = ev.target.dataItem.dataContext.name;
+//   alert("Clicked on " + country_name);
+         
+           let data = {'country_name': country_name};
+           var url = "{{route('UI_country_specific_packages_map')}}"+ "/" + country_name;
+        //    let url = 'country-specific-packages';
+           let response = AjaxRequest_get(url, data);
+           window.location = response.route;
+           console.log(response.route);
+   
 });
     </script>
 @endpush

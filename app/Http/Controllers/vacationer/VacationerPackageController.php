@@ -119,6 +119,12 @@ class VacationerPackageController extends Controller
     }
 
 
+    public function country_specific_packages_map($country_name)
+    {
+        $country_obj = CountryModel::where('name', $country_name)->first();
+        $route = route('UI_country_specific_packages', [$country_obj->id]);
+        return response()->json(['status' => 1, 'route' => $route]);
+    }
     public function country_specific_packages($country_id)
     {
         $packages = PackageModel::where('country_id', $country_id)
