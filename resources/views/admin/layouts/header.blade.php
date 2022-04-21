@@ -77,6 +77,12 @@ function active($current_page){
               <span>Memberships</span>
           </a>
         </li>
+        <li class="nav-item {{ active('membership-plans-list') }}">
+          <a href="{{route('admin_memberships_plans')}}" class="nav-link">
+              <span class="sidebar-icon"><span class="far fa-user"></span></span>
+              <span>Memberships Plans</span>
+          </a>
+        </li>
         <li class="nav-item {{ active('Package-request-list') }}">
           <a href="{{route('admin_package_requests')}}" class="nav-link">
               <span class="sidebar-icon"><span class="far fa-images"></span></span>

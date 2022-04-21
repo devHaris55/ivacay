@@ -5,22 +5,23 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\MembershipModel;
+use App\Models\MembershipPlanModel;
 use App\Models\PackageRequestsModel;
 
-class AdminMembershipController extends Controller
+class AdminMembershipPlansController extends Controller
 {
-    public function membership(){
-        $memberships = MembershipModel::all();
+    public function membership_plan(){
+        $memberships_plans = MembershipPlanModel::all();
         // dd($guiders[0]->getMemberships[0]->title);
-        return view('admin.memberships.memberships-list',compact('memberships'));
+        return view('admin.memberships-plan.memberships-plans-list',compact('memberships_plans'));
     }
 
-    function membership_edit($id)
+    function membership_plan_edit($id)
     {
-        $memberships = MembershipModel::where('id',$id)->first();
-        return view('admin.memberships.memberships-edit',compact('memberships'));
+        $memberships_plan = MembershipPlanModel::where('id',$id)->first();
+        return view('admin.memberships-plan.memberships-plans-edit',compact('memberships_plan'));
     }
-    function membership_add_edit_data(Request $request,MembershipModel $membership)
+    public function membership_plan_add_edit_data(Request $request,MembershipPlanModel $membership_plan)
     {
         $request->validate([
             'title' => 'required',
@@ -30,13 +31,13 @@ class AdminMembershipController extends Controller
         ]);
 
         $create = 1;
-        (isset($membership->id) and $membership->id>0)?$create=0:$create=1;
+        (isset($membership_plan->id) and $membership_plan->id>0)?$create=0:$create=1;
         
-        $membership->title = $request->title;
-        $membership->price = $request->price;
-        $membership->no_of_packages = $request->no_of_packages;
-        $membership->duration = $request->duration;
-        $membership->save();
+        $membership_plan->title = $request->title;
+        $membership_plan->price = $request->price;
+        $membership_plan->no_of_packages = $request->no_of_packages;
+        $membership_plan->duration = $request->duration;
+        $membership_plan->save();
         if($create == 0)
         {
             return back()->with('update','Updated Successfully');

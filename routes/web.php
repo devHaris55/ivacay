@@ -14,6 +14,7 @@ use App\Http\Controllers\admin\AdminGuiderController;
 use App\Http\Controllers\admin\AdminVacationerController;
 use App\Http\Controllers\admin\AdminJourneyController;
 use App\Http\Controllers\admin\AdminMembershipController;
+use App\Http\Controllers\admin\AdminMembershipPlansController;
 
 use App\Http\Controllers\guider\GuiderController;
 use App\Http\Controllers\guider\GuiderPackageController;
@@ -62,6 +63,14 @@ Route::get('/admin/journey-list',[AdminJourneyController::class, 'journey'])->na
 
 /** Admin Membership Routes */
 Route::get('/admin/membership-list',[AdminMembershipController::class, 'membership'])->name('admin_memberships');
+
+/** Admin Membership Plan Routes */
+Route::get('/admin/membership-plan-list',[AdminMembershipPlansController::class, 'membership_plan'])->name('admin_memberships_plans');
+// Route::get('/admin/membership-add', [AdminMembershipPlansController::class, 'membership_plan_add'])->name('admin_memberships_add');
+Route::get('/admin/membership-plan-edit/{id?}', [AdminMembershipPlansController::class, 'membership_plan_edit'])->name('admin_memberships_plans_edit');
+// Route::get('/admin/membership-delete/{membership?}', [AdminMembershipPlansController::class, 'membership_plan_delete'])->name('admin_memberships_delete');
+Route::post('/admin/membership-plan-add-edit/{membership_plan?}', [AdminMembershipPlansController::class, 'membership_plan_add_edit_data'])->name('admin_memberships_plans_add_edit');
+    
 
 /** Package Requests Routes */
 Route::get('/admin/package-requests-list',[AdminMembershipController::class, 'package_requests'])->name('admin_package_requests');

@@ -4,12 +4,12 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
             <li class="breadcrumb-item"><a href="{{route('admin_dashboard')}}"><span class="fas fa-home"></span></a></li>
-            <li class="breadcrumb-item active" aria-current="page">Memberships</li>
+            <li class="breadcrumb-item active" aria-current="page">Memberships-Plans</li>
         </ol>
     </nav>
     <div class="d-flex justify-content-between w-100 flex-wrap">
         <div class="mb-3 mb-lg-0">
-            <h1 class="h4">Memberships-List</h1>
+            <h1 class="h4">Memberships-Plans-List</h1>
         </div>
     </div>
 </div>
@@ -26,11 +26,11 @@
                 <thead class="thead-light">
                     <tr>
                         <th class="border-0">#</th>
-                        <th class="border-0">Name</th>
-                        <th class="border-0">Email</th>
-                        <th class="border-0">Membership Plan</th>
-                        <th class="border-0">Payment Slip</th>
+                        <th class="border-0">Title</th>
                         <th class="border-0">Price</th>
+                        <th class="border-0">No. of packages</th>
+                        <!-- <th class="border-0">Payment Slip</th> -->
+                        <th class="border-0">Duration</th>
                         <!-- <th class="border-0">Status</th> -->
                         <th class="border-0 text-center">Action</th>
                     </tr>
@@ -38,20 +38,20 @@
                 <tbody>
                     <!-- Item -->
                         <!-- Start of Item -->
-                        @foreach($memberships as $key=>$value)
+                        @foreach($memberships_plans as $key=>$value)
                             <tr>
                                 <td class="border-0"><a href="#" class="text-primary font-weight-bold">{{$key+1}}</a> </td>
-                                <td class="border-0 font-weight-bold">{{$value->getUser->username}}</td>
-                                <td class="border-0 font-weight-bold">{{$value->getUser->email}}</td>
-                                <td class="border-0 font-weight-bold">{{$value->getMembershipPlan->title}}</td>
-                                <td class="border-0 font-weight-bold"><a href="{{ $value->receipt_url }}">Payemnt slip</a></td>
-                                <td class="border-0 font-weight-bold">{{ $value->price }}</td>
+                                <td class="border-0 font-weight-bold">{{$value->title}}</td>
+                                <td class="border-0 font-weight-bold">{{$value->price}}</td>
+                                <td class="border-0 font-weight-bold">{{$value->no_of_packages}}</td>
+                                <!-- <td class="border-0 font-weight-bold"><a href="{{ $value->receipt_url }}">Payemnt slip</a></td> -->
+                                <td class="border-0 font-weight-bold">{{ $value->duration }}</td>
                                 <!-- <td class="border-0 font-weight-bold">
                                     <span class="{{$value->status == 1 ? 'text-success' : 'text-danger'}}">{{$value->status == 1 ? 'Active' : 'Inactive'}}</span>
                                 </td> -->
                                 <td class="border-0">
                                     <!-- <span class="text-primary"> |  </span> -->
-                                    <a href="{{route('admin_memberships_edit').'/'.$value->id}}" class="text-secondary mr-3"><i class="fas fa-edit"></i>Edit</a>
+                                    <a href="{{route('admin_memberships_plans_edit').'/'.$value->id}}" class="text-secondary mr-3"><i class="fas fa-edit"></i>Edit</a>
                                     <!-- <span class="text-primary"> |  </span>
                                     <a href="{{route('admin_jobs_delete').'/'.$value->id}}" class="text-danger ml-3"><i class="far fa-trash-alt"></i>Delete</a> -->
                                 </td>
