@@ -19,9 +19,23 @@ class AdminJobController extends Controller
 /**Job functions starts*/
     function job_applications($job_id)
     {
-        $job_applications = JobAppliedModel::where('job_id', $job_id)->with('get_user', 'get_job')->get();
-        return view('admin.jobs-applied.job-applied-list',compact('job_applications'));
+        $jobs_status = 'Pending';
+        $job_applications = JobAppliedModel::where('job_id', $job_id)->where('status', 0)->with('get_user', 'get_job')->get();
+        return view('admin.jobs-applied.job-applied-list',compact('job_applications', 'jobs_status'));
     }
+    function jobs_applied_completed_list()
+    {
+        $jobs_status = 'Completed';
+        $job_applications = JobAppliedModel::where('status', 1)->with('get_user', 'get_job')->get();
+        return view('admin.jobs-applied.job-applied-list',compact('job_applications', 'jobs_status'));
+    }
+    function jobs_applied_cancelled_list()
+    {
+        $jobs_status = 'Cancelled';
+        $job_applications = JobAppliedModel::where('status', 2)->with('get_user', 'get_job')->get();
+        return view('admin.jobs-applied.job-applied-list',compact('job_applications', 'jobs_status'));
+    }
+
     public function jobs_applied_completed(JobAppliedModel $job_applied_id)
     {
         //status 2 means completed
@@ -43,6 +57,7 @@ class AdminJobController extends Controller
         $job = JobModel::get();
         return view('admin.jobs.job-list',compact('job'));
     }
+    
     function job_add()
     {
         return view('admin.jobs.job-add');

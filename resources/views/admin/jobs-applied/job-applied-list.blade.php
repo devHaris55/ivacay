@@ -9,7 +9,7 @@
     </nav>
     <div class="d-flex justify-content-between w-100 flex-wrap">
         <div class="mb-3 mb-lg-0">
-            <h1 class="h4">Jobs-Application-List</h1>
+            <h1 class="h4">{{ $jobs_status }}-Jobs-Application-List</h1>
         </div>
         <!-- <div>
             <a href="route('admin_jobs_applied_add')" class="btn btn-outline-gray"><i class="far fa-plus-square mr-1"></i> Add New Job</a>

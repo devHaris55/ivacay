@@ -49,6 +49,8 @@ Route::get('/admin-login', function () {
     Route::post('/admin/job-add-edit/{job?}', [AdminJobController::class, 'job_add_edit_data'])->name('admin_jobs_add_edit');
     
     Route::get('/admin/job-applications-list/{job_id?}', [AdminJobController::class, 'job_applications'])->name('admin_jobs_applications');
+    Route::get('/admin/job-completed-list', [AdminJobController::class, 'jobs_applied_completed_list'])->name('admin_jobs_applied_completed_list');
+    Route::get('/admin/job-cancelled-list', [AdminJobController::class, 'jobs_applied_cancelled_list'])->name('admin_jobs_applied_cancelled_list');
     Route::get('/admin/job-completed/{job_applied_id?}', [AdminJobController::class, 'jobs_applied_completed'])->name('admin_jobs_applied_completed');
     Route::get('/admin/job-cancelled/{job_applied_id?}', [AdminJobController::class, 'jobs_applied_cancelled'])->name('admin_jobs_applied_cancelled');
 

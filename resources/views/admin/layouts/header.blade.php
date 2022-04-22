@@ -47,11 +47,24 @@ function active($current_page){
             <span>Dashboard</span>
           </a>
         </li>
-        <li class="nav-item {{ active('job-list') . active('job-add') . active('job-edit') }}">
-          <a href="{{route('admin_jobs')}}" class="nav-link">
-              <span class="sidebar-icon"><span class="far fa-images"></span></span>
-              <span>Jobs</span>
-          </a>
+        <li class="nav-item {{ active('job-list') . active('job-add') . active('job-edit') . active('job-completed-list') . active('job-canceled-list')
+        }}">
+        <!-- . active('sub-categories-list') . active('sub-categories-add') . active('sub-categories-edit') . active('products-list') . active('products-add') . active('products-edit') -->
+          <span class="nav-link  collapsed  d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#submenu-pages">
+            <span>
+              <span class="sidebar-icon"><span class="far fa-file-alt"></span></span>
+              Jobs
+            </span>
+            <span class="link-arrow"><span class="fas fa-chevron-right"></span></span>
+          </span>
+          <div class="multi-level collapse " role="list" id="submenu-pages" aria-expanded="false">
+              <ul class="flex-column nav">
+                  <li class="nav-item {{ active('job-list') . active('job-add') . active('job-edit') }}"><a class="nav-link" href="{{route('admin_jobs')}}"><i class="fas fa-bars"></i><span> Jobs Pending</span></a></li>
+                  <li class="nav-item {{ active('job-completed-list') }}"><a class="nav-link" href="{{route('admin_jobs_applied_completed_list')}}"><i class="fas fa-bars"></i><span> Jobs Completed</span></a></li>
+                  <li class="nav-item {{ active('job-canceled-list') }}"><a class="nav-link" href="{{route('admin_jobs_applied_cancelled_list')}}"><i class="fas fa-bars"></i><span> Jobs Canceled</span></a></li>
+                  <!-- <li class="nav-item {{ active('products-list') . active('products-add') . active('products-edit') }}"><a class="nav-link" href="{{route('admin_products')}}"><i class="fas fa-box-open"></i><span> Products</span></a></li> -->
+              </ul>
+          </div>
         </li>
         <li class="nav-item {{ active('guider-list') }}">
           <a href="{{route('admin_guiders')}}" class="nav-link">
