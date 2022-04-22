@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2022 at 09:33 PM
+-- Generation Time: Apr 07, 2022 at 04:12 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -367,8 +367,7 @@ CREATE TABLE `jobs` (
 --
 
 INSERT INTO `jobs` (`id`, `title`, `description`, `images`, `start_date`, `end_date`, `status`, `created_at`, `updated_at`) VALUES
-(2, 'Aut ipsum minima omn', 'Dicta tempor id corr', '1649297143.jpg', '2022-04-09', '2022-04-30', 1, '2022-04-06 21:05:43', '2022-04-06 21:05:43'),
-(3, 'Numquam ut quia arch', 'Quam est suscipit si', '1649361080.jpg', '2022-04-08', '2022-04-30', 1, '2022-04-07 14:51:20', '2022-04-07 14:51:20');
+(2, 'Aut ipsum minima omn', 'Dicta tempor id corr', '1649297143.jpg', '2022-04-09', '2022-04-30', 1, '2022-04-06 21:05:43', '2022-04-06 21:05:43');
 
 -- --------------------------------------------------------
 
@@ -390,7 +389,7 @@ CREATE TABLE `jobs_applied` (
 --
 
 INSERT INTO `jobs_applied` (`id`, `user_id`, `job_id`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, 2, 0, '2022-04-06 21:07:56', '2022-04-07 15:31:50');
+(1, 1, 2, 0, '2022-04-06 21:07:56', '2022-04-06 21:07:56');
 
 -- --------------------------------------------------------
 
@@ -442,8 +441,8 @@ CREATE TABLE `membership_plans` (
 --
 
 INSERT INTO `membership_plans` (`id`, `title`, `price`, `plan_type`, `no_of_packages`, `duration`, `created_at`, `updated_at`) VALUES
-(1, 'Free', '0.00', NULL, 1, 3, '2022-03-24 19:42:47', '2022-04-20 18:14:23'),
-(2, 'Deluxe', '19.99', NULL, 5, 30, '2022-03-24 19:42:47', '2022-04-20 18:36:01'),
+(1, 'Free', '0.00', NULL, 1, 3, '2022-03-24 19:42:47', '2022-03-24 19:42:47'),
+(2, 'Deluxe', '19.99', NULL, 5, 30, '2022-03-24 19:42:47', '2022-03-24 19:42:47'),
 (3, 'Premium', '29.99', NULL, 2147483647, 30, '2022-03-24 19:42:51', '2022-03-24 19:42:51'),
 (4, 'Monthly ', '19.99', 'Alternative', 2147483647, 30, '2022-03-24 19:42:51', '2022-03-24 19:42:51'),
 (5, 'Quarterly', '55.00', 'Alternative', 2147483647, 90, '2022-03-24 19:46:18', '2022-03-24 19:46:18'),
@@ -518,38 +517,6 @@ INSERT INTO `packages` (`id`, `user_id`, `title`, `description`, `price`, `from_
 (11, 1, 'Sed eos delectus do', 'Sunt adipisci dolor', 383, '2022-04-05', '2022-04-05', NULL, 217, 1, '2022-04-04 15:21:37', '2022-04-04 15:21:37'),
 (12, 1, 'Nam anim praesentium', 'Dolore nihil nobis m', 967, '2022-04-05', '2022-04-15', NULL, 190, 1, '2022-04-04 16:28:58', '2022-04-04 16:30:27'),
 (13, 1, 'In corrupti dolor d', 'Libero ea aliquam ar', 613, '2022-04-05', '2022-04-15', NULL, 193, 1, '2022-04-04 16:29:23', '2022-04-04 16:29:23');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `package_requests`
---
-
-CREATE TABLE `package_requests` (
-  `id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `user_id` int(11) DEFAULT NULL,
-  `country_id` int(11) NOT NULL,
-  `start_date` date NOT NULL,
-  `end_date` date NOT NULL,
-  `starting_point` varchar(255) NOT NULL,
-  `destination` varchar(255) NOT NULL,
-  `comment` varchar(255) NOT NULL,
-  `status` int(11) NOT NULL DEFAULT 0,
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `package_requests`
---
-
-INSERT INTO `package_requests` (`id`, `username`, `email`, `user_id`, `country_id`, `start_date`, `end_date`, `starting_point`, `destination`, `comment`, `status`, `updated_at`, `created_at`) VALUES
-(1, '', '', NULL, 25, '1975-12-28', '2017-06-30', '', '', '', 0, '2022-04-12 21:00:36', '2022-04-12 21:00:36'),
-(2, '', '', NULL, 25, '1975-12-28', '2017-06-30', '', '', '', 0, '2022-04-12 21:01:09', '2022-04-12 21:01:09'),
-(3, 'vidypy', 'myko@mailinator.com', NULL, 104, '1977-06-27', '2013-02-05', '01-May-1988', '10-May-1984', 'foxedegy', 0, '2022-04-13 20:53:36', '2022-04-13 20:53:36'),
-(4, 'dfh', 'guide@gmail.com', NULL, 4, '2022-04-08', '2022-04-23', 'fghd', 'dfh', 'fdh', 0, '2022-04-13 20:55:37', '2022-04-13 20:55:37');
 
 -- --------------------------------------------------------
 
@@ -679,12 +646,6 @@ ALTER TABLE `packages`
   ADD KEY `countrys_id` (`country_id`);
 
 --
--- Indexes for table `package_requests`
---
-ALTER TABLE `package_requests`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `profiles`
 --
 ALTER TABLE `profiles`
@@ -724,7 +685,7 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `jobs_applied`
@@ -742,7 +703,7 @@ ALTER TABLE `journies`
 -- AUTO_INCREMENT for table `membership_plans`
 --
 ALTER TABLE `membership_plans`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `member_ships`
@@ -755,12 +716,6 @@ ALTER TABLE `member_ships`
 --
 ALTER TABLE `packages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT for table `package_requests`
---
-ALTER TABLE `package_requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `profiles`
