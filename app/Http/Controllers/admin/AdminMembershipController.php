@@ -9,8 +9,9 @@ use App\Models\PackageRequestsModel;
 
 class AdminMembershipController extends Controller
 {
-    public function membership(){
-        $memberships = MembershipModel::all();
+    public function membership()
+    {
+        $memberships = MembershipModel::orderBy('id', 'DESC')->get();
         // dd($guiders[0]->getMemberships[0]->title);
         return view('admin.memberships.memberships-list',compact('memberships'));
     }

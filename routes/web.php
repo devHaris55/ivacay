@@ -55,7 +55,8 @@ Route::get('/admin-login', function () {
     Route::get('/admin/job-cancelled/{job_applied_id?}', [AdminJobController::class, 'jobs_applied_cancelled'])->name('admin_jobs_applied_cancelled');
 
 /** Guider Routes */
-    Route::get('/admin/guider-list',[AdminGuiderController::class, 'guider'])->name('admin_guiders');
+Route::get('/admin/guider-list',[AdminGuiderController::class, 'guider'])->name('admin_guiders');
+Route::get('/admin/guider-profile-status/{guides?}',[AdminGuiderController::class, 'guides_profile_state_edit'])->name('admin_guides_profile_state_edit');
 
 /** Vacationer Routes */
 Route::get('/admin/vacationer-list',[AdminVacationerController::class, 'vacationer'])->name('admin_vacationers');

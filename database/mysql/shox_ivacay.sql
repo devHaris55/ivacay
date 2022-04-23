@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2022 at 09:33 PM
+-- Generation Time: Apr 23, 2022 at 04:18 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -533,6 +533,7 @@ CREATE TABLE `package_requests` (
   `country_id` int(11) NOT NULL,
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,
+  `no_of_person` int(11) NOT NULL,
   `starting_point` varchar(255) NOT NULL,
   `destination` varchar(255) NOT NULL,
   `comment` varchar(255) NOT NULL,
@@ -545,11 +546,14 @@ CREATE TABLE `package_requests` (
 -- Dumping data for table `package_requests`
 --
 
-INSERT INTO `package_requests` (`id`, `username`, `email`, `user_id`, `country_id`, `start_date`, `end_date`, `starting_point`, `destination`, `comment`, `status`, `updated_at`, `created_at`) VALUES
-(1, '', '', NULL, 25, '1975-12-28', '2017-06-30', '', '', '', 0, '2022-04-12 21:00:36', '2022-04-12 21:00:36'),
-(2, '', '', NULL, 25, '1975-12-28', '2017-06-30', '', '', '', 0, '2022-04-12 21:01:09', '2022-04-12 21:01:09'),
-(3, 'vidypy', 'myko@mailinator.com', NULL, 104, '1977-06-27', '2013-02-05', '01-May-1988', '10-May-1984', 'foxedegy', 0, '2022-04-13 20:53:36', '2022-04-13 20:53:36'),
-(4, 'dfh', 'guide@gmail.com', NULL, 4, '2022-04-08', '2022-04-23', 'fghd', 'dfh', 'fdh', 0, '2022-04-13 20:55:37', '2022-04-13 20:55:37');
+INSERT INTO `package_requests` (`id`, `username`, `email`, `user_id`, `country_id`, `start_date`, `end_date`, `no_of_person`, `starting_point`, `destination`, `comment`, `status`, `updated_at`, `created_at`) VALUES
+(1, '', '', NULL, 25, '1975-12-28', '2017-06-30', 0, '', '', '', 0, '2022-04-12 21:00:36', '2022-04-12 21:00:36'),
+(2, '', '', NULL, 25, '1975-12-28', '2017-06-30', 0, '', '', '', 0, '2022-04-12 21:01:09', '2022-04-12 21:01:09'),
+(3, 'vidypy', 'myko@mailinator.com', NULL, 104, '1977-06-27', '2013-02-05', 0, '01-May-1988', '10-May-1984', 'foxedegy', 0, '2022-04-13 20:53:36', '2022-04-13 20:53:36'),
+(4, 'dfh', 'guide@gmail.com', NULL, 4, '2022-04-08', '2022-04-23', 0, 'fghd', 'dfh', 'fdh', 0, '2022-04-13 20:55:37', '2022-04-13 20:55:37'),
+(5, 'dyvym', 'botuwyk@mailinator.com', NULL, 149, '2022-04-25', '2022-04-28', 64, '11-Jun-2020', '17-Sep-1984', 'culox', 0, '2022-04-22 20:45:53', '2022-04-22 20:45:53'),
+(6, 'xakofimy', 'hicydizy@mailinator.com', 5, 117, '2022-04-26', '2022-04-30', 90, '15-Oct-2014', '09-Jan-1983', 'pajorax', 0, '2022-04-22 20:49:29', '2022-04-22 20:49:29'),
+(7, 'sdf', 'hicydizy@mailinator.com', NULL, 4, '2022-04-24', '2022-04-29', 4, 'dg', 'dsg', 'sdg', 0, '2022-04-22 20:49:54', '2022-04-22 20:49:54');
 
 -- --------------------------------------------------------
 
@@ -596,6 +600,7 @@ CREATE TABLE `users` (
   `password` varchar(555) DEFAULT NULL,
   `user_role` int(11) NOT NULL COMMENT '0 = tourist,\r\n1 = guider,\r\n2 = admin',
   `status` int(11) DEFAULT 0 COMMENT '1 = active , 0 = inactive ',
+  `profile_status` int(11) NOT NULL DEFAULT 0 COMMENT '\r\n0 = Profile unlocked, 1 = profile locked',
   `is_reset` int(11) NOT NULL DEFAULT 0,
   `is_approved` int(11) NOT NULL DEFAULT 0 COMMENT '0 = not Approved,\r\n1 = Approved',
   `facebook_id` varchar(255) DEFAULT NULL,
@@ -607,12 +612,12 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `provider_id`, `avatar`, `password`, `user_role`, `status`, `is_reset`, `is_approved`, `facebook_id`, `created_at`, `updated_at`) VALUES
-(1, 'guider', 'guider@gmail.com', NULL, NULL, '$2y$10$Bhrk3QGuAe3VvnXkqRoqxuwj/X56jkm14PNN63XfjsUv/1Mt1FK9y', 1, 1, 0, 0, NULL, '2022-03-30 19:15:19', '2022-03-30 19:15:19'),
-(2, 'dev', 'dev.haris55@gmail.com', NULL, NULL, '$2y$10$iDCLYb5Kd0aaD2lbRLjKsO1tza758dMdLrB47PSbrxcm.K4bBqI9C', 1, 0, 0, 0, NULL, '2022-03-30 19:18:50', '2022-03-30 19:18:50'),
-(3, 'tourist', 'tourist@gmail.com', NULL, NULL, '$2y$10$TcoeERgnCFf065oKoY2DweVWjcSmY.d9Bn9nBcQ.5ei3IO51OgPVa', 0, 1, 0, 0, NULL, '2022-03-30 19:52:02', '2022-03-30 19:52:02'),
-(4, 'a', 'a@gmail.com', NULL, NULL, '$2y$10$/6vcJ/TyqOzXhvCrjF573OrYjK67QMju7K4pOcL.OApNHj1VKuBgq', 1, 1, 0, 0, NULL, '2022-03-31 18:15:07', '2022-03-31 18:15:07'),
-(5, 'admin', 'admin@mail.com', NULL, NULL, '$2y$10$eBzm3cEsbRSf2djUAs1P2eyT.yQlWP3XJQb737CalCQoTsdTbRvja', 2, 1, 0, 0, NULL, '2022-04-05 21:23:33', '2022-04-05 21:23:33');
+INSERT INTO `users` (`id`, `username`, `email`, `provider_id`, `avatar`, `password`, `user_role`, `status`, `profile_status`, `is_reset`, `is_approved`, `facebook_id`, `created_at`, `updated_at`) VALUES
+(1, 'guider', 'guider@gmail.com', NULL, NULL, '$2y$10$Bhrk3QGuAe3VvnXkqRoqxuwj/X56jkm14PNN63XfjsUv/1Mt1FK9y', 1, 1, 0, 0, 0, NULL, '2022-03-30 19:15:19', '2022-04-22 18:59:07'),
+(2, 'dev', 'dev.haris55@gmail.com', NULL, NULL, '$2y$10$iDCLYb5Kd0aaD2lbRLjKsO1tza758dMdLrB47PSbrxcm.K4bBqI9C', 1, 0, 0, 0, 0, NULL, '2022-03-30 19:18:50', '2022-03-30 19:18:50'),
+(3, 'tourist', 'tourist@gmail.com', NULL, NULL, '$2y$10$TcoeERgnCFf065oKoY2DweVWjcSmY.d9Bn9nBcQ.5ei3IO51OgPVa', 0, 1, 0, 0, 0, NULL, '2022-03-30 19:52:02', '2022-03-30 19:52:02'),
+(4, 'a', 'a@gmail.com', NULL, NULL, '$2y$10$/6vcJ/TyqOzXhvCrjF573OrYjK67QMju7K4pOcL.OApNHj1VKuBgq', 1, 1, 0, 0, 0, NULL, '2022-03-31 18:15:07', '2022-03-31 18:15:07'),
+(5, 'admin', 'admin@mail.com', NULL, NULL, '$2y$10$eBzm3cEsbRSf2djUAs1P2eyT.yQlWP3XJQb737CalCQoTsdTbRvja', 2, 1, 0, 0, 0, NULL, '2022-04-05 21:23:33', '2022-04-05 21:23:33');
 
 --
 -- Indexes for dumped tables
@@ -760,7 +765,7 @@ ALTER TABLE `packages`
 -- AUTO_INCREMENT for table `package_requests`
 --
 ALTER TABLE `package_requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `profiles`

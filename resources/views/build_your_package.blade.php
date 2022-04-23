@@ -51,6 +51,10 @@
                                 <input name="end_date" min="{{Carbon\Carbon::now()->addDay(2)->format('Y-m-d')}}" value="{{Carbon\Carbon::now()->addDay(2)->format('Y-m-d')}}" type="date" placeholder="" id="fromdate" required>
                             </div>
                             <div class="form-group">
+                                <label for="">Number of Person</label>
+                                <input name="no_of_person" type="number" class="form-control" placeholder="Number of Person" id="fromdate" required>
+                            </div>
+                            <div class="form-group">
                                 <label for="">Starting Point</label>
                                 <input name="starting_point" type="text" class="form-control" placeholder="Starting Point" id="fromdate" required>
                             </div>

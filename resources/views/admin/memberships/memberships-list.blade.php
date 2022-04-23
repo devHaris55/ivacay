@@ -31,8 +31,8 @@
                         <th class="border-0">Membership Plan</th>
                         <th class="border-0">Payment Slip</th>
                         <th class="border-0">Price</th>
-                        <!-- <th class="border-0">Status</th> -->
-                        <th class="border-0 text-center">Action</th>
+                        <!-- <th class="border-0">Status</th>
+                        <th class="border-0 text-center">Action</th> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -48,13 +48,13 @@
                                 <td class="border-0 font-weight-bold">{{ $value->price }}</td>
                                 <!-- <td class="border-0 font-weight-bold">
                                     <span class="{{$value->status == 1 ? 'text-success' : 'text-danger'}}">{{$value->status == 1 ? 'Active' : 'Inactive'}}</span>
-                                </td> -->
-                                <td class="border-0">
-                                    <!-- <span class="text-primary"> |  </span> -->
-                                    <a href="{{route('admin_memberships_edit').'/'.$value->id}}" class="text-secondary mr-3"><i class="fas fa-edit"></i>Edit</a>
-                                    <!-- <span class="text-primary"> |  </span>
-                                    <a href="{{route('admin_jobs_delete').'/'.$value->id}}" class="text-danger ml-3"><i class="far fa-trash-alt"></i>Delete</a> -->
                                 </td>
+                                <td class="border-0">
+                                    <span class="text-primary"> |  </span>
+                                    <a href="route('admin_memberships_edit').'/'.$value->id" class="text-secondary mr-3"><i class="fas fa-edit"></i>Edit</a>
+                                    <span class="text-primary"> |  </span>
+                                    <a href="{{route('admin_jobs_delete').'/'.$value->id}}" class="text-danger ml-3"><i class="far fa-trash-alt"></i>Delete</a>
+                                </td> -->
                             </tr>
                         @endforeach
                         <!-- End of Item -->

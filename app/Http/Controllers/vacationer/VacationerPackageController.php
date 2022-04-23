@@ -145,20 +145,27 @@ class VacationerPackageController extends Controller
             'starting_point' => 'required',
             'destination' => 'required',
             'comment' => 'required',
+            'no_of_person' => 'required',
             // 'image' => 'required',
             // 'image' => $validate_image,
             // 'image.*' => 'image|mimes:jpeg,png,jpg|max:2048'
         ]);
 
-        // $user = Auth::user();
+        $user_id = null;
+        if(Auth::user())
+        {
+            $user = Auth::user();
+            $user_id = $user->id;
+        }
 
         $pack_req = new PackageRequestsModel();
-        // $pack_req->user_id = $user->id;
+        $pack_req->user_id = $user_id;
         $pack_req->username = $req->username;
         $pack_req->email = $req->email;
         $pack_req->country_id = $req->country_id;
         $pack_req->start_date = $req->start_date;
         $pack_req->end_date = $req->end_date;
+        $pack_req->no_of_person = $req->no_of_person;
         $pack_req->starting_point = $req->starting_point;
         $pack_req->destination = $req->destination;
         $pack_req->comment = $req->comment;

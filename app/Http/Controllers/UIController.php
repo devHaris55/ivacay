@@ -150,7 +150,13 @@ class UIController extends EmailController
                         // dd($userfind->user_role == 1); //means if user is a guider
                         if($userfind->user_role == 1) //means if user is a guider
                         {
-                            return redirect()->route('Guider_membership_plan');
+                            if($userfind->profile_status == 0)
+                            {
+                                return redirect()->route('Guider_membership_plan');
+                            } else {
+                                Auth::logout();
+                                return back()->with('error', 'Your profile is locked. Contact owner to unlock it');
+                            }
                         } else if($userfind->user_role == 0)
                         {
                             return back()->with('success', 'Logged in successfully');

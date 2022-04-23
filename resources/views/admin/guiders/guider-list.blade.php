@@ -30,7 +30,7 @@
                         <th class="border-0">Email</th>
                         <th class="border-0">Current Membership</th>
                         <th class="border-0">Status</th>
-                        <!-- <th class="border-0 text-center">Action</th> -->
+                        <th class="border-0 text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,10 +45,10 @@
                                 <td class="border-0 font-weight-bold">
                                     <span class="{{$value->status == 1 ? 'text-success' : 'text-danger'}}">{{$value->status == 1 ? 'Active' : 'Inactive'}}</span>
                                 </td>
-                                <!-- <td class="border-0">
-                                    <span class="text-primary"> |  </span>
-                                    <a href="{{route('admin_jobs_edit').'/'.$value->id}}" class="text-secondary mr-3"><i class="fas fa-edit"></i>Edit</a>
-                                    <span class="text-primary"> |  </span>
+                                <td class="border-0">
+                                    <!-- <span class="text-primary"> |  </span> -->
+                                    <a href="{{route('admin_guides_profile_state_edit').'/'.$value->id}}" class="{{ $value->profile_status == 0 ? 'text-danger' : 'text-success'}} mr-3"><i class="fas fa-edit"></i>{{ $value->profile_status == 0 ? 'Lock this guide' : 'Unlocked this guide'}}</a>
+                                <!--     <span class="text-primary"> |  </span>
                                     <a href="{{route('admin_jobs_delete').'/'.$value->id}}" class="text-danger ml-3"><i class="far fa-trash-alt"></i>Delete</a>
                                 </td> -->
                             </tr>
