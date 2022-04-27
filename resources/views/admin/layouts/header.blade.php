@@ -47,7 +47,7 @@ function active($current_page){
             <span>Dashboard</span>
           </a>
         </li>
-        <li class="nav-item {{ active('job-list') . active('job-add') . active('job-edit') . active('job-completed-list') . active('job-canceled-list')
+        <li class="nav-item {{ active('job-list') . active('job-add') . active('job-edit') . active('job-completed-list') . active('job-cancelled-list') . active('job-pending-list') . active('job-posted-list')
         }}">
         <!-- . active('sub-categories-list') . active('sub-categories-add') . active('sub-categories-edit') . active('products-list') . active('products-add') . active('products-edit') -->
           <span class="nav-link  collapsed  d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#submenu-pages">
@@ -59,9 +59,11 @@ function active($current_page){
           </span>
           <div class="multi-level collapse " role="list" id="submenu-pages" aria-expanded="false">
               <ul class="flex-column nav">
-                  <li class="nav-item {{ active('job-list') . active('job-add') . active('job-edit') }}"><a class="nav-link" href="{{route('admin_jobs')}}"><i class="fas fa-bars"></i><span> Jobs Pending</span></a></li>
+                  <li class="nav-item {{ active('job-list') . active('job-add') . active('job-edit') }}"><a class="nav-link" href="{{route('admin_jobs')}}"><i class="fas fa-bars"></i><span> Jobs</span></a></li>
+                  <li class="nav-item {{ active('job-posted-list') }}"><a class="nav-link" href="{{route('admin_jobs_applied_posted_list')}}"><i class="fas fa-bars"></i><span> Jobs Posted</span></a></li>
+                  <li class="nav-item {{ active('job-pending-list') }}"><a class="nav-link" href="{{route('admin_jobs_applied_pending_list')}}"><i class="fas fa-bars"></i><span> Jobs Pending</span></a></li>
                   <li class="nav-item {{ active('job-completed-list') }}"><a class="nav-link" href="{{route('admin_jobs_applied_completed_list')}}"><i class="fas fa-bars"></i><span> Jobs Completed</span></a></li>
-                  <li class="nav-item {{ active('job-canceled-list') }}"><a class="nav-link" href="{{route('admin_jobs_applied_cancelled_list')}}"><i class="fas fa-bars"></i><span> Jobs Canceled</span></a></li>
+                  <li class="nav-item {{ active('job-cancelled-list') }}"><a class="nav-link" href="{{route('admin_jobs_applied_cancelled_list')}}"><i class="fas fa-bars"></i><span> Jobs Cancelled</span></a></li>
                   <!-- <li class="nav-item {{ active('products-list') . active('products-add') . active('products-edit') }}"><a class="nav-link" href="{{route('admin_products')}}"><i class="fas fa-box-open"></i><span> Products</span></a></li> -->
               </ul>
           </div>

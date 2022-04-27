@@ -481,13 +481,13 @@
     </div>
 </div> -->
 
-<h1>Laravel Google Chart Example - ItSolutionstuff.com</h1>
-    <div id="linechart" style="width: 900px; height: 500px"></div>
+<!-- <h1>Laravel Google Chart Example - ItSolutionstuff.com</h1>
+    <div id="linechart" style="width: 900px; height: 500px"></div> -->
 @endsection
 
 @push('js')
 <script type="text/javascript">
-      var visitor = 2000;
+      var visitor = <?php echo $visitor; ?>;
       console.log(visitor);
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
@@ -498,6 +498,7 @@
           curveType: 'function',
           legend: { position: 'bottom' }
         };
+        // LineChart    BarChart     ScatterChart   PieChart
         var chart = new google.visualization.LineChart(document.getElementById('linechart'));
         chart.draw(data, options);
       }

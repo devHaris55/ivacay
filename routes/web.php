@@ -49,6 +49,8 @@ Route::get('/admin-login', function () {
     Route::post('/admin/job-add-edit/{job?}', [AdminJobController::class, 'job_add_edit_data'])->name('admin_jobs_add_edit');
     
     Route::get('/admin/job-applications-list/{job_id?}', [AdminJobController::class, 'job_applications'])->name('admin_jobs_applications');
+    Route::get('/admin/job-posted-list', [AdminJobController::class, 'jobs_applied_posted_list'])->name('admin_jobs_applied_posted_list');
+    Route::get('/admin/job-pending-list', [AdminJobController::class, 'jobs_applied_pending_list'])->name('admin_jobs_applied_pending_list');
     Route::get('/admin/job-completed-list', [AdminJobController::class, 'jobs_applied_completed_list'])->name('admin_jobs_applied_completed_list');
     Route::get('/admin/job-cancelled-list', [AdminJobController::class, 'jobs_applied_cancelled_list'])->name('admin_jobs_applied_cancelled_list');
     Route::get('/admin/job-completed/{job_applied_id?}', [AdminJobController::class, 'jobs_applied_completed'])->name('admin_jobs_applied_completed');
@@ -96,6 +98,7 @@ Route::prefix('facebook')->name('facebook.')->group( function(){
 // =================================================================== GuiderController ===================================================================
 // --------------------- JOBs ------
 Route::get('guider-jobs', [GuiderController::class, 'index'])->name('Guider_index');
+Route::get('guider-orders-list', [GuiderController::class, 'orders_list'])->name('Guider_orders');
 Route::get('guider-applied-job/{job?}', [GuiderController::class, 'job_applied'])->name('Guider_job_applied');
 // --------------------- JOBs ------
 Route::get('guider-job-portal', [GuiderController::class, 'job_portal'])->name('Guider_job_portal');

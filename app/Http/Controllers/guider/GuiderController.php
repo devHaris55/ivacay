@@ -16,6 +16,7 @@ use App\Models\MembershipPlanModel;
 use App\Models\MembershipModel;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use App\Models\JourneysModel;
 
 
 class GuiderController extends Controller
@@ -25,6 +26,11 @@ class GuiderController extends Controller
     {
         $job = JobModel::get();
         return view('guider.index',compact('job'));
+    }
+    public function orders_list()
+    {
+        $orders = JourneysModel::where('guide_id', auth()->user()->id)->get();
+        return view('guider.orders_list',compact('orders'));
     }
     public function job_applied($job)
     {

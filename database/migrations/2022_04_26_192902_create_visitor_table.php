@@ -1,9 +1,9 @@
 <?php
-
+  
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
+  
 class CreateVisitorTable extends Migration
 {
     /**
@@ -13,12 +13,14 @@ class CreateVisitorTable extends Migration
      */
     public function up()
     {
-        Schema::create('visitor', function (Blueprint $table) {
+        Schema::create('visitors', function (Blueprint $table) {
             $table->id();
+            $table->integer('click');
+            $table->integer('viewer');
             $table->timestamps();
         });
     }
-
+ 
     /**
      * Reverse the migrations.
      *

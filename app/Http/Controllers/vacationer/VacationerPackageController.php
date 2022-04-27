@@ -107,6 +107,7 @@ class VacationerPackageController extends Controller
             //condition store database Order 
             $journey = new JourneysModel();
             $journey->user_id = auth()->user()->id;
+            $journey->guide_id = $package->user_id;
             $journey->package_id = $package->id;
             $journey->payment_id = $response['id'];
             $journey->payment_url = $response['receipt_url'];

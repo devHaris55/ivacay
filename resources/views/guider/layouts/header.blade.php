@@ -14,6 +14,9 @@
                     <a href="{{route('Guider_index')}}">Jobs</a><span class="icon"><img src="{{asset('guider/images/toogleicon1.png')}}" class="img-responsive"></span>
                   </li>
                   <li class="menu-hasdropdown">
+                    <a href="{{route('Guider_orders')}}">Orders</a><span class="icon"><img src="{{asset('guider/images/toogleicon1.png')}}" class="img-responsive"></span>
+                  </li>
+                  <li class="menu-hasdropdown">
                     <a href="{{route('Guider_profile')}}">Guider Profile</a><span class="icon"><img src="{{asset('guider/images/toogleicon1.png')}}" class="img-responsive"></span>
                     <!-- <label title="toggle menu" for="Business">
                     <span class="downarrow"><i class="fa fa-caret-down"></i></span>

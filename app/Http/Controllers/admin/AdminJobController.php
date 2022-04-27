@@ -19,8 +19,22 @@ class AdminJobController extends Controller
 /**Job functions starts*/
     function job_applications($job_id)
     {
+        $jobs_status = 'Posted';
+        $job_applications = JobAppliedModel::where('job_id', $job_id)
+            // ->where('status', 0)
+            ->with('get_user', 'get_job')->get();
+        return view('admin.jobs-applied.job-applied-list',compact('job_applications', 'jobs_status'));
+    }
+    function jobs_applied_posted_list()
+    {
+        $jobs_status = 'Posted';
+        $job_applications = JobAppliedModel::orderBy('id', 'DESC')->with('get_user', 'get_job')->get();
+        return view('admin.jobs-applied.job-applied-list',compact('job_applications', 'jobs_status'));
+    }
+    function jobs_applied_pending_list()
+    {
         $jobs_status = 'Pending';
-        $job_applications = JobAppliedModel::where('job_id', $job_id)->where('status', 0)->with('get_user', 'get_job')->get();
+        $job_applications = JobAppliedModel::where('status', 0)->with('get_user', 'get_job')->get();
         return view('admin.jobs-applied.job-applied-list',compact('job_applications', 'jobs_status'));
     }
     function jobs_applied_completed_list()

@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\admin;
 
 use App\Models\BannerModel;
-
+use App\Models\Visitor;
+use DB;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -12,7 +13,22 @@ class AdminBannerController extends Controller
 {
     function dashboard()
     {
-        return view('admin.dashboard');
+        $visitor = Visitor::select(
+            DB::raw("year(created_at) as year"),
+            DB::raw("SUM(click) as total_click"),
+            DB::raw("SUM(viewer) as total_viewer")) 
+        ->orderBy(DB::raw("YEAR(created_at)"))
+        ->groupBy(DB::raw("YEAR(created_at)"))
+        ->get();
+
+        $result[] = ['Year','Click','Viewer'];
+        foreach ($visitor as $key => $value) {
+        $result[++$key] = [$value->year, (int)$value->total_click, (int)$value->total_viewer];
+        }
+
+        return view('admin.dashboard')
+            ->with('visitor',json_encode($result));
+        // return view('admin.dashboard');
     }
 
 /**Banner functions starts*/
