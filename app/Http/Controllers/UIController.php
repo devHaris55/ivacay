@@ -34,6 +34,10 @@ class UIController extends EmailController
     {
         return view('faq');
     }
+    public function about_us()
+    {
+        return view('about-us');
+    }
 
 
     public function service_provider()

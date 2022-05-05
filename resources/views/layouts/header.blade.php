@@ -40,6 +40,7 @@
               <li><a href="{{route('UI_faq')}}">FAQ</a></li>
               <li><a href="{{route('UI_service_provider')}}">Service Provider</a></li>
               <li><a href="{{route('UI_vacationer')}}">Vacationer</a></li>
+              <li><a href="{{route('UI_about_us')}}">About Us</a></li>
               @if(!Auth::check())
                 <li><a href="{{route('UI_sign_up')}}"> Sign Up </a></li>
                 <li><a href="{{route('UI_login')}}"> Log In</a></li>

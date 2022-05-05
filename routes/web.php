@@ -149,6 +149,7 @@ Route::get('/', [UIController::class, 'index'])->name('UI_index');
 Route::get('/build-your-package', [UIController::class, 'build_package'])->name('UI_build_package');
 Route::get('/for-guide', [UIController::class, 'for_guide'])->name('UI_for_guide');
 Route::get('/articles', [UIController::class, 'articles'])->name('UI_articles');
+Route::get('/about-us', [UIController::class, 'about_us'])->name('UI_about_us');
 Route::get('/faq', [UIController::class, 'faq'])->name('UI_faq');
 
 Route::get('/service-provider', [UIController::class, 'service_provider'])->name('UI_service_provider');

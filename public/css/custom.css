@@ -98,7 +98,7 @@ header {
 }
 
 .container {
-    width: 1170px;
+    width: 1270px;
 }
 
 .noPadding {
@@ -1507,12 +1507,14 @@ a.btn.btn_dashed i {
     margin-top: 3% !important;
     margin: 0;
 }
-.log_input.cust  select {
+.log_input.cust select {
     color: #ffffff;
     border: 1px solid #44346e;
     border-radius: 60px;
     background: #160f29;
-height: 50px;margin: 15px 0 0;}
+    height: 50px;
+    margin: 15px 0 0;
+}
 .log_input .form-control:focus {
     color: #fff;
     background-color: transparent;
@@ -1524,7 +1526,6 @@ height: 50px;margin: 15px 0 0;}
     color: #ffffff;
     margin: 10px 0 0;
     padding: 0 10px;
-
 }
 
 div#test a {
@@ -2625,7 +2626,7 @@ a#btn_click:hover {
 .light-mode p,
 .light-mode .btn.btn_dashed,
 .light-mode h3 {
-    color: #000000;
+    color: #000000 !important;
 }
 
 .light-mode .lips_div h3 strong {
@@ -2717,8 +2718,6 @@ a#btn_click:hover {
     background: #0000008c;
 }
 
-
-
 .light-mode .log_input label {
     color: #000000;
     margin: 10px 0 0;
@@ -2726,7 +2725,6 @@ a#btn_click:hover {
 
 .light-mode div#test a {
     color: rgb(0, 0, 0);
-
 }
 #chartdiv {
     width: 100%;
@@ -2761,8 +2759,64 @@ a#btn_click:hover {
     background: #ffffff;
 }
 
-
-
 .service.text-center button.btn.btn-primary {
     display: none;
 }
+
+/* About Us Start */
+.about_con {
+    position: relative;
+    z-index: 1;
+}
+
+.about_con p {
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 27px;
+}
+
+.about_con p span {
+    font-weight: bold;
+}
+
+.about_con h2 {
+    font-family: "Poppins", Sans-Serif;
+    font-size: 30px;
+    line-height: 38px;
+    color: #f8c22c;
+    font-weight: 500;
+    margin: 60px 0 11px;
+}
+
+.about_con li:after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 2px;
+    background: #fff;
+    left: 0;
+    top: 12px;
+}
+
+.about_con li {
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 27px;
+    position: relative;
+    padding: 0 0 0 20px;
+}
+
+.about_con li span {
+    font-weight: bold;
+}
+
+.light-mode .main_about .about_con li:after {
+    background: #000000;
+}
+.light-mode .main_about .about_con :is(ul li, p) {
+    color: #000000;
+}
+
+/* About Us End */
