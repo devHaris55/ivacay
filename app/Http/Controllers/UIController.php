@@ -42,40 +42,36 @@ class UIController extends EmailController
     }
     public function search_country(Request $request)
     {
-        if($request->ajax()){
-            
-         if($request->search != null)  {
-            $part = CountryModel::where('name','LIKE','%'.$request->search.'%')
-            // ->orWhere('title','LIKE','%'.$request->search.'%')
-            ->get();
-                $output = '';
-                if (count($part) > 0) {
-                    $output .= '<table class="table table-striped">
-                                    <tbody>
-                                        ';
-                                        foreach($part as $value){
+        if($request->ajax())
+        {    
+            if($request->search != null)
+            {
+                $part = CountryModel::where('name','LIKE','%'.$request->search.'%')
+                // ->orWhere('title','LIKE','%'.$request->search.'%')
+                ->get();
 
-                                            $route = route('UI_country_specific_packages',[$value->id]);
-                                        $output .= 
-                                            '<tr><a href="'.$route.'">
-                                                ' . $value->name . '
-                                            </a></tr>'
-                                            ;
-                                            }
-                                    $output .=  '
-                                    </tbody>
-                                </table>' ;
-                    return $output;          
-                    // return response()->json(['data', $output]);
-                    // return redirect()->route('UI_single_product', [$part->id]);
+                $output = '<table class="table table-striped">
+                                    <tbody>';
+                if (count($part) > 0)
+                {
+                    foreach($part as $value)
+                    {
+                        $route = route('UI_country_specific_packages',[$value->id]);
+                        $output .= 
+                            '<tr><a href="'.$route.'">
+                                ' . $value->name . '
+                            </a></tr>';
+                    }       
                 } else {
-                    return $output = 'No Result Found';   
-                    // return redirect()->route('UI_part_not_found');
+                    $output .= '<tr><a href="javascript:void(0)">No Result Found. Please search a correct name.</a></tr>';   
                 }
-            }else{
+                $output .= '</tbody>
+                        </table>';
+                return $output; 
+            } else {
                 return $output = '';   
             }
-        } 
+        }
     }
 
 

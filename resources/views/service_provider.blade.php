@@ -28,19 +28,19 @@
                             maecenas accumsan lacus vel facilisis.
                         </p>
                         <!-- -------------------------------------------------------------------------- -->
-                        <form method="POST" action="">
-                            @csrf
+                        <!-- <form method="POST" action=""> -->
+                            <!-- @csrf -->
                             <!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> -->
                         <!-- -------------------------------------------------------------------------- -->
                         <div class="form-group">
-                            <input type="text" aria-describedby="emailHelp" id="search" name="country" placeholder="Search Country" >
+                            <input type="text" aria-describedby="emailHelp" id="search" name="country" placeholder="Search Country" autocomplete="off">
                             <!-- <input type="search" class="searchable" placeholder="Search by Part#" id="search" name="part" required> -->
-                            <button type="submit" class="btn btn-primary"><i
+                            <button type="button" class="btn btn-primary"><i
                                     class="fas fa-magnifying-glass"></i></button>
-                                    <p>Or click a map location* and find your next private guide!</p>
+                                    <p>search for countries list or click a map location* and find your next private guide!</p>
                         </div>
                         <!-- -------------------------------------------------------------------------- -->
-                    </form>
+                    <!-- </form> -->
                     <div id="test"></div>
                     @push('js')
                         <script>        
