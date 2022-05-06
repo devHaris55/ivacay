@@ -50,11 +50,11 @@
                         <p>The iVacay vision relies on ushering in a new way of vacationing through a pre-planned trip
                             that
                             you can access via the iVacay app and website. We operate based on trust and aim for
-                            memorability, coupling local knowledge with top-of-the-line entertainment to create flawless
+                            memorability, coupling local guider knowledge with top-of-the-line entertainment to create flawless
                             journeys.</p>
                         <h2>The iVacay Mission</h2>
                         <p>The mission at the heart of our company is to provide potential vacationers with an array of
-                            services such as entertainment and lodgings through the eyes of a local while helping them
+                            services such as entertainment and lodgings through the eyes of a local guider while helping them
                             experience a destination to its fullest. The tour guides that are part of the iVacay program
                             always
                             strive to help customers assimilate into a new culture. We aim to help you get the best out
