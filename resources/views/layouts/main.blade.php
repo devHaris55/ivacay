@@ -26,4 +26,10 @@
 
 </body>
 
+<script>
+  $(document).ready(function(){
+        $(".toVanish").delay(5000).slideUp(300);
+  });
+</script>
+
 </html>

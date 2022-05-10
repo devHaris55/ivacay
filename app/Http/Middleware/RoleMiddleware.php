@@ -5,7 +5,8 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-class SessionMiddleware
+
+class RoleMiddleware
 {
     /**
      * Handle an incoming request.
@@ -19,20 +20,14 @@ class SessionMiddleware
 
         if(Auth::check())
         {
-            if(auth()->user()->user_role !== 2)
+            if(auth()->user()->user_role !== 1)
             {
                 return back();
             }
             
         }else{
-            return redirect(route('admin_login'));
+            return redirect(route('UI_index'));
         }
-
-
-        // if(!Auth::user()){
-
-        //     return redirect(route('login_page'));
-        // }
         return $next($request);
     }
 }

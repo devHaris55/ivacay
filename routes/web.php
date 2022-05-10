@@ -84,7 +84,7 @@ Route::get('/admin/package-requests-list',[AdminMembershipController::class, 'pa
 
 
     /*--------------------------------------- GUIDER ROUTES ------------------------------- START --------------- */
-
+    Route::group(['middleware'=>['guiderRoleMiddleware']], function(){
 // For stripe
 Route::get('guider-stripe-form/{membership?}', [GuiderController::class, 'stripe_form'])->name('Guider_stripe_form');
 Route::post('/payee', [GuiderController::class, 'event_stripe'])->name('stripe_post');
@@ -96,6 +96,7 @@ Route::prefix('facebook')->name('facebook.')->group( function(){
 });
 
 // =================================================================== GuiderController ===================================================================
+
 // --------------------- JOBs ------
 Route::get('guider-jobs', [GuiderController::class, 'index'])->name('Guider_index');
 Route::get('guider-orders-list', [GuiderController::class, 'orders_list'])->name('Guider_orders');
@@ -122,7 +123,7 @@ Route::post('add-edit-package/{package?}', [GuiderPackageController::class, 'add
 Route::get('guider-edit-package/{id?}', [GuiderPackageController::class, 'edit_package'])->name('Guider_edit_package');
 Route::get('guider-delete-package/{package?}', [GuiderPackageController::class, 'delete_package'])->name('Guider_delete_package');
 // =================================================================== GuiderPackageController ===================================================================
-
+});
 /*--------------------------------------- GUIDER ROUTES ------------------------------ END ---------------- */
 
 

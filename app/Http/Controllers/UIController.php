@@ -109,7 +109,7 @@ class UIController extends EmailController
     {
         $this->validate($req, [
             'username' => ['required'],
-            'email' => ['required'],
+            'email' => ['required', 'unique:users'],
             'password' => ['required'],
             'user_role' => ['required'],
         ]);

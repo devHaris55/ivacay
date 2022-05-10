@@ -45,11 +45,11 @@
                                                 </li>                                                
                                                 <li>
                                                     <label for="">From</label>
-                                                    <input name="from_date" type="date" placeholder="" id="fromdate">
+                                                    <input name="from_date" min="{{Carbon\Carbon::now()->addDay()->format('Y-m-d')}}" type="date" placeholder="" id="fromdate">
                                                 </li>                                                
                                                 <li>
                                                     <label for="">To</label>
-                                                    <input name="end_date" type="date" placeholder="" id="todate">
+                                                    <input name="end_date" min="{{Carbon\Carbon::now()->addDay()->format('Y-m-d')}}" type="date" placeholder="" id="todate">
                                                 </li>
                                                 <li>
                                                     <button type="submit">Go</button>
