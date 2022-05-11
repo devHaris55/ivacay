@@ -25,9 +25,10 @@
                             <div class="col-xs-12 col-sm-12 col-md-12 ">
                                 <div class="lips_div text-center">
                                     <h3><strong>Plan Your </strong>Vacation</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
-                                        gravida. </p>
+                                    <p>There are a few key elements that make up a good vacation, and one of them is planning.
+Planning can make or break your holiday, so it’s best to proceed carefully. We’ve gathered a
+bunch of steps for those of you who need a roadmap to plan travels! Let’s get started.
+</p>
                                     <div class="input_form">
                                         <form action="{{route('Vacationer_search_packages')}}" method="POST">
                                             @csrf

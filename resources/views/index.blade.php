@@ -94,12 +94,20 @@
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
           <div class="about_text wow fadeInLeft" data-wow-duration="2s">
             <h3>About Us</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
-              lacus vel facilisis. </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. sed do eiusmod et dolore magna aliqua. </p>
-            <a href="javascript:void(0)" class="btn btn_dashed"> Read More</a>
+            <p>There’s often a stigma around <span>tourism</span>, most people will say that you should try
+                            and see all
+                            the
+                            famous places, but that’s not always the goal. It can be so much more than just doing the
+                            rounds
+                            at some favorite tourist spots, especially if you’re one of those <span> backpackers</span>
+                            who’s looking
+                            for a
+                            full-fledged adventure. Taking a trip should be a fulfilling activity, not a generic trail
+                            of footsteps
+                            that you’re expected to follow. At first, going from one place to another may seem like a
+                            hassle
+                            without those footsteps to track, but we can help you with that</p>
+            <a href="{{route('UI_about_us')}}" class="btn btn_dashed"> Read More</a>
           </div>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
