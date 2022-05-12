@@ -103,7 +103,8 @@ class UIController extends EmailController
 
     public function sign_up()
     {
-        return view('sign_up');
+        $countries = CountryModel::all();
+        return view('sign_up', compact('countries'));
     }
     public function create_account(Request $req)
     {
@@ -112,6 +113,7 @@ class UIController extends EmailController
             'email' => ['required', 'unique:users'],
             'password' => ['required'],
             'user_role' => ['required'],
+            'country_id' => ['required'],
         ]);
         $user = new User();
         $user->username = $req->username;
@@ -121,6 +123,13 @@ class UIController extends EmailController
         }
         $user->user_role = $req->user_role;
         $user->save();
+
+        $profile = new ProfileModel();
+        $profile->user_id = $user->id;
+        $profile->full_name = $user->username;
+        $profile->country_id = $req->country_id;
+        // $profile->country = $req->country;
+        $profile->save();
 
         //to shoot an email
         $this->verifyEmail($user->id);

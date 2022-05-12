@@ -26,9 +26,9 @@
                                 <div class="lips_div text-center">
                                     <h3><strong>Plan Your </strong>Vacation</h3>
                                     <p>There are a few key elements that make up a good vacation, and one of them is planning.
-Planning can make or break your holiday, so it’s best to proceed carefully. We’ve gathered a
-bunch of steps for those of you who need a roadmap to plan travels! Let’s get started.
-</p>
+                                        Planning can make or break your holiday, so it’s best to proceed carefully. We’ve gathered a
+                                        bunch of steps for those of you who need a roadmap to plan travels! Let’s get started.
+                                        </p>
                                     <div class="input_form">
                                         <form action="{{route('Vacationer_search_packages')}}" method="POST">
                                             @csrf
@@ -216,7 +216,7 @@ bunch of steps for those of you who need a roadmap to plan travels! Let’s get 
 
                         </div>
                     </div>
-                    <div class="main_client">
+                    <!-- <div class="main_client">
                         <h3>What Our Client Says About Us</h3>
                         <div class="row">
                             <div class="col-md-6 col-sm-6 col-xs-12">
@@ -240,10 +240,87 @@ bunch of steps for those of you who need a roadmap to plan travels! Let’s get 
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
+    </section>
+    <section class="main_about">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-10 col-md-10 centerCol">
+                    <div class="about_con">
+                        <h2>Step 1: Pick Your Destination</h2>
+                        <p>You can’t plan a vacation if you don’t know where you’re headed. Luckily, the iVacay team
+                            could give you some ideas about that. Our app and website both have some great destinations
+                            listed on them. If you need inspiration, you can provide them with a look. You can also read
+                            through our blog to learn more about a destination.
+                            </p>
+
+
+
+
+                        <h2>Step 2: Style of Travel</h2>
+                        <p>If you haven’t thought about what kind of a trip you’re having, now’s the time. Pick a style of travel and go from there. Some of the most common ones are:</p>
+                        <ul>
+                            <li><strong>Independent</strong> </li>
+                            <li><strong>Self-Drive</strong> </li>
+                            <li><strong>Escorted Tours</strong> </li>
+                            <li><strong>Backpacker</strong> </li>
+                            
+                        </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                        <h2>Step 3: Sightseeing</h2>
+                        <p>Decide on what you plan on seeing preemptively; that way, you can have an organized itinerary to go through later when you’re on vacation.</p>
+
+                        <h2>Step 4: Activities</h2>
+                        <p>Make a list of exciting activities you enjoy: shopping, wine-tasting, bird-watching, diving, resting/relaxing, cycling, walking, skiing, etc.</p>
+                        <h2>Step 5: Set Vacation Travel Dates</h2>
+                        <p>Depending on your schedule and plans, you might have to arrange for specific traveling windows. Things to consider when selecting dates are:</p>
+                        <ul>
+                            <li><strong>Climate & Seasons</strong> </li>
+                            <li><strong>Public & School Holidays</strong> </li>
+                            <li><strong>Airfare Pricing</strong> </li>
+                            
+                        </ul>
+                        
+                        <h2>Step 6: Places to Visit</h2>
+                        <p>Finding places to visit in a foreign area could be challenging. Luckily, iVacay matches vacationers with  <strong>    local tour guides </strong> who know every nook and cranny in their respective areas. With our services, your trip becomes much more memorable.</p>
+
+                        
+                        <h2>Step 7: Accommodation</h2>
+                        <p>Next, you need to find the most suitable accommodation at your destination. iVacay offers many different accommodation options to help create a memorable vacation.</p>
+
+                        
+                        <h2>Step 8: Logistics & Routing</h2>
+                        <p>Logistics play a crucial part in planning your vacation.iVacay partners up with many companies that offer logistics and routing; be sure to check our directory here.</p>
+
+                        
+                        <h2>Step 9: Vacation Design & Price</h2>
+                        <p>After deciding on the specifics of your vacation, you can give us a call for price inquiries. We’ll put everything together and draft up a price for you. Then, you can pay via your credit card, debit card, or crypto of your choice</p>
+<h2>Step 10: Booking
+</h2>
+<p>Once you make sure that you’ve planned everything thoroughly, you can get in touch
+with us to book your trip, lodgings, and more. <br>Happy Travels!
+</p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
     </section>
     <!-- Log In End -->
 

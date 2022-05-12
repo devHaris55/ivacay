@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- Primary Meta Tags -->
-<title>Volt Bootstrap 5 Dashboard - Sign in page</title>
+<title>Ivacay - Sign in page</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="title" content="Volt Bootstrap 5 Dashboard - Sign in page">
 <meta name="author" content="Themesberg">
@@ -73,7 +73,7 @@
                                               Remember me
                                             </label>
                                         </div> --}}
-                                        <div><a href="#" class="small text-right">Lost password?</a></div>
+                                        <!-- <div><a href="#" class="small text-right">Lost password?</a></div> -->
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-block btn-primary">Sign in</button>
@@ -94,8 +94,10 @@
                             </div> --}}
                             <div class="d-flex justify-content-center align-items-center mt-4">
                                 <span class="font-weight-normal">
-                                    Not registered?
-                                    <a href="./sign-up.html" class="font-weight-bold">Create account</a>
+                                    <!-- Not registered? -->
+                                    <a href="./sign-up.html" class="font-weight-bold">
+                                      </a>
+                                        <!-- Create account -->
                                 </span>
                             </div>
                         </div>

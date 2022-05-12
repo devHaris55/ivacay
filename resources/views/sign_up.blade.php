@@ -49,6 +49,14 @@
                             <div class="form-group">
                                 <input type="text" name="username" class="form-control" placeholder="User Name*">
                             </div>
+                            <div class="form-group log_input cust">
+                            <select class="sel" name="country_id">
+                                <!-- <option selected="" hidden="" disabled="">Select Country</option> -->
+                                @foreach($countries as $country)
+                                    <option value="{{$country->id}}">{{$country->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                             <!-- <div class="form-group">
                                 <input type="name" class="form-control" placeholder="Last  Name*">
                             </div> -->
