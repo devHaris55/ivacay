@@ -47,24 +47,27 @@
                         </div>
                         <div class="log_input ">
                             <div class="form-group">
-                                <input type="text" name="username" class="form-control" placeholder="User Name*">
+                                <input type="text" name="username" class="form-control" placeholder="User Name*" required>
                             </div>
                             <div class="form-group log_input cust">
-                            <select class="sel" name="country_id">
-                                <!-- <option selected="" hidden="" disabled="">Select Country</option> -->
-                                @foreach($countries as $country)
-                                    <option value="{{$country->id}}">{{$country->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
+                                <select class="sel" name="country_id" required>
+                                    <option selected="" hidden="" value="" disabled="">Select Country</option>
+                                    @foreach($countries as $country)
+                                        <option value="{{$country->id}}">{{$country->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="number" name="phone" class="form-control" placeholder="Phone No*" required>
+                            </div>
                             <!-- <div class="form-group">
                                 <input type="name" class="form-control" placeholder="Last  Name*">
                             </div> -->
                             <div class="form-group">
-                                <input type="email" name="email" class="form-control" placeholder="E-mail*">
+                                <input type="email" name="email" class="form-control" placeholder="E-mail*" required>
                             </div>
                             <div class="form-group">
-                                <input type="password" id="password" name="password" class="form-control" placeholder="password*">
+                                <input type="password" id="password" name="password" class="form-control" placeholder="password*" required>
                                 <span> <a href="javascript:void(0)" type="button" onclick="showPass()"><i class="fa-regular fa-eye"></i></a></span>
                             </div>
                             <div class="second_check">

@@ -128,6 +128,7 @@ class UIController extends EmailController
         $profile->user_id = $user->id;
         $profile->full_name = $user->username;
         $profile->country_id = $req->country_id;
+        $profile->phone = $req->phone;
         // $profile->country = $req->country;
         $profile->save();
 

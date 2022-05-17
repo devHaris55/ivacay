@@ -18,9 +18,9 @@
         <button type="button" class="btn btn-sm btn-outline-primary">Share</button>
         <button type="button" class="btn btn-sm btn-outline-primary">Export</button>
     </div>
-</div>
+</div> -->
 <div class="row justify-content-md-center">
-    <div class="col-12 mb-4">
+    <!-- <div class="col-12 mb-4">
         <div class="card bg-yellow-alt shadow-sm">
             <div class="card-header d-flex flex-row align-items-center flex-0">
                 <div class="d-block">
@@ -41,7 +41,7 @@
                 <div class="ct-chart-sales-value ct-double-octave ct-series-g"></div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="col-12 col-sm-6 col-xl-4 mb-4">
         <div class="card border-light shadow-sm">
             <div class="card-body">
@@ -49,20 +49,20 @@
                     <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
                         <div class="icon icon-shape icon-md icon-shape-blue rounded mr-4 mr-sm-0"><span class="fas fa-chart-line"></span></div>
                         <div class="d-sm-none">
-                            <h2 class="h5">Customers</h2>
-                            <h3 class="mb-1">345,678</h3>
+                            <h2 class="h5">Guides</h2>
+                            <h3 class="mb-1">{{$guiders}}</h3>
                         </div>
                     </div>
                     <div class="col-12 col-xl-7 px-xl-0">
                         <div class="d-none d-sm-block">
-                            <h2 class="h5">Customers</h2>
-                            <h3 class="mb-1">345k</h3>
+                            <h2 class="h5">Guides</h2>
+                            <h3 class="mb-1">{{$guiders}}</h3>
                         </div>
-                        <small>Feb 1 - Apr 1,  <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span> WorldWide</small>
+                        <!-- <small>Feb 1 - Apr 1,  <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span> WorldWide</small>
                         <div class="small mt-2">
                             <span class="fas fa-angle-up text-success"></span>
                             <span class="text-success font-weight-bold">18.2%</span> Since last month
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -75,26 +75,26 @@
                     <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
                         <div class="icon icon-shape icon-md icon-shape-secondary rounded mr-4"><span class="fas fa-cash-register"></span></div>
                         <div class="d-sm-none">
-                            <h2 class="h5">Revenue</h2>
-                            <h3 class="mb-1">$43,594</h3>
+                            <h2 class="h5">Vacationers</h2>
+                            <h3 class="mb-1">{{$vacationers}}</h3>
                         </div>
                     </div>
                     <div class="col-12 col-xl-7 px-xl-0">
                         <div class="d-none d-sm-block">
-                            <h2 class="h5">Revenue</h2>
-                            <h3 class="mb-1">$43,594</h3>
+                            <h2 class="h5">Vacationers</h2>
+                            <h3 class="mb-1">{{$vacationers}}</h3>
                         </div>
-                        <small>Feb 1 - Apr 1,  <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span> Worldwide</small>
+                        <!-- <small>Feb 1 - Apr 1,  <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span> Worldwide</small>
                         <div class="small mt-2">
                             <span class="fas fa-angle-up text-success"></span>
                             <span class="text-success font-weight-bold">28.2%</span> Since last month
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-12 col-sm-6 col-xl-4 mb-4">
+    <!-- <div class="col-12 col-sm-6 col-xl-4 mb-4">
         <div class="card border-light shadow-sm">
             <div class="card-body">
                 <div class="row d-block d-xl-flex align-items-center">
@@ -110,8 +110,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
+<!--
 <div class="row">
     <div class="col-12 col-xl-8 mb-4">
         <div class="row">
@@ -481,11 +482,154 @@
     </div>
 </div> -->
 
-<!-- <h1>Laravel Google Chart Example - ItSolutionstuff.com</h1>
-    <div id="linechart" style="width: 900px; height: 500px"></div> -->
+
+<!-- Monthly membership plans sales of current year --------------- Starts -->
+<div class="card chart-container">
+    <canvas id="chart1"></canvas>
+</div>
+<!-- Monthly membership plans sales of current year --------------- Ends -->
+
+<!-- Membership plan scope which plan sold most or least ----------------- Starts -->
+<div class="card chart-container">
+    <canvas id="chart2"></canvas>
+</div>
+<!-- Membership plan scope which plan sold most or least ----------------- Ends -->
+
+
+<!-- Monthly Journeys sales of current year --------------- Starts -->
+<div class="card chart-container">
+    <canvas id="journeys"></canvas>
+</div>
+<!-- Monthly Journeys sales of current year --------------- Ends -->
+
+<div id="linechart" style="width: 900px; height: 500px"></div>
+
 @endsection
 
 @push('js')
+<script src="https://cdn.jsdelivr.net/npm/cdbootstrap/js/cdb.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cdbootstrap/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/9d1d9a82d2.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    
+<!-- Monthly membership plans sales of current year --------------- Starts -->
+<script>
+      const ctx1 = document.getElementById("chart1").getContext('2d');
+      const myChart1 = new Chart(ctx1, {
+        type: 'line',
+        data: {
+          labels: ["Jan", "Feb", "Mar",
+          "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          datasets: [{
+            label: 'Yearly Sales of Membership Plans',
+            backgroundColor: 'rgba(161, 198, 247, 1)',
+            borderColor: 'rgb(47, 128, 237)',
+            // data: sites,
+            data: [
+                @foreach($monthly_sale as $values)
+                    {{$values.','}}
+                @endforeach
+            ],
+            // data: [3000, 4000, 2000, 5000, 8000, 9000, 2000],
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true,
+              }
+            }]
+          },
+          plugins: {
+          legend: {
+            labels: {
+              usePointStyle: true,
+            },
+          }
+        }
+        },
+      });
+</script>
+<!-- Monthly membership plans sales of current year --------------- Ends -->
+
+
+<!-- Membership plan scope which plan sold most or least ----------------- Starts -->
+<script>
+      const ctx2 = document.getElementById("chart2").getContext('2d');
+      const myChart2 = new Chart(ctx2, {
+        type: 'bar',
+        data: {
+          labels: [
+            @foreach($plans as $values)
+                "{{$values}}",
+            @endforeach
+          ],
+          datasets: [{
+            label: 'Membership Plans Scope',
+            backgroundColor: 'rgba(161, 198, 247, 1)',
+            borderColor: 'rgb(47, 128, 237)',
+            data: [
+                @foreach($totalPlanSales as $valu)
+                    {{$valu.','}}
+                @endforeach
+            ],
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true,
+              }
+            }]
+          }
+        },
+      });
+</script>
+<!-- Membership plan scope which plan sold most or least ----------------- Ends -->
+
+<!-- Monthly Journeys sales of current year --------------- Starts -->
+<script>
+      const journeys = document.getElementById("journeys").getContext('2d');
+      const journeysChart1 = new Chart(journeys, {
+        type: 'line',
+        data: {
+          labels: ["Jan", "Feb", "Mar",
+          "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          datasets: [{
+            label: 'Yearly Sales of Journeys',
+            backgroundColor: 'rgba(161, 247, 198, 1)',
+            borderColor: 'rgb(47, 237, 128)',
+            // data: sites,
+            data: [
+                @foreach($journeys_sale as $values)
+                    {{$values.','}}
+                @endforeach
+            ],
+            // data: [3000, 4000, 2000, 5000, 8000, 9000, 2000],
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true,
+              }
+            }]
+          },
+          plugins: {
+          legend: {
+            labels: {
+              usePointStyle: true,
+            },
+          }
+        }
+        },
+      });
+</script>
+<!-- Monthly Journeys sales of current year --------------- Ends -->
+
 <script type="text/javascript">
       var visitor = <?php echo $visitor; ?>;
       console.log(visitor);
