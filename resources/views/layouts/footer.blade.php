@@ -22,11 +22,13 @@
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <ul>
               <li><a href="{{route('UI_index')}}">Home</a></li>
-              <li><a href="{{route('UI_for_guide')}}">For Guide</a></li>
-              <li><a href="{{route('UI_articles')}}">Articles</a></li>
-              <li><a href="{{route('UI_faq')}}">FAQ</a></li>
+              <li><a href="{{route('UI_about_us')}}">About Us</a></li>
+              <li><a href="{{route('UI_for_guide')}}">Ultimate Ivacay Deals</a></li>
+              <!-- <li><a href="{{route('UI_articles')}}">Articles</a></li> -->
+              <li><a href="{{route('UI_share_experience')}}">Share your ultimate experiences</a></li>
               <li><a href="{{route('UI_service_provider')}}">Service Provider</a></li>
-              <li><a href="{{route('UI_vacationer')}}">Vacationer</a></li>
+              <li><a href="{{route('UI_vacationer')}}">Plan your Vacation</a></li>
+              <li><a href="{{route('UI_faq')}}">FAQ</a></li>
               
             </ul>
           </div>

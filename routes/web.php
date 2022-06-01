@@ -152,6 +152,7 @@ Route::get('/for-guide', [UIController::class, 'for_guide'])->name('UI_for_guide
 Route::get('/articles', [UIController::class, 'articles'])->name('UI_articles');
 Route::get('/about-us', [UIController::class, 'about_us'])->name('UI_about_us');
 Route::get('/faq', [UIController::class, 'faq'])->name('UI_faq');
+Route::get('/share-experience', [UIController::class, 'share_experience'])->name('UI_share_experience');
 
 Route::get('/service-provider', [UIController::class, 'service_provider'])->name('UI_service_provider');
 Route::get('country-search', [UIController::class, 'search_country'])->name('UI_search_country');

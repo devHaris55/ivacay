@@ -38,6 +38,10 @@ class UIController extends EmailController
     {
         return view('about-us');
     }
+    public function share_experience()
+    {
+        return view('share-experience');
+    }
 
 
     public function service_provider()
@@ -140,7 +144,13 @@ class UIController extends EmailController
 
     public function login()
     {
-        return view('login');
+        if(!Auth::check())
+        {
+            return view('login');
+        } else {
+            $countries = CountryModel::all();
+            return view('index',compact('countries'));
+        }
     }
     public function loggedin(Request $req)
     {

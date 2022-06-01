@@ -1761,7 +1761,7 @@ div#test a {
     line-height: 44px;
     color: #ffffff;
     font-weight: 500;
-    margin: 0 0 70px;
+    margin: 70px 0 0;
 }
 
 .client {
@@ -2820,3 +2820,7 @@ a#btn_click:hover {
 }
 
 /* About Us End */
+
+.lips_div.text-center {
+    margin: 0 125px 64px 125px;
+}

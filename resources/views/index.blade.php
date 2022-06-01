@@ -91,6 +91,19 @@
   <section class="about_sec">
     <div class="container">
       <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 ">
+                    <div class="lips_div text-center">
+                      <h3><strong>Ivacay</strong></h3>
+                      <p>Ivacay is your one stop all inclusive company, that offers discounted vacation packages 
+                        and Customized services for your adventures. We offer local entertainment, excursions and
+                         tour guides to your destination. Create your ultimate experience with our interactive easy 
+                         to use website. Be more by exploring more with Ivacay.
+                        </p>
+                        
+                    </div>
+                  </div>
+                </div>
+      <div class="row">
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
           <div class="about_text wow fadeInLeft" data-wow-duration="2s">
             <h3>About Us</h3>
@@ -324,7 +337,7 @@
                 </div>
               </div>
               <div class="main_client">
-                <h3>What Our Client Says About Us</h3>
+                <h3>How it works</h3>
                 <div class="row">
                   <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="client">
@@ -365,7 +378,7 @@
               <source src="images/lorem.mp4" type="video/mp4">
               <source src="images/lorem.mp4" type="video/ogg">
             </video>
-            <h3>Vacationer guide</h3>
+            <h3>Guest</h3>
           </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6">
@@ -374,7 +387,7 @@
               <source src="images/lorem.mp4" type="video/mp4">
               <source src="images/lorem.mp4" type="video/ogg">
             </video>
-            <h3>Service Provider guide </h3>
+            <h3>Host guide </h3>
           </div>
         </div>
       </div>

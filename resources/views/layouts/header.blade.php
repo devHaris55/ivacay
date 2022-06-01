@@ -35,20 +35,21 @@
           <div class="col-md-9 d-none d-md-block">
             <ul id="menu">
               <li><a href="{{route('UI_index')}}">Home</a></li>
-              <li><a href="{{route('UI_for_guide')}}">For Guide</a></li>
-              <li><a href="{{route('UI_articles')}}">Articles</a></li>
-              <li><a href="{{route('UI_faq')}}">FAQ</a></li>
-              <li><a href="{{route('UI_service_provider')}}">Service Provider</a></li>
-              <li><a href="{{route('UI_vacationer')}}">Vacationer</a></li>
               <li><a href="{{route('UI_about_us')}}">About Us</a></li>
+              <li><a href="{{route('UI_for_guide')}}">Ultimate Ivacay Deals</a></li>
+              <li><a href="{{route('UI_share_experience')}}">Share your ultimate experiences</a></li>
+              <!-- <li><a href="{{route('UI_articles')}}">Articles</a></li> -->
+              <!-- <li><a href="{{route('UI_faq')}}">FAQ</a></li> -->
+              <li><a href="{{route('UI_service_provider')}}">Service Provider</a></li>
+              <li><a href="{{route('UI_vacationer')}}">Plan your Vacation</a></li>
               @if(!Auth::check())
                 <li><a href="{{route('UI_sign_up')}}"> Sign Up </a></li>
-                <li><a href="{{route('UI_login')}}"> Log In</a></li>
+                <!-- <li><a href="{{route('UI_login')}}"> Log In</a></li> -->
               @else
                 <li><a href="{{route('UI_logout')}}"> Log Out</a></li>
               @endif
-              <li><a href="{{route('UI_plan_journey')}}" class="btn btn_dashed">Plan Your Journey
-                  <i class="fa-solid fa-arrow-right-long"></i></a></li>
+              <!-- <li><a href="{{route('UI_plan_journey')}}" class="btn btn_dashed">Plan Your Journey
+                  <i class="fa-solid fa-arrow-right-long"></i></a></li> -->
             </ul>
           </div>
         </div>

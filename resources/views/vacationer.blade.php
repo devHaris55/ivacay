@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="banner_text text-center ">
-                        <h3> Vacationer</h3>
+                        <h3> Plan your Vacation</h3>
                     </div>
                 </div>
             </div>
