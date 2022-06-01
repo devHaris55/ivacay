@@ -92,7 +92,7 @@
     <div class="container">
       <div class="row">
                   <div class="col-xs-12 col-sm-12 col-md-12 ">
-                    <div class="lips_div text-center">
+                    <div class="lips_div te text-center">
                       <h3><strong>Ivacay</strong></h3>
                       <p>Ivacay is your one stop all inclusive company, that offers discounted vacation packages 
                         and Customized services for your adventures. We offer local entertainment, excursions and

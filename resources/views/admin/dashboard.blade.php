@@ -502,7 +502,7 @@
 </div>
 <!-- Monthly Journeys sales of current year --------------- Ends -->
 
-<div id="linechart" style="width: 900px; height: 500px"></div>
+<!-- <div id="linechart" style="width: 900px; height: 500px"></div> -->
 
 @endsection
 
