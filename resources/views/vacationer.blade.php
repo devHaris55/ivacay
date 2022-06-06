@@ -14,7 +14,7 @@
         </div>
     </section>
     <!-- banner end -->
-    
+
     <!-- Log In Start -->
     <section class="log_in">
         <div class="container">
@@ -43,11 +43,11 @@
                                                         @endforeach
                                                     </select>
                                                 <!-- <input type="text" placeholder="" id="wtg"> -->
-                                                </li>                                                
+                                                </li>
                                                 <li>
                                                     <label for="">From</label>
                                                     <input name="from_date" min="{{Carbon\Carbon::now()->addDay()->format('Y-m-d')}}" type="date" placeholder="" id="fromdate">
-                                                </li>                                                
+                                                </li>
                                                 <li>
                                                     <label for="">To</label>
                                                     <input name="end_date" min="{{Carbon\Carbon::now()->addDay()->format('Y-m-d')}}" type="date" placeholder="" id="todate">
@@ -56,7 +56,7 @@
                                                     <button type="submit">Go</button>
                                                  <!-- <a class="btn btn-danger" id="btn_click"> Go</a> -->
                                                 </li>
-                                  
+
                                             </ul>
                                         </form>
                                         <div id="test"></div>
@@ -67,26 +67,26 @@
                                                 let x = $(this).val();
                                                 let data = {'search': x};
                                                 let url = 'country-for-vacation';
-                                                
+
                                                 $.ajax({
                                                     url: url,
                                                     data: data,
                                                     type: 'GET',
-                                                
+
                                                     success: function(data) {
                                                         res = data;
                                                         console.log(data);
                                                         $('#test').html(data);
-                                        
+
                                                     },
                                                     error: function() {
                                                         console.log('error');
                                                     }
-                                        
+
                                                 });
                                             });
                                         });
-                                        
+
                                         // In your Javascript (external .js resource or <script> tag)
                                         $(document).ready(function() {
                                             $('.js-example-basic-single').select2();
@@ -98,7 +98,7 @@
                             </div>
                         </div>
                     </div>
-                
+
 
 
 
@@ -144,7 +144,7 @@
                                       <span class="checkmark"></span>
                                     </label>
                                 </div>
-                            </div>                           
+                            </div>
                            <div class="col-md-3 col-sm-3 col-xs-12 custom" >
                                 <div class="family">
                                     <label class="containerd">
@@ -160,10 +160,10 @@
                                     <a id="ssd" class="btn btn-danger"href="{{route('UI_personal_concierge_service')}}" >shared service deal
                                     </a>
                                 </div>
-                            </div> 
+                            </div>
 
                         </div>
-                    </div>                    
+                    </div>
                     <div class="deals_you "  id="panel2" >
                         <h3>Nature</h3>
                         <div class="row">
@@ -206,7 +206,7 @@
                                       <span class="checkmark"></span>
                                     </label>
                                 </div>
-                            </div>                           
+                            </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="service_btn">
                                     <a id="pcs"  class="btn btn-danger" href="{{route('UI_personal_concierge_service2')}}">personal concierge service
@@ -251,7 +251,7 @@
                 <div class="col-xs-12 col-sm-10 col-md-10 centerCol">
                     <div class="about_con">
                         <h2>Step 1: Pick Your Destination</h2>
-                        <p>You can’t plan a vacation if you don’t know where you’re headed. Luckily, the iVacay team
+                        <p>You can’t plan a vacation if you don’t know where you’re headed. Luckily, the ivacay team
                             could give you some ideas about that. Our app and website both have some great destinations
                             listed on them. If you need inspiration, you can provide them with a look. You can also read
                             through our blog to learn more about a destination.
@@ -267,7 +267,7 @@
                             <li><strong>Self-Drive</strong> </li>
                             <li><strong>Escorted Tours</strong> </li>
                             <li><strong>Backpacker</strong> </li>
-                            
+
                         </ul>
 
 
@@ -292,21 +292,21 @@
                             <li><strong>Climate & Seasons</strong> </li>
                             <li><strong>Public & School Holidays</strong> </li>
                             <li><strong>Airfare Pricing</strong> </li>
-                            
+
                         </ul>
-                        
+
                         <h2>Step 6: Places to Visit</h2>
-                        <p>Finding places to visit in a foreign area could be challenging. Luckily, iVacay matches vacationers with  <strong>    local tour guides </strong> who know every nook and cranny in their respective areas. With our services, your trip becomes much more memorable.</p>
+                        <p>Finding places to visit in a foreign area could be challenging. Luckily, ivacay matches vacationers with  <strong>    local tour guides </strong> who know every nook and cranny in their respective areas. With our services, your trip becomes much more memorable.</p>
 
-                        
+
                         <h2>Step 7: Accommodation</h2>
-                        <p>Next, you need to find the most suitable accommodation at your destination. iVacay offers many different accommodation options to help create a memorable vacation.</p>
+                        <p>Next, you need to find the most suitable accommodation at your destination. ivacay offers many different accommodation options to help create a memorable vacation.</p>
 
-                        
+
                         <h2>Step 8: Logistics & Routing</h2>
-                        <p>Logistics play a crucial part in planning your vacation.iVacay partners up with many companies that offer logistics and routing; be sure to check our directory here.</p>
+                        <p>Logistics play a crucial part in planning your vacation.ivacay partners up with many companies that offer logistics and routing; be sure to check our directory here.</p>
 
-                        
+
                         <h2>Step 9: Vacation Design & Price</h2>
                         <p>After deciding on the specifics of your vacation, you can give us a call for price inquiries. We’ll put everything together and draft up a price for you. Then, you can pay via your credit card, debit card, or crypto of your choice</p>
 <h2>Step 10: Booking
@@ -320,7 +320,7 @@ with us to book your trip, lodgings, and more. <br>Happy Travels!
 
             </div>
         </div>
-        
+
     </section>
     <!-- Log In End -->
 

@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <div class="banner_text text-center">
-            <h1>Ultimate <span>Ivacay</span> Deals </h1>
+            <h1>Ultimate <span>ivacay</span> Deals </h1>
           </div>
         </div>
       </div>
@@ -15,7 +15,7 @@
   </section>
   <!-- banner end -->
 
-  
+
   <section class="about_sec">
     <div class="container">
       <div class="row">

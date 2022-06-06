@@ -14,7 +14,7 @@
     </div>
   </section>
   <!-- banner end -->
-  
+
   <section class="faq_sec">
     <div class="container">
       <div class="row">
@@ -38,7 +38,7 @@
               <h2 class="accordion-header" id="headingTwo">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                   data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Can I bring my family on an iVacay trip?
+                  Can I bring my family on an ivacay trip?
 ?
                 </button>
               </h2>
@@ -61,7 +61,7 @@
               <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  <p>No. Unfortunately, iVacay only accepts payments in Credit/Debit cards and crypto.</p>
+                  <p>No. Unfortunately, ivacay only accepts payments in Credit/Debit cards and crypto.</p>
 
                 </div>
               </div>
@@ -87,14 +87,14 @@ guides and renowned companies.
               <h2 class="accordion-header" id="headingTwo2">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                   data-bs-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
-                  Can I travel with iVacay if I’m disabled?
+                  Can I travel with ivacay if I’m disabled?
 ?
                 </button>
               </h2>
               <div id="collapseTwo2" class="accordion-collapse collapse" aria-labelledby="headingTwo2"
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  <p>Yes. iVacay is a place of equity and equality. If you reach out to our team with the
+                  <p>Yes. ivacay is a place of equity and equality. If you reach out to our team with the
 specific details of your condition, we can help you make the best out of your trip.</p>
 
                 </div>
@@ -128,7 +128,7 @@ specific details of your condition, we can help you make the best out of your tr
               <div id="collapseFour4" class="accordion-collapse collapse" aria-labelledby="headingThree3"
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  <p> Yes! You and your group can book a trip through iVacay.
+                  <p> Yes! You and your group can book a trip through ivacay.
                     </p>
 
                 </div>

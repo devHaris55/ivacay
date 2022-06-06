@@ -86,20 +86,20 @@
     </div>
   </section>
   <!-- banner end -->
-  
+
   <!-- about sec start  -->
   <section class="about_sec">
     <div class="container">
       <div class="row">
                   <div class="col-xs-12 col-sm-12 col-md-12 ">
                     <div class="lips_div te text-center">
-                      <h3><strong>Ivacay</strong></h3>
-                      <p>Ivacay is your one stop all inclusive company, that offers discounted vacation packages 
+                      <h3><strong>ivacay</strong></h3>
+                      <p>ivacay is your one stop all inclusive company, that offers discounted vacation packages
                         and Customized services for your adventures. We offer local entertainment, excursions and
-                         tour guides to your destination. Create your ultimate experience with our interactive easy 
-                         to use website. Be more by exploring more with Ivacay.
+                         tour guides to your destination. Create your ultimate experience with our interactive easy
+                         to use website. Be more by exploring more with ivacay.
                         </p>
-                        
+
                     </div>
                   </div>
                 </div>
@@ -196,11 +196,11 @@
                                           @endforeach
                                       </select>
                                       <!-- <input type="text" placeholder="" id="wtg"> -->
-                                  </li>                                                
+                                  </li>
                                   <li>
                                       <label for="">From</label>
                                       <input name="from_date" min="{{Carbon\Carbon::now()->addDay()->format('Y-m-d')}}" type="date" placeholder="" id="fromdate">
-                                  </li>                                                
+                                  </li>
                                   <li>
                                       <label for="">To</label>
                                       <input name="end_date" min="{{Carbon\Carbon::now()->addDay()->format('Y-m-d')}}" type="date" placeholder="" id="todate">
@@ -209,7 +209,7 @@
                                       <button type="submit">Go</button>
                                     <!-- <a class="btn btn-danger" id="btn_click"> Go</a> -->
                                   </li>
-                    
+
                               </ul>
                           </form>
                       </div>
@@ -387,7 +387,7 @@
               <source src="images/lorem.mp4" type="video/mp4">
               <source src="images/lorem.mp4" type="video/ogg">
             </video>
-            <h3>Host guide </h3>
+            <h3>Host </h3>
           </div>
         </div>
       </div>
@@ -516,7 +516,7 @@
 
   @endsection
 
-  
+
 @push('js')
   <script>
 
@@ -543,7 +543,7 @@
       });
 
     });
-    
+
     $(".about_slide").slick({
       dots: false,
       arrows: false,
