@@ -842,7 +842,7 @@ a.btn.btn_dashed i {
   content: '';
   top: -30px;
   right: -30px;
-   background:#ffffff; 
+   background:#ffffff;
   height: 100%;
   width: 100%;
   border-radius: 30px;
@@ -1680,11 +1680,23 @@ div#test a {
 }
 
 .input_form select {
-    width: auto;
+    /* width: auto; */
     float: none;
     background: #ffffff87 url(../images/arrow.png) no-repeat right;
     padding: 0 0px 0 30px;
     border-left: 2px solid #fff;
+    width: 100%;
+}
+select.slelct_text {
+    width: 160px;
+}
+.text_input {
+    width: 96% !important;
+    margin: 0 0 0 50px;
+}
+.text_label {
+    width: 100%;
+    margin: 0px 10px 10px 57px !important;
 }
 
 .pro_img img {
@@ -2269,7 +2281,7 @@ div#test a {
     display: block;
     text-align: left;
     color: #ffffff;
-    margin: 0 10px 5px;
+    margin: 0 6px 4px;
 }
 
 a#btn_click {
