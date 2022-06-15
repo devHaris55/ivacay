@@ -144,32 +144,32 @@
                 </div>
             </div>
             <!--       <div class="lips_sec">
-                                        <div class="row">
-                                          <div class="col-xs-12 col-sm-12 col-md-12 centerCol">
-                                            <div class="lips_div text-center">
-                                              <h3><strong>Book Your </strong> Destination</h3>
-                                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                                                dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. </p>
-                                              <div class="input_form">
-                                                <form action="">
-                                                  <input type="text" placeholder="Where to go?">
-                                                  <select name="" id="">
-                                                    <option value="">From</option>
-                                                    <option value="">Lorem Ipsum</option>
-                                                    <option value="">Lorem Ipsum</option>
-                                                  </select>
-                                                  <select name="" id="">
-                                                    <option value="">To</option>
-                                                    <option value="">Lorem Ipsum</option>
-                                                    <option value="">Lorem Ipsum</option>
-                                                  </select>
-                                                  <button type="submit"> Go</button>
-                                                </form>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div> -->
+                                                <div class="row">
+                                                  <div class="col-xs-12 col-sm-12 col-md-12 centerCol">
+                                                    <div class="lips_div text-center">
+                                                      <h3><strong>Book Your </strong> Destination</h3>
+                                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                                                        dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. </p>
+                                                      <div class="input_form">
+                                                        <form action="">
+                                                          <input type="text" placeholder="Where to go?">
+                                                          <select name="" id="">
+                                                            <option value="">From</option>
+                                                            <option value="">Lorem Ipsum</option>
+                                                            <option value="">Lorem Ipsum</option>
+                                                          </select>
+                                                          <select name="" id="">
+                                                            <option value="">To</option>
+                                                            <option value="">Lorem Ipsum</option>
+                                                            <option value="">Lorem Ipsum</option>
+                                                          </select>
+                                                          <button type="submit"> Go</button>
+                                                        </form>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div> -->
             <!-- Log In Start -->
             <section class="log_in">
                 <div class="container">
@@ -183,9 +183,11 @@
                                             <p>There are a few key elements that make up a good vacation, and one of them is
                                                 planning.
                                                 Planning can make or break your holiday, so it’s best to proceed carefully.
-                                                We’ve gathered a
+                                                We’ve
+                                                gathered a
                                                 bunch of steps for those of you who need a roadmap to plan travels! Let’s
-                                                get started.
+                                                get
+                                                started.
                                             </p>
                                             <div class="input_form">
                                                 <form action="{{ route('Vacationer_search_packages') }}" method="POST">
@@ -193,8 +195,10 @@
                                                     <ul>
                                                         <li>
                                                             <label for="">Where to go?</label>
-                                                            <select class="sel" name="country_id">
-                                                                <option selected="" hidden="" disabled="">Select Country
+                                                            <!-- <input type="search" placeholder="Search Country" id="search" name="country" required> -->
+                                                            <select class="sel" name="country_id" required>
+                                                                <option selected="" hidden="" value="" disabled="">Select
+                                                                    Country
                                                                 </option>
                                                                 @foreach ($countries as $country)
                                                                     <option value="{{ $country->id }}">
@@ -208,21 +212,89 @@
                                                             <label for="">From</label>
                                                             <input name="from_date"
                                                                 min="{{ Carbon\Carbon::now()->addDay()->format('Y-m-d') }}"
-                                                                type="date" placeholder="" id="fromdate">
+                                                                type="date" placeholder="" id="fromdate" required>
                                                         </li>
                                                         <li>
                                                             <label for="">To</label>
                                                             <input name="end_date"
                                                                 min="{{ Carbon\Carbon::now()->addDay()->format('Y-m-d') }}"
-                                                                type="date" placeholder="" id="todate">
+                                                                type="date" placeholder="" id="todate" required>
                                                         </li>
                                                         <li>
+                                                            <label for="">Favored scenery</label>
+                                                            <!-- <input type="search" placeholder="Search Country" id="search" name="country" required> -->
+                                                            <select class="slelct_text" name="activity" required>
+                                                                <option value="">Select Favored scenery</option>
+                                                                <option value="Ancient Architecture">Ancient Architecture
+                                                                </option>
+                                                                <option value="Beaches">Beaches</option>
+                                                                <option value="Concrete Jungles">Concrete Jungles</option>
+                                                                <option value="Deserts">Deserts</option>
+                                                                <option value="Forests">Forests</option>
+                                                                <option value="Flea Markets">Flea Markets</option>
+                                                                <option value="Safari">Safari</option>
+                                                                <option value="Volcanic Hotspots">Volcanic Hotspots</option>
+                                                                <option value="Wine Country">Wine Country</option>
+                                                                <option value="Mountains">Mountains</option>
+                                                                <option value="Lake/River fronts">Lake/River fronts</option>
+                                                                <option value="Tropical Rain forests">Tropical Rain forests
+                                                                </option>
+                                                            </select>
+                                                            <!-- <input type="text" placeholder="" id="wtg"> -->
+                                                        </li>
+                                                        <li class="down">
+                                                            <label class="text_label" for="">Price</label>
+                                                            <input class="text_input" type="number" name="price"
+                                                                placeholder="Enter your Max budget" id="fromdate" required>
+                                                        </li>
+                                                        <li class="down">
+                                                            <label class="text_label" for="">Activities</label>
+                                                            <input class="text_input" name="activities" type="text"
+                                                                placeholder="activities you want to do" id="fromdate">
+                                                        </li>
+                                                        <li class=" down down_btn">
                                                             <button type="submit">Go</button>
                                                             <!-- <a class="btn btn-danger" id="btn_click"> Go</a> -->
                                                         </li>
 
                                                     </ul>
                                                 </form>
+                                                <div id="test"></div>
+                                                @push('js')
+                                                    <script>
+                                                        $(document).ready(function() {
+                                                            $('#search').on('keyup', function() {
+                                                                let x = $(this).val();
+                                                                let data = {
+                                                                    'search': x
+                                                                };
+                                                                let url = 'country-for-vacation';
+
+                                                                $.ajax({
+                                                                    url: url,
+                                                                    data: data,
+                                                                    type: 'GET',
+
+                                                                    success: function(data) {
+                                                                        res = data;
+                                                                        console.log(data);
+                                                                        $('#test').html(data);
+
+                                                                    },
+                                                                    error: function() {
+                                                                        console.log('error');
+                                                                    }
+
+                                                                });
+                                                            });
+                                                        });
+
+                                                        // In your Javascript (external .js resource or <script> tag)
+                                                        $(document).ready(function() {
+                                                            $('.js-example-basic-single').select2();
+                                                        });
+                                                    </script>
+                                                @endpush
                                             </div>
                                         </div>
                                     </div>
@@ -358,31 +430,31 @@
 
                                 </div>
                             </div>
-                            <div class="main_client">
-                                <h3>How it works</h3>
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <div class="client">
-                                            <h4>Lorem Ipsum</h4>
-                                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse
-                                                ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
-                                                facilisis. </p>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod et dolore
-                                                magna aliqua. </p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <div class="vid_img">
-                                            <img src="{{ asset('images/vid_img.png') }}" class="img-fluid" alt="">
-                                            <a data-fancybox="gallery" href="https://www.youtube.com/watch?v=-7aTH9G9ZaE"
-                                                tabindex="0"><i class="fas fa-circle-play"></i></a>
+                            <!-- <div class="main_client">
+                                                                                                                                                            <h3>What Our Client Says About Us</h3>
+                                                                                                                                                            <div class="row">
+                                                                                                                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                                                                                                                    <div class="client">
+                                                                                                                                                                        <h4>Lorem Ipsum</h4>
+                                                                                                                                                                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                                                                                                                                            tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse
+                                                                                                                                                                            ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+                                                                                                                                                                            facilisis. </p>
+                                                                                                                                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                                                                                                                                            tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod et dolore
+                                                                                                                                                                            magna aliqua. </p>
+                                                                                                                                                                    </div>
+                                                                                                                                                                </div>
+                                                                                                                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                                                                                                                    <div class="vid_img">
+                                                                                                                                                                        <img src="{{ asset('images/vid_img.png') }}" class="img-fluid" alt="">
+                                                                                                                                                                        <a data-fancybox="gallery" href="https://www.youtube.com/watch?v=-7aTH9G9ZaE"
+                                                                                                                                                                            tabindex="0"><i class="fas fa-circle-play"></i></a>
 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                                                                                                                                                    </div>
+                                                                                                                                                                </div>
+                                                                                                                                                            </div>
+                                                                                                                                                        </div> -->
                         </div>
                     </div>
                 </div>
@@ -424,15 +496,15 @@
                                 <a href="{{ route('UI_build_package') }}">Group Travelers</a>
                             </div>
                             <!-- <div class="select">
-                                                <select name="" id="">
-                                                  <option>Group Travellers</option>
-                                                  <option>lorem</option>
-                                                  <option>lorem</option>
-                                                  <option>lorem</option>
-                                                  <option>lorem</option>
-                                                  <option>lorem</option>
-                                                </select>
-                                              </div> -->
+                                                        <select name="" id="">
+                                                          <option>Group Travellers</option>
+                                                          <option>lorem</option>
+                                                          <option>lorem</option>
+                                                          <option>lorem</option>
+                                                          <option>lorem</option>
+                                                          <option>lorem</option>
+                                                        </select>
+                                                      </div> -->
                         </div>
                     </div>
 
@@ -447,15 +519,15 @@
                             <a href="{{ route('UI_vacationer') }}">Individual Travelers</a>
                         </div>
                         <!-- <div class="select">
-                                              <select name="" id="">
-                                                <option>Individual Travellers</option>
-                                                <option>lorem</option>
-                                                <option>lorem</option>
-                                                <option>lorem</option>
-                                                <option>lorem</option>
-                                                <option>lorem</option>
-                                              </select>
-                                            </div> -->
+                                                      <select name="" id="">
+                                                        <option>Individual Travellers</option>
+                                                        <option>lorem</option>
+                                                        <option>lorem</option>
+                                                        <option>lorem</option>
+                                                        <option>lorem</option>
+                                                        <option>lorem</option>
+                                                      </select>
+                                                    </div> -->
                     </div>
                 </div>
             </div>
@@ -468,15 +540,15 @@
                             <a href="{{ route('UI_for_guide') }}">Budget Travelers</a>
                         </div>
                         <!-- <div class="select">
-                                              <select name="" id="">
-                                                <option> Budget Travellers.</option>
-                                                <option>lorem</option>
-                                                <option>lorem</option>
-                                                <option>lorem</option>
-                                                <option>lorem</option>
-                                                <option>lorem</option>
-                                              </select>
-                                            </div> -->
+                                                      <select name="" id="">
+                                                        <option> Budget Travellers.</option>
+                                                        <option>lorem</option>
+                                                        <option>lorem</option>
+                                                        <option>lorem</option>
+                                                        <option>lorem</option>
+                                                        <option>lorem</option>
+                                                      </select>
+                                                    </div> -->
                     </div>
                 </div>
             </div>
@@ -500,15 +572,15 @@
                             <a href="{{ route('UI_for_guide') }}">Your Concierge</a>
                         </div>
                         <!-- <div class="select">
-                                              <select name="" id="">
-                                                <option>Your Concierge</option>
-                                                <option>lorem</option>
-                                                <option>lorem</option>
-                                                <option>lorem</option>
-                                                <option>lorem</option>
-                                                <option>lorem</option>
-                                              </select>
-                                            </div> -->
+                                                      <select name="" id="">
+                                                        <option>Your Concierge</option>
+                                                        <option>lorem</option>
+                                                        <option>lorem</option>
+                                                        <option>lorem</option>
+                                                        <option>lorem</option>
+                                                        <option>lorem</option>
+                                                      </select>
+                                                    </div> -->
                     </div>
                 </div>
             </div>
@@ -521,15 +593,15 @@
                             <a href="{{ route('UI_articles') }}">Your Adventure</a>
                         </div>
                         <!-- <div class="select">
-                                              <select name="" id="">
-                                                <option> Your Adventure</option>
-                                                <option>lorem</option>
-                                                <option>lorem</option>
-                                                <option>lorem</option>
-                                                <option>lorem</option>
-                                                <option>lorem</option>
-                                              </select>
-                                            </div> -->
+                                                      <select name="" id="">
+                                                        <option> Your Adventure</option>
+                                                        <option>lorem</option>
+                                                        <option>lorem</option>
+                                                        <option>lorem</option>
+                                                        <option>lorem</option>
+                                                        <option>lorem</option>
+                                                      </select>
+                                                    </div> -->
                     </div>
                 </div>
             </div>

@@ -860,7 +860,7 @@ a.btn.btn_dashed i {
 }*/
 
 .about_img .img-fluid.float-left {
-    width: auto;
+    width: 340px;
     position: absolute;
     left: 0;
     bottom: -50px;
@@ -1688,7 +1688,7 @@ div#test a {
     width: 100%;
 }
 select.slelct_text {
-    width: 160px;
+    width: 100% !important;
 }
 .text_input {
     width: 96% !important;
@@ -1696,7 +1696,7 @@ select.slelct_text {
 }
 .text_label {
     width: 100%;
-    margin: 0px 10px 10px 57px !important;
+    margin: 0px 10px 10px 72px !important;
 }
 
 .pro_img img {
@@ -2259,8 +2259,8 @@ select.slelct_text {
 }
 
 .input_form ul li:nth-child(1) {
-    width: 42%;
-    margin-left: 0;
+    width: 26%;
+    margin-left: 61px;
 }
 .input_form ul li:nth-child(2) {
     width: 20%;
@@ -2273,7 +2273,7 @@ select.slelct_text {
     margin-left: -6px;
 }
 .input_form ul li:nth-child(4) {
-    width: 10%;
+    width: 29%;
     margin-left: -6px;
 }
 
@@ -2835,4 +2835,26 @@ a#btn_click:hover {
 
 .lips_div.te {
     margin: 0 125px 64px 125px;
+}
+
+
+
+
+li.down {
+    width: 33% !important;
+    float: left;
+    margin: 0px -17px 0px 0px;
+}
+li.down.down_btn  button {
+    width: 94%;
+    background: #7f62d6;
+    color: #ffffff;
+    transition: all 0.5s ease-in-out;
+    border: 0;
+    margin: 35px -113px 0px 0;
+}
+.down input {
+    margin: 0 0 0 65px;
+}
+.down  input:nth-child(2) {
 }

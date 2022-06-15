@@ -38,8 +38,9 @@
                                                 <li>
                                                     <label for="">Where to go?</label>
                                                     <!-- <input type="search" placeholder="Search Country" id="search" name="country" required> -->
-                                                    <select class="sel" name="country_id">
-                                                        <option selected="" hidden="" disabled="">Select Country</option>
+                                                    <select class="sel" name="country_id" required>
+                                                        <option selected="" hidden="" value="" disabled="">Select Country
+                                                        </option>
                                                         @foreach ($countries as $country)
                                                             <option value="{{ $country->id }}">{{ $country->name }}
                                                             </option>
@@ -51,18 +52,19 @@
                                                     <label for="">From</label>
                                                     <input name="from_date"
                                                         min="{{ Carbon\Carbon::now()->addDay()->format('Y-m-d') }}"
-                                                        type="date" placeholder="" id="fromdate">
+                                                        type="date" placeholder="" id="fromdate" required>
                                                 </li>
                                                 <li>
                                                     <label for="">To</label>
                                                     <input name="end_date"
                                                         min="{{ Carbon\Carbon::now()->addDay()->format('Y-m-d') }}"
-                                                        type="date" placeholder="" id="todate">
+                                                        type="date" placeholder="" id="todate" required>
                                                 </li>
                                                 <li>
-                                                    <label for="">favored scenery</label>
+                                                    <label for="">Favored scenery</label>
                                                     <!-- <input type="search" placeholder="Search Country" id="search" name="country" required> -->
-                                                    <select class="slelct_text" name="activity">
+                                                    <select class="slelct_text" name="activity" required>
+                                                        <option value="">Select Favored scenery</option>
                                                         <option value="Ancient Architecture">Ancient Architecture</option>
                                                         <option value="Beaches">Beaches</option>
                                                         <option value="Concrete Jungles">Concrete Jungles</option>
@@ -78,17 +80,17 @@
                                                     </select>
                                                     <!-- <input type="text" placeholder="" id="wtg"> -->
                                                 </li>
-                                                <li>
+                                                <li class="down">
                                                     <label class="text_label" for="">Price</label>
-                                                    <input class="text_input" type="text" name="price"
-                                                        placeholder="Enter your Max budget" id="fromdate">
+                                                    <input class="text_input" type="number" name="price"
+                                                        placeholder="Enter your Max budget" id="fromdate" required>
                                                 </li>
-                                                <li>
+                                                <li class="down">
                                                     <label class="text_label" for="">Activities</label>
                                                     <input class="text_input" name="activities" type="text"
-                                                        placeholder="" id="fromdate">
+                                                        placeholder="activities you want to do" id="fromdate">
                                                 </li>
-                                                <li>
+                                                <li class=" down down_btn">
                                                     <button type="submit">Go</button>
                                                     <!-- <a class="btn btn-danger" id="btn_click"> Go</a> -->
                                                 </li>
@@ -257,30 +259,30 @@
                         </div>
                     </div>
                     <!-- <div class="main_client">
-                                                                                                        <h3>What Our Client Says About Us</h3>
-                                                                                                        <div class="row">
-                                                                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                                                                <div class="client">
-                                                                                                                    <h4>Lorem Ipsum</h4>
-                                                                                                                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                                                                                        tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse
-                                                                                                                        ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
-                                                                                                                        facilisis. </p>
-                                                                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                                                                                        tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod et dolore
-                                                                                                                        magna aliqua. </p>
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                                                                <div class="vid_img">
-                                                                                                                    <img src="{{ asset('images/vid_img.png') }}" class="img-fluid" alt="">
-                                                                                                                    <a data-fancybox="gallery" href="https://www.youtube.com/watch?v=-7aTH9G9ZaE"
-                                                                                                                        tabindex="0"><i class="fas fa-circle-play"></i></a>
+                                                                                                                                                <h3>What Our Client Says About Us</h3>
+                                                                                                                                                <div class="row">
+                                                                                                                                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                                                                                                        <div class="client">
+                                                                                                                                                            <h4>Lorem Ipsum</h4>
+                                                                                                                                                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                                                                                                                                tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse
+                                                                                                                                                                ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+                                                                                                                                                                facilisis. </p>
+                                                                                                                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                                                                                                                                tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod et dolore
+                                                                                                                                                                magna aliqua. </p>
+                                                                                                                                                        </div>
+                                                                                                                                                    </div>
+                                                                                                                                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                                                                                                        <div class="vid_img">
+                                                                                                                                                            <img src="{{ asset('images/vid_img.png') }}" class="img-fluid" alt="">
+                                                                                                                                                            <a data-fancybox="gallery" href="https://www.youtube.com/watch?v=-7aTH9G9ZaE"
+                                                                                                                                                                tabindex="0"><i class="fas fa-circle-play"></i></a>
 
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                    </div> -->
+                                                                                                                                                        </div>
+                                                                                                                                                    </div>
+                                                                                                                                                </div>
+                                                                                                                                            </div> -->
                 </div>
             </div>
         </div>
